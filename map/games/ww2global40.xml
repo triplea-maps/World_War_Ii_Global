@@ -4582,9 +4582,9 @@
       <unitPlacement unitType="infantry" territory="Hunan" quantity="1" owner="Chinese"/>
       <unitPlacement unitType="infantry" territory="Yunnan" quantity="3" owner="Chinese"/>
       <unitPlacement unitType="infantry" territory="Kwangtung" quantity="2" owner="British"/>
-      <unitPlacement unitType="harbour" territory="Kwangtung" quantity="1" owner="British"/>
+      <unitPlacement unitType="harbour" territory="Kwangtung" quantity="1" owner="UK_Pacific"/>
       <unitPlacement unitType="infantry" territory="Malaya" quantity="4" owner="British"/>
-      <unitPlacement unitType="harbour" territory="Malaya" quantity="1" owner="British"/>
+      <unitPlacement unitType="harbour" territory="Malaya" quantity="1" owner="UK_Pacific"/>
       <unitPlacement unitType="infantry" territory="Burma" quantity="1" owner="British"/>
       <unitPlacement unitType="fighter" territory="Burma" quantity="1" owner="British"/>
       <unitPlacement unitType="infantry" territory="India" quantity="4" owner="British"/>
@@ -4592,8 +4592,8 @@
       <unitPlacement unitType="fighter" territory="India" quantity="3" owner="British"/>
       <unitPlacement unitType="tactical_bomber" territory="India" quantity="1" owner="British"/>
       <unitPlacement unitType="aaGun" territory="India" quantity="1" owner="British"/>
-      <unitPlacement unitType="airfield" territory="India" quantity="1" owner="British"/>
-      <unitPlacement unitType="harbour" territory="India" quantity="1" owner="British"/>
+      <unitPlacement unitType="airfield" territory="India" quantity="1" owner="UK_Pacific"/>
+      <unitPlacement unitType="harbour" territory="India" quantity="1" owner="UK_Pacific"/>
       <unitPlacement unitType="factory_major" territory="India" quantity="1" owner="UK_Pacific"/>
       <unitPlacement unitType="destroyer" territory="39 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="39 Sea Zone" quantity="1" owner="British"/>
