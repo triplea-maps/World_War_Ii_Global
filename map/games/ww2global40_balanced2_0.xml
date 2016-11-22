@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II G40 Balanced Mod" version="2.0"/>
+  <info name="World War II Global 1940 Balanced Mod" version="2.1"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4913,9 +4913,28 @@
     <attachment name="conditionAttachment_French_Territory_May_Turn_Vichy_Switch" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="switch" value="true"/>
     </attachment>
+    <attachment name="conditionAttachment_Southern_France_No_American_Units_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Southern France"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Southern_France_No_British_Units_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Southern France"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Southern_France_No_Russian_Units_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Southern France"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Southern_France_No_ANZAC_Units_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="1:Southern France"/>
+      <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_No_Allied_Units_In_Southern_France" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="alliedExclusionTerritories" value="Southern France"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
+      <option name="conditions" value="conditionAttachment_Southern_France_No_British_Units_1:conditionAttachment_Southern_France_No_American_Units_1:conditionAttachment_Southern_France_No_ANZAC_Units_1:conditionAttachment_Southern_France_No_Russian_Units_1"/>
     </attachment>
     <attachment name="conditionAttachment_Axis_Conquer_France_And_Normandy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="France:Normandy Bordeaux"/>
@@ -15512,6 +15531,7 @@ These changes to units are things other than price/movement which you can see in
 <b>Credits to Veqryn for almost all related Engine code that allows this map to work.</b>
 <br><br><hr><br>
 <br>Change Log:
+<br>BM2.1: Fixes Vichy bug
 <br>
 <br>3.9
 <br>Stopped British fighters from dying if UK Pacific could place a carrier under them.
@@ -15637,6 +15657,7 @@ These changes to units are things other than price/movement which you can see in
 <br>
 <br>2.0
 <br>Everything done, now playtesting.
+<br>
 <br>
 <br><br><hr><br>
 </div>
