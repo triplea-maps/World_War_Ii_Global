@@ -15378,6 +15378,7 @@ You may also need to use edit mode to correct things listed below.<br>
 <br>* (NA) You should be able to SBR / Rocket attack an empty territory that you are blitzing.
 <br>* (NA) Each phase of combat should have all units in that phase fire before any casualty selection occurs, whereas right now in TripleA if air and subs are involved then units might be broken up into smaller groups and casualty selection done for each group.
 <br>* (EM) If you select for a bombardment from a sea zone, you should be able to select which units you want to have bombard, but currently all possible units are used.
+<br>* (EM) If you are purchasing a carrier which is the only valid landing space, Triple-A won't let you use your planes to attack because you haven't been through the purchase phase yet
 <br>
 <br><hr><br>
 
