@@ -4913,22 +4913,22 @@
     <attachment name="conditionAttachment_French_Territory_May_Turn_Vichy_Switch" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="switch" value="true"/>
     </attachment>
-    <attachment name="conditionAttachment_Southern_France_No_American_Units_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="conditionAttachment_Southern_France_No_British_Units_1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="1:Southern France"/>
       <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
       <option name="invert" value="true"/>
     </attachment>
-    <attachment name="conditionAttachment_Southern_France_No_British_Units_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="conditionAttachment_Southern_France_No_American_Units_1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="1:Southern France"/>
       <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
       <option name="invert" value="true"/>
     </attachment>
-    <attachment name="conditionAttachment_Southern_France_No_Russian_Units_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="conditionAttachment_Southern_France_No_Russian_Units_1" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="1:Southern France"/>
       <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
       <option name="invert" value="true"/>
     </attachment>
-    <attachment name="conditionAttachment_Southern_France_No_ANZAC_Units_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="conditionAttachment_Southern_France_No_ANZAC_Units_1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="1:Southern France"/>
       <option name="unitPresence" value="1:infantry:artillery:mech_infantry:armour:aaGun:marine"/>
       <option name="invert" value="true"/>
