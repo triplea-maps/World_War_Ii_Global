@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Alpha 3" version="3.7"/>
+  <info name="World War II Global 1940 2nd Edition with Combat Move First" version="3.9"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
-  <triplea minimumVersion="1.6.1"/>
+  <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
   <map>
     <!-- Full europe list:
@@ -59,7 +59,7 @@
     <territory name="India"/>
     <territory name="Malaya"/>
     <territory name="Borneo"/>
-    <territory name="Yukon Territory"/>
+    <!--<territory name="Yukon Territory"/>-->
     <territory name="Kwangtung"/>
     <territory name="Queensland"/>
     <territory name="Victoria"/>
@@ -422,7 +422,7 @@
     <connection t1="Burma" t2="Himalayas"/>
     <connection t1="British Columbia" t2="Alaska"/>
     <connection t1="British Columbia" t2="1 Sea Zone"/>
-    <connection t1="British Columbia" t2="Yukon Territory"/>
+    <!--<connection t1="British Columbia" t2="Yukon Territory"/>-->
     <connection t1="India" t2="Himalayas"/>
     <connection t1="India" t2="West India"/>
     <connection t1="Queensland" t2="Northern Territory"/>
@@ -446,7 +446,7 @@
     <connection t1="Western United States" t2="British Columbia"/>
     <connection t1="Alaska" t2="2 Sea Zone"/>
     <connection t1="Alaska" t2="1 Sea Zone"/>
-    <connection t1="Alaska" t2="Yukon Territory"/>
+    <!--<connection t1="Alaska" t2="Yukon Territory"/>-->
     <connection t1="Aleutian Islands" t2="8 Sea Zone"/>
     <connection t1="Sakha" t2="Amur"/>
     <connection t1="Sakha" t2="Siberia"/>
@@ -731,7 +731,7 @@
     <connection t1="Alberta Saskatchewan Manitoba" t2="Central United States"/>
     <connection t1="Alberta Saskatchewan Manitoba" t2="Ontario"/>
     <connection t1="Alberta Saskatchewan Manitoba" t2="121 Sea Zone"/>
-    <connection t1="Alberta Saskatchewan Manitoba" t2="Yukon Territory"/>
+    <!--<connection t1="Alberta Saskatchewan Manitoba" t2="Yukon Territory"/>-->
     <connection t1="Alberta Saskatchewan Manitoba" t2="British Columbia"/>
     <connection t1="Trans-Jordan" t2="Iraq"/>
     <connection t1="Trans-Jordan" t2="81 Sea Zone"/>
@@ -1307,69 +1307,71 @@
       <step name="frenchBid" delegate="bid" player="French" maxRunCount="1"/>
       <step name="frenchBidPlace" delegate="placeBid" player="French" maxRunCount="1"/>
       <!-- Germans Game Sequence -->
-      <step name="germansPolitics" delegate="politics" player="Germans"/>
       <step name="germansTech" delegate="tech" player="Germans"/>
       <step name="germansTechActivation" delegate="tech_activation" player="Germans"/>
-      <step name="germansPurchase" delegate="purchase" player="Germans"/>
+      <step name="germansPolitics" delegate="politics" player="Germans"/>
       <step name="germansCombatMove" delegate="move" player="Germans"/>
       <step name="germansAirborneCombatMove" delegate="specialCombatMove" player="Germans" display="Airborne Attack Move"/>
+      <step name="germansPurchase" delegate="purchase" player="Germans"/>
       <step name="germansBattle" delegate="battle" player="Germans"/>
       <step name="germansNonCombatMove" delegate="move" player="Germans" display="Non Combat Move"/>
       <step name="germansPlace" delegate="place" player="Germans"/>
       <step name="germansEndTurn" delegate="endTurn" player="Germans"/>
       <!-- Russians Game Sequence -->
-      <step name="russiansPolitics" delegate="politics" player="Russians"/>
       <step name="russiansTech" delegate="tech" player="Russians"/>
       <step name="russiansTechActivation" delegate="tech_activation" player="Russians"/>
-      <step name="russiansPurchase" delegate="purchase" player="Russians"/>
+      <step name="russiansPolitics" delegate="politics" player="Russians"/>
       <step name="russiansCombatMove" delegate="move" player="Russians"/>
       <step name="russiansAirborneCombatMove" delegate="specialCombatMove" player="Russians" display="Airborne Attack Move"/>
+      <step name="russiansPurchase" delegate="purchase" player="Russians"/>
       <step name="russiansBattle" delegate="battle" player="Russians"/>
       <step name="russiansNonCombatMove" delegate="move" player="Russians" display="Non Combat Move"/>
       <step name="russiansPlace" delegate="place" player="Russians"/>
       <step name="russiansEndTurn" delegate="endTurn" player="Russians"/>
       <!-- Japanese Game Sequence -->
-      <step name="japanesePolitics" delegate="politics" player="Japanese"/>
       <step name="japaneseTech" delegate="tech" player="Japanese"/>
       <step name="japaneseTechActivation" delegate="tech_activation" player="Japanese"/>
-      <step name="japanesePurchase" delegate="purchase" player="Japanese"/>
+      <step name="japanesePolitics" delegate="politics" player="Japanese"/>
       <step name="japaneseCombatMove" delegate="move" player="Japanese"/>
       <step name="japaneseAirborneCombatMove" delegate="specialCombatMove" player="Japanese" display="Airborne Attack Move"/>
+      <step name="japanesePurchase" delegate="purchase" player="Japanese"/>
       <step name="japaneseBattle" delegate="battle" player="Japanese"/>
       <step name="japaneseNonCombatMove" delegate="move" player="Japanese" display="Non Combat Move"/>
       <step name="japanesePlace" delegate="place" player="Japanese"/>
       <step name="japaneseEndTurn" delegate="endTurn" player="Japanese"/>
       <!-- Americans Game Sequence -->
-      <step name="americansPolitics" delegate="politics" player="Americans"/>
       <step name="americansTech" delegate="tech" player="Americans"/>
       <step name="americansTechActivation" delegate="tech_activation" player="Americans"/>
-      <step name="americansPurchase" delegate="purchase" player="Americans"/>
+      <step name="americansPolitics" delegate="politics" player="Americans"/>
       <step name="americansCombatMove" delegate="move" player="Americans"/>
       <step name="americansAirborneCombatMove" delegate="specialCombatMove" player="Americans" display="Airborne Attack Move"/>
+      <step name="americansPurchase" delegate="purchase" player="Americans"/>
       <step name="americansBattle" delegate="battle" player="Americans"/>
       <step name="americansNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
       <step name="americansPlace" delegate="place" player="Americans"/>
       <step name="americansEndTurn" delegate="endTurn" player="Americans"/>
       <!-- Chinese Game Sequence -->
       <step name="chinesePolitics" delegate="politics" player="Chinese"/>
-      <step name="chinesePurchase" delegate="purchase" player="Chinese"/>
       <step name="chineseCombatMove" delegate="move" player="Chinese"/>
+      <step name="chinesePurchase" delegate="purchase" player="Chinese"/>
       <step name="chineseBattle" delegate="battle" player="Chinese"/>
       <step name="chineseNonCombatMove" delegate="move" player="Chinese" display="Non Combat Move"/>
       <step name="chinesePlace" delegate="place" player="Chinese"/>
       <step name="chineseEndTurn" delegate="endTurn" player="Chinese"/>
       <!-- British Game Sequence -->
-      <step name="britishPolitics" delegate="politics" player="British"/>
       <step name="britishTech" delegate="tech" player="British"/>
       <step name="britishTechActivation" delegate="tech_activation" player="British"/>
-      <step name="britishPurchase" delegate="purchase" player="British"/>
       <!--<step name="UK_PacificTech" delegate="tech" player="UK_Pacific"/>-->
       <step name="UK_PacificTechActivation" delegate="tech_activation" player="UK_Pacific"/>
       <step name="UK_PacificPurchase" delegate="purchase" player="UK_Pacific"/>
+      <step name="britishPolitics" delegate="politics" player="British"/>
       <step name="britishCombatMove" delegate="move" player="British"/>
       <step name="britishAirborneCombatMove" delegate="specialCombatMove" player="British" display="Airborne Attack Move"/>
+      <step name="britishPurchase" delegate="purchase" player="British"/>
       <step name="britishBattle" delegate="battle" player="British"/>
-      <step name="britishNonCombatMove" delegate="move" player="British" display="Non Combat Move"/>
+      <step name="britishNonCombatMove" delegate="move" player="British" display="Non Combat Move">
+        <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
+      </step>
       <step name="britishNoAirCheckPlace" delegate="placeNoAirCheck" player="British"/>
       <step name="britishEndTurn" delegate="endTurn" player="British">
         <stepProperty name="skipPosting" value="true"/>
@@ -1379,34 +1381,34 @@
         <stepProperty name="turnSummaryPlayers" value="British:UK_Pacific"/>
       </step>
       <!-- Italians Game Sequence -->
-      <step name="italiansPolitics" delegate="politics" player="Italians"/>
       <step name="italiansTech" delegate="tech" player="Italians"/>
       <step name="italiansTechActivation" delegate="tech_activation" player="Italians"/>
-      <step name="italiansPurchase" delegate="purchase" player="Italians"/>
+      <step name="italiansPolitics" delegate="politics" player="Italians"/>
       <step name="italiansCombatMove" delegate="move" player="Italians"/>
       <step name="italiansAirborneCombatMove" delegate="specialCombatMove" player="Italians" display="Airborne Attack Move"/>
+      <step name="italiansPurchase" delegate="purchase" player="Italians"/>
       <step name="italiansBattle" delegate="battle" player="Italians"/>
       <step name="italiansNonCombatMove" delegate="move" player="Italians" display="Non Combat Move"/>
       <step name="italiansPlace" delegate="place" player="Italians"/>
       <step name="italiansEndTurn" delegate="endTurn" player="Italians"/>
       <!-- ANZAC Game Sequence -->
-      <step name="anzacPolitics" delegate="politics" player="ANZAC"/>
       <step name="anzacTech" delegate="tech" player="ANZAC"/>
       <step name="anzacTechActivation" delegate="tech_activation" player="ANZAC"/>
-      <step name="anzacPurchase" delegate="purchase" player="ANZAC"/>
+      <step name="anzacPolitics" delegate="politics" player="ANZAC"/>
       <step name="anzacCombatMove" delegate="move" player="ANZAC"/>
       <step name="anzacAirborneCombatMove" delegate="specialCombatMove" player="ANZAC" display="Airborne Attack Move"/>
+      <step name="anzacPurchase" delegate="purchase" player="ANZAC"/>
       <step name="anzacBattle" delegate="battle" player="ANZAC"/>
       <step name="anzacNonCombatMove" delegate="move" player="ANZAC" display="Non Combat Move"/>
       <step name="anzacPlace" delegate="place" player="ANZAC"/>
       <step name="anzacEndTurn" delegate="endTurn" player="ANZAC"/>
       <!-- French Game Sequence -->
-      <step name="frenchPolitics" delegate="politics" player="French"/>
       <step name="frenchTech" delegate="tech" player="French"/>
       <step name="frenchTechActivation" delegate="tech_activation" player="French"/>
-      <step name="frenchPurchase" delegate="purchase" player="French"/>
+      <step name="frenchPolitics" delegate="politics" player="French"/>
       <step name="frenchCombatMove" delegate="move" player="French"/>
       <step name="frenchAirborneCombatMove" delegate="specialCombatMove" player="French" display="Airborne Attack Move"/>
+      <step name="frenchPurchase" delegate="purchase" player="French"/>
       <step name="frenchBattle" delegate="battle" player="French"/>
       <step name="frenchNonCombatMove" delegate="move" player="French" display="Non Combat Move"/>
       <step name="frenchPlace" delegate="place" player="French"/>
@@ -2638,9 +2640,11 @@
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
-    <attachment name="territoryAttachment" attachTo="Yukon Territory" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="0"/>
-    </attachment>
+    <!--
+                    <attachment name="territoryAttachment" attachTo="Yukon Territory" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+                        <option name="production" value="0"/>
+                   </attachment>
+				   -->
     <attachment name="territoryAttachment" attachTo="Kwangtung" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
       <option name="victoryCity" value="1"/>
@@ -3937,8 +3941,9 @@
     <attachment name="conditionAttachment_Axis_Capture_London_Switch" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="switch" value="false"/>
     </attachment>
+    <!-- Yukon Territory: -->
     <attachment name="conditionAttachment_Axis_Land_In_North_America" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="alliedOwnershipTerritories" value="Yukon Territory:British Columbia:Alberta Saskatchewan Manitoba:Ontario:Quebec:Newfoundland Labrador:New Brunswick Nova Scotia" count="1"/>
+      <option name="alliedOwnershipTerritories" value="British Columbia:Alberta Saskatchewan Manitoba:Ontario:Quebec:Newfoundland Labrador:New Brunswick Nova Scotia" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Axis_Land_In_North_America_Switch" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="switch" value="false"/>
@@ -4094,6 +4099,7 @@
 						
 					 Japanese Territories next to Mongolian Territories:
 						Manchuria:Jehol
+						and Korea
 						
 					 Chinese Territories next to Mongolian Territories (could possibly be controlled by Japan):
 						Chahar:Suiyuyan:Kansu
@@ -4107,10 +4113,18 @@
       <option name="switch" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_Conquer_Japanese_Territory_By_Mongolia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="Russians:Japanese:any:currentRound:Manchuria:Jehol:Chahar:Suiyuyan:Kansu"/>
+      <option name="battle" value="Russians:Japanese:any:currentRound:Manchuria:Jehol:Chahar:Suiyuyan:Kansu:Korea"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Japanese:Russians:any:currentRound:Timguska:Yenisey:Yakut S.S.R.:Buryatia:Amur"/>
+    </attachment>
+    <attachment name="conditionAttachment_Germans_have_units_in_China" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Shantung:Kwangsi:Kiangsi:Kiangsu:Jehol:Manchuria:Shensi:Yunnan:Suiyuyan:Kweichow:Hunan:Kansu:Hopei:Tsinghai:Szechwan:Chahar:Sikang:Anhwe:Kwangtung:Burma" count="1"/>
+      <option name="unitPresence" value="ANY" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Italians_have_units_in_China" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Shantung:Kwangsi:Kiangsi:Kiangsu:Jehol:Manchuria:Shensi:Yunnan:Suiyuyan:Kweichow:Hunan:Kansu:Hopei:Tsinghai:Szechwan:Chahar:Sikang:Anhwe:Kwangtung:Burma" count="1"/>
+      <option name="unitPresence" value="ANY" count="1"/>
     </attachment>
     <!-- Trigger Attachments -->
     <!-- Victory Triggers -->
@@ -4760,6 +4774,9 @@
       <option name="shareTechnology" value="UK_Pacific"/>
       <option name="helpPayTechCost" value="UK_Pacific"/>
     </attachment>
+    <attachment name="playerAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
+      <option name="immuneToBlockade" value="true"/>
+    </attachment>
     <!--  Rules Restrictions -->
     <attachment name="rulesAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="movementRestrictionTerritories" value="Shantung:Kwangsi:Kiangsi:Kiangsu:Jehol:Manchuria:Shensi:Yunnan:Suiyuyan:Kweichow:Hunan:Kansu:Hopei:Tsinghai:Szechwan:Chahar:Sikang:Anhwe:Kwangtung:Burma"/>
@@ -4904,6 +4921,21 @@
       <!-- Allies declaring war on Strict Neutrals does not flip Mongolians -->
       <option name="text" value="Allies_War_Neutral_True"/>
     </attachment>
+    <attachment name="politicalActionAttachment_Allies_To_War_With_TrueNeutrals" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals"/>
+      <option name="relationshipChange" value="British:Neutral_True:War"/>
+      <option name="relationshipChange" value="UK_Pacific:Neutral_True:War"/>
+      <option name="relationshipChange" value="ANZAC:Neutral_True:War"/>
+      <option name="relationshipChange" value="Dutch:Neutral_True:War"/>
+      <option name="relationshipChange" value="Chinese:Neutral_True:War"/>
+      <option name="relationshipChange" value="French:Neutral_True:War"/>
+      <option name="relationshipChange" value="Neutral_True:Germans:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Neutral_True:Italians:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Neutral_True:Japanese:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Neutral_True:Neutral_Axis:Friendly_Neutral"/>
+      <!-- Allies declaring war on Strict Neutrals does not flip Mongolians -->
+      <option name="text" value="Allies_War_Neutral_True"/>
+    </attachment>
     <attachment name="politicalActionAttachment_Allies_To_War_With_TrueNeutrals" attachTo="French" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals"/>
       <option name="relationshipChange" value="British:Neutral_True:War"/>
@@ -4968,6 +5000,16 @@
       <option name="relationshipChange" value="Russians:Dutch:Friendly"/>
       <option name="relationshipChange" value="Russians:UK_Pacific:Allied"/>
       <option name="text" value="Russians_War_Japanese"/>
+    </attachment>
+    <attachment name="politicalActionAttachment_Chinese_To_War_With_Germans" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentGermansNotYetAtWarWithChinese:conditionAttachment_Germans_have_units_in_China"/>
+      <option name="relationshipChange" value="Germans:Chinese:War"/>
+      <option name="text" value="Chinese_War_Germans"/>
+    </attachment>
+    <attachment name="politicalActionAttachment_Chinese_To_War_With_Italians" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentItaliansNotYetAtWarWithChinese:conditionAttachment_Italians_have_units_in_China"/>
+      <option name="relationshipChange" value="Italians:Chinese:War"/>
+      <option name="text" value="Chinese_War_Italians"/>
     </attachment>
     <attachment name="politicalActionAttachment_Germans_To_War_With_Chinese" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachmentGermansNotYetAtWarWithChinese"/>
@@ -5273,7 +5315,7 @@
       <territoryOwner territory="India" owner="UK_Pacific"/>
       <territoryOwner territory="Malaya" owner="UK_Pacific"/>
       <territoryOwner territory="Borneo" owner="UK_Pacific"/>
-      <territoryOwner territory="Yukon Territory" owner="British"/>
+      <!--<territoryOwner territory="Yukon Territory" owner="British"/>-->
       <territoryOwner territory="Kwangtung" owner="UK_Pacific"/>
       <territoryOwner territory="Queensland" owner="ANZAC"/>
       <territoryOwner territory="Victoria" owner="ANZAC"/>
@@ -5632,7 +5674,7 @@
       <unitPlacement unitType="infantry" territory="Alexandria" quantity="2" owner="British"/>
       <unitPlacement unitType="artillery" territory="Alexandria" quantity="1" owner="British"/>
       <unitPlacement unitType="armour" territory="Alexandria" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Egypt" quantity="2" owner="British"/>
+      <unitPlacement unitType="infantry" territory="Egypt" quantity="1" owner="British"/>
       <unitPlacement unitType="artillery" territory="Egypt" quantity="1" owner="British"/>
       <unitPlacement unitType="mech_infantry" territory="Egypt" quantity="1" owner="British"/>
       <unitPlacement unitType="harbour" territory="Egypt" quantity="1" owner="British"/>
@@ -6328,12 +6370,12 @@
     <property name="notes">
       <value><![CDATA[  
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
-<b>Global 1940 Alpha +3</b><br>
+<b>Global 1940 Second Edition</b><br>
 <br>
 <b>Credits:</b> Bung, Veqryn<br><br>
 
 <b>Note</b><br>
-This game uses the latest Alpha +3 rules, as posted on Larry's website.<br>
+This game uses the latest Global 1940 2nd Edition (successor to Alpha +3) rules, as posted on Larry's website.<br>
 To blitz move mech_infantry with armour, you must click on them both at the same time (use CTRL to create waypoints).<br>
 Paratroopers tech enables a second combat movement phase which happens right after the first combat movement phase, and the second one only allowes movement of paratrooping infantry.<br>
 <br>
@@ -6346,22 +6388,56 @@ You must always validate your own movement, especially air movement at sea.  The
 <br>
 
 <b>Edit Mode</b><br>
-When not yet at war, you may ask for permission to move through a canal, and if granted, use Edit Mode to move the units.<br>
 If you ever need to create new UK units, always create "British" units, do not create "UK_Pacific" units (except for Factories, all UK_Pacific units turn into British units when placed normally).<br>
 The Warbonds technology will give the PUs to the British, please use edit mode if you want some of it to go to UK Pacific.<br>
+You may also need to use edit mode to correct things listed below.<br>
 <br>
 
-<b>Rules the engine does not do, but you must follow:</b><br>
-* Do not allow blitzing or movement through Friendly Neutrals.<br>
-* Air units may not land in or move through Friendly Neutrals, including the same turn they are captured.<br>
-* Friendly Neutrals can not be 'captured' with an AA Gun, only by land units with an attack power.<br>
-* Air units may not move through Unfriendly Neutrals unless they are attacking them.<br>
-* Air units may not move through a Neutral territory IF that neutral territory had been attacked on some previous turn by some power (because technically that neutral stops being neutral at that point, and joins the other side).<br>
-* If UK Pacific captures Japan, the money goes to UK Pacific, even if UK Pacific's capital is occupied.<br>
-* Do not allow USA movement to end in any Sea Zone that touches a Japanese owned territory (Sea Zones 6, 17, 19, 20, 22, 32, 33, 34, 36, and 37).<br>
-* You must place all units you purchased if you are able to, or as many as you can. Any units not placed get refunded to you (triplea instead carries them over to the next turn).<br>
-* The victory conditions must be held for a full continuous round after they are achieved (so for example if Italy takes Egypt as the 8th European VC, then the Axis must hold 8 VCs continuously until Italy's next turn).<br>
-<br><br>
+<br>Below is a list of rules that the TripleA game engine either does not enforce, or enforces incorrectly, at this point.
+<br>Each item starts with a code in parentheses that represents how you may fix or correct the rule.
+<br>(PE) = Player Enforced = You must be aware of the rule and must follow it. The engine will not stop you from breaking the rule.
+<br>(CL) = Comment Log = You must record what you are doing in the comment log, because TripleA does not keep that information around. (To access the comment log, go to the 'view' menu, and click 'show comment log', then type a comment there.)
+<br>(SR) = Save/Reload = You may save the game now or at the start of the phase, then reload it, in order to solve this problem.
+<br>(EM) = Edit Mode = You must use Edit Mode to correct or fix the error, because the engine either disallows the rule or otherwise does something wrong that you can correct.
+<br>(NA) = None Available = There is no fix available for this yet.
+<br>
+<br><b>Rules specific to 1940 the engine does not do, but you must follow:</b>
+<br>* (EM) You may ask for permission during your turn to move through a canal owned by a power you are not yet at war with (use edit mode to move them).
+<br>* (CL) TripleA does not keep track of which neutral territories have been previously attacked (use comment log to keep track of this instead).
+<br>* (PE) You are not allowed to blitz or move any units through Friendly Neutrals, including the same turn they are captured, unless they have been previously attacked.
+<br>* (PE) You may not land air units in Friendly Neutrals, including the same turn they are captured, unless they have been previously attacked.
+<br>* (PE) You can not fly over unfriendly neutrals, unless they are being attacked or they have previously been attacked.
+<br>* (PE) Friendly Neutrals can not be 'captured' with an AA Gun, only by land units with an attack power.
+<br>* (PE) You may not build facilities on territories that were Dutch at the start of your turn.
+<br>* (PE) You may not attack a territory containing units owned by a nation that you are not at war with (even if the territory is owned by someone you are at war with).
+<br>* (PE) USA may not end movement in seazone adjacent to Japanese controlled territories when not at war with Japan (Sea Zones 6, 17, 19, 20, 22, 32, 33, 34, 36, and 37).
+<br>* (EM) Japan can fly over UK and French territories before going to war with them.
+<br>* (EM) USA does not have to declare war at the end of USA 3 if they do not want to.
+<br>* (PE) You may not conduct an amphibious assault from an allied transport if the defender could scramble and you have no other combat units to protect that transport.
+<br>* (EM) If Russia is at war with Italy, but not with Germany, a German warship in sz125 will cancel Russia's national objective (and same if at war with Germany but not Italy, and there is an Italian boat in sz125).
+<br>* (EM) If UK Pacific captures Japan, the money should go to UK Pacific, even if UK Pacific's capital is occupied.
+<br>* (EM) You must place all units you purchased if you are able to, or as many as you can. Any units not placed get refunded to you (TripleA instead carries them over to the next turn).
+<br>* (PE) The victory conditions must be held for a full continuous round after they are achieved (so for example if Italy takes Egypt as the 8th European VC, then the Axis must hold 8 VCs continuously until Italy's next turn).
+<br>* (NA) During an SBR, AA fire and casualty selection should be done on a per-facility-being-attacked basis.
+<br>* (EM) Rocket damage to an airfield should occur after scrambling, which means if an airbase is disabled by the rocket attack, it could still scramble this turn.
+<br>* (PE) Paratroopers (airborne) may not attack multiple territories from a single airbase.
+<br>
+<br><b>General rules for all A&A games that the engine does not do, but you must follow:</b>
+<br>* (PE) Battles should be resolved in this order: all SBR, then all Amphibious Assaults, then all others.
+<br>* (SR or EM) Repairing and Purchase are should actually be done at the same time.
+<br>* (CL) TripleA does keep track of which units are on which transports, but there is no easy way to see this information when it is not your turn.
+<br>* (CL) TripleA should, but does not keep track of which air units are on which carriers.
+<br>* (PE) All air moved must have a way of potentially being picked up or landing, and all air that survives combat MUST be picked up if possible.
+<br>* (PE) TripleA should not allow non-combat moves to be done during combat move phase.
+<br>* (PE) Only non-air units that did not move during combat move and did not participate in combat, may move during non-combat-move.
+<br>* (PE) Transports can only be loaded in 1 phase (not both), and unloaded in 1 phase (not both).
+<br>* (PE) Transports if unloading for amphibious assault, must unload all their units, and may not hold back some units while offloading other units.
+<br>* (NA) Rocket attacks should all be chosen first, before any dice and results are shown.
+<br>* (NA) You should be able to SBR / Rocket attack an empty territory that you are blitzing.
+<br>* (NA) Each phase of combat should have all units in that phase fire before any casualty selection occurs, whereas right now in TripleA if air and subs are involved then units might be broken up into smaller groups and casualty selection done for each group.
+<br>* (EM) If you select for a bombardment from a sea zone, you should be able to select which units you want to have bombard, but currently all possible units are used.
+<br>* (EM) If you are purchasing a carrier which is the only valid landing space, Triple-A won't let you use your planes to attack because you haven't been through the purchase phase yet.
+<br>
 <br><hr><br>
 
 <b>Victory Conditions</b><br>
@@ -6410,6 +6486,7 @@ There are 5 canals/straits in the game with the following set of conditions.<br>
 <td>None. It requires no movement to cross.</td>
 <td>Turkey</td>
 </tr>
+
 </table><br>
 Air units have no restrictions for any strait or canal.
 
@@ -6583,6 +6660,19 @@ These changes to units are things other than price/movement which you can see in
 <br><br><hr><br>
 <br>Change Log:
 <br>
+<br>3.9
+<br>Stopped British fighters from dying if UK Pacific could place a carrier under them.
+<br>Stopped Chinese from being affected by sea zone blockades.
+<br>Prevented defensive subs from firing before attackers if an attacking destroyer is present.
+<br>Various fixes for paratroopers (airborne) tech.
+<br>Various other engine related fixes, and updated game notes with a complete list of rules not enforced.
+<br>
+<br>3.8
+<br>Moved Politics phase to be after Purchase phase and before Combat Move phase.
+<br>China can declare war on European Axis if they move into China's allowed movement range.
+<br>ANZAC can now declare war on True Neutrals.
+<br>Added the 1942 scenario.
+<br>
 <br>3.7
 <br>Fixing Japanese objective for taking local power centers like India, to allow allies to take them as well.
 <br>Fixing rockets so that many rockets can target the same infrastructure per turn.
@@ -6595,6 +6685,9 @@ These changes to units are things other than price/movement which you can see in
 <br>Added in Objective tab text and conditions.
 <br>
 <br>3.4
+<br>Updating to Global 2nd Edition by removing 1 UK infantry from Egypt.
+<br>Updating to Global 2nd Edition by adding Korea to the list of territories that Russia can not attack without permanently losing the ability for Manchuria to join Russia.
+<br>Updating to Global 2nd Edition by removing Yukon Territory from map.
 <br>Allowed UK_Pacific to repair airfields and harbours under its control.
 <br>Disallowed China to repair anything.
 <br>
