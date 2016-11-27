@@ -1354,8 +1354,8 @@
       <!-- Chinese Game Sequence -->
       <step name="chinesePolitics" delegate="politics" player="Chinese"/>
       <step name="chineseCombatMove" delegate="move" player="Chinese"/>
-      <step name="chineseBattle" delegate="battle" player="Chinese"/>
       <step name="chinesePurchase" delegate="purchase" player="Chinese"/>
+      <step name="chineseBattle" delegate="battle" player="Chinese"/>
       <step name="chineseNonCombatMove" delegate="move" player="Chinese" display="Non Combat Move"/>
       <step name="chinesePlace" delegate="place" player="Chinese"/>
       <step name="chineseEndTurn" delegate="endTurn" player="Chinese"/>
