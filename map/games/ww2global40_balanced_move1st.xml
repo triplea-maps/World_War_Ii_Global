@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Balanced Mod" version="2.1"/>
+  <info name="World War II Global 1940 Balanced Mod with Combat Move First" version="2.1"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1310,10 +1310,10 @@
       <!-- Germans Game Sequence -->
       <step name="germansTech" delegate="tech" player="Germans"/>
       <step name="germansTechActivation" delegate="tech_activation" player="Germans"/>
-      <step name="germansPurchase" delegate="purchase" player="Germans"/>
       <step name="germansPolitics" delegate="politics" player="Germans"/>
       <step name="germansCombatMove" delegate="move" player="Germans"/>
       <step name="germansAirborneCombatMove" delegate="specialCombatMove" player="Germans" display="Airborne Attack Move"/>
+      <step name="germansPurchase" delegate="purchase" player="Germans"/>
       <step name="germansBattle" delegate="battle" player="Germans"/>
       <step name="germansNonCombatMove" delegate="move" player="Germans" display="Non Combat Move"/>
       <step name="germansPlace" delegate="place" player="Germans"/>
@@ -1321,10 +1321,10 @@
       <!-- Russians Game Sequence -->
       <step name="russiansTech" delegate="tech" player="Russians"/>
       <step name="russiansTechActivation" delegate="tech_activation" player="Russians"/>
-      <step name="russiansPurchase" delegate="purchase" player="Russians"/>
       <step name="russiansPolitics" delegate="politics" player="Russians"/>
       <step name="russiansCombatMove" delegate="move" player="Russians"/>
       <step name="russiansAirborneCombatMove" delegate="specialCombatMove" player="Russians" display="Airborne Attack Move"/>
+      <step name="russiansPurchase" delegate="purchase" player="Russians"/>
       <step name="russiansBattle" delegate="battle" player="Russians"/>
       <step name="russiansNonCombatMove" delegate="move" player="Russians" display="Non Combat Move"/>
       <step name="russiansPlace" delegate="place" player="Russians"/>
@@ -1332,10 +1332,10 @@
       <!-- Japanese Game Sequence -->
       <step name="japaneseTech" delegate="tech" player="Japanese"/>
       <step name="japaneseTechActivation" delegate="tech_activation" player="Japanese"/>
-      <step name="japanesePurchase" delegate="purchase" player="Japanese"/>
       <step name="japanesePolitics" delegate="politics" player="Japanese"/>
       <step name="japaneseCombatMove" delegate="move" player="Japanese"/>
       <step name="japaneseAirborneCombatMove" delegate="specialCombatMove" player="Japanese" display="Airborne Attack Move"/>
+      <step name="japanesePurchase" delegate="purchase" player="Japanese"/>
       <step name="japaneseBattle" delegate="battle" player="Japanese"/>
       <step name="japaneseNonCombatMove" delegate="move" player="Japanese" display="Non Combat Move"/>
       <step name="japanesePlace" delegate="place" player="Japanese"/>
@@ -1343,18 +1343,18 @@
       <!-- Americans Game Sequence -->
       <step name="americansTech" delegate="tech" player="Americans"/>
       <step name="americansTechActivation" delegate="tech_activation" player="Americans"/>
-      <step name="americansPurchase" delegate="purchase" player="Americans"/>
       <step name="americansPolitics" delegate="politics" player="Americans"/>
       <step name="americansCombatMove" delegate="move" player="Americans"/>
       <step name="americansAirborneCombatMove" delegate="specialCombatMove" player="Americans" display="Airborne Attack Move"/>
+      <step name="americansPurchase" delegate="purchase" player="Americans"/>
       <step name="americansBattle" delegate="battle" player="Americans"/>
       <step name="americansNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
       <step name="americansPlace" delegate="place" player="Americans"/>
       <step name="americansEndTurn" delegate="endTurn" player="Americans"/>
       <!-- Chinese Game Sequence -->
-      <step name="chinesePurchase" delegate="purchase" player="Chinese"/>
       <step name="chinesePolitics" delegate="politics" player="Chinese"/>
       <step name="chineseCombatMove" delegate="move" player="Chinese"/>
+      <step name="chinesePurchase" delegate="purchase" player="Chinese"/>
       <step name="chineseBattle" delegate="battle" player="Chinese"/>
       <step name="chineseNonCombatMove" delegate="move" player="Chinese" display="Non Combat Move"/>
       <step name="chinesePlace" delegate="place" player="Chinese"/>
@@ -1362,13 +1362,13 @@
       <!-- British Game Sequence -->
       <step name="britishTech" delegate="tech" player="British"/>
       <step name="britishTechActivation" delegate="tech_activation" player="British"/>
-      <step name="britishPurchase" delegate="purchase" player="British"/>
       <!--<step name="UK_PacificTech" delegate="tech" player="UK_Pacific"/>-->
       <step name="UK_PacificTechActivation" delegate="tech_activation" player="UK_Pacific"/>
-      <step name="UK_PacificPurchase" delegate="purchase" player="UK_Pacific"/>
       <step name="britishPolitics" delegate="politics" player="British"/>
       <step name="britishCombatMove" delegate="move" player="British"/>
       <step name="britishAirborneCombatMove" delegate="specialCombatMove" player="British" display="Airborne Attack Move"/>
+      <step name="britishPurchase" delegate="purchase" player="British"/>
+      <step name="UK_PacificPurchase" delegate="purchase" player="UK_Pacific"/>
       <step name="britishBattle" delegate="battle" player="British"/>
       <step name="britishNonCombatMove" delegate="move" player="British" display="Non Combat Move">
         <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
@@ -1384,10 +1384,10 @@
       <!-- Italians Game Sequence -->
       <step name="italiansTech" delegate="tech" player="Italians"/>
       <step name="italiansTechActivation" delegate="tech_activation" player="Italians"/>
-      <step name="italiansPurchase" delegate="purchase" player="Italians"/>
       <step name="italiansPolitics" delegate="politics" player="Italians"/>
       <step name="italiansCombatMove" delegate="move" player="Italians"/>
       <step name="italiansAirborneCombatMove" delegate="specialCombatMove" player="Italians" display="Airborne Attack Move"/>
+      <step name="italiansPurchase" delegate="purchase" player="Italians"/>
       <step name="italiansBattle" delegate="battle" player="Italians"/>
       <step name="italiansNonCombatMove" delegate="move" player="Italians" display="Non Combat Move"/>
       <step name="italiansPlace" delegate="place" player="Italians"/>
@@ -1395,10 +1395,10 @@
       <!-- ANZAC Game Sequence -->
       <step name="anzacTech" delegate="tech" player="ANZAC"/>
       <step name="anzacTechActivation" delegate="tech_activation" player="ANZAC"/>
-      <step name="anzacPurchase" delegate="purchase" player="ANZAC"/>
       <step name="anzacPolitics" delegate="politics" player="ANZAC"/>
       <step name="anzacCombatMove" delegate="move" player="ANZAC"/>
       <step name="anzacAirborneCombatMove" delegate="specialCombatMove" player="ANZAC" display="Airborne Attack Move"/>
+      <step name="anzacPurchase" delegate="purchase" player="ANZAC"/>
       <step name="anzacBattle" delegate="battle" player="ANZAC"/>
       <step name="anzacNonCombatMove" delegate="move" player="ANZAC" display="Non Combat Move"/>
       <step name="anzacPlace" delegate="place" player="ANZAC"/>
@@ -1406,10 +1406,10 @@
       <!-- French Game Sequence -->
       <step name="frenchTech" delegate="tech" player="French"/>
       <step name="frenchTechActivation" delegate="tech_activation" player="French"/>
-      <step name="frenchPurchase" delegate="purchase" player="French"/>
       <step name="frenchPolitics" delegate="politics" player="French"/>
       <step name="frenchCombatMove" delegate="move" player="French"/>
       <step name="frenchAirborneCombatMove" delegate="specialCombatMove" player="French" display="Airborne Attack Move"/>
+      <step name="frenchPurchase" delegate="purchase" player="French"/>
       <step name="frenchBattle" delegate="battle" player="French"/>
       <step name="frenchNonCombatMove" delegate="move" player="French" display="Non Combat Move"/>
       <step name="frenchPlace" delegate="place" player="French"/>
@@ -15375,6 +15375,7 @@ You may also need to use edit mode to correct things listed below.<br>
 <br>* (NA) You should be able to SBR / Rocket attack an empty territory that you are blitzing.
 <br>* (NA) Each phase of combat should have all units in that phase fire before any casualty selection occurs, whereas right now in TripleA if air and subs are involved then units might be broken up into smaller groups and casualty selection done for each group.
 <br>* (EM) If you select for a bombardment from a sea zone, you should be able to select which units you want to have bombard, but currently all possible units are used.
+<br>* (EM) If you are purchasing a carrier which is the only valid landing space, Triple-A won't let you use your planes to attack because you haven't been through the purchase phase yet
 <br>* (PE) When Russia is not at war with Japan, Allied units should not be able to move into USSR territories on the Pacific map but Triple-A allows this
 <br>
 <br><hr><br>
