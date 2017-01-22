@@ -1363,11 +1363,11 @@
       <step name="britishTechActivation" delegate="tech_activation" player="British"/>
       <!--<step name="UK_PacificTech" delegate="tech" player="UK_Pacific"/>-->
       <step name="UK_PacificTechActivation" delegate="tech_activation" player="UK_Pacific"/>
-      <step name="UK_PacificPurchase" delegate="purchase" player="UK_Pacific"/>
       <step name="britishPolitics" delegate="politics" player="British"/>
       <step name="britishCombatMove" delegate="move" player="British"/>
       <step name="britishAirborneCombatMove" delegate="specialCombatMove" player="British" display="Airborne Attack Move"/>
       <step name="britishPurchase" delegate="purchase" player="British"/>
+      <step name="UK_PacificPurchase" delegate="purchase" player="UK_Pacific"/>
       <step name="britishBattle" delegate="battle" player="British"/>
       <step name="britishNonCombatMove" delegate="move" player="British" display="Non Combat Move">
         <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
