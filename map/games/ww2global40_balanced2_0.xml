@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Balanced Mod" version="2.1"/>
+  <info name="World War II Global 1940 Balanced Mod" version="2.2"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -13570,8 +13570,6 @@
     </attachment>
     <attachment name="playerAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="immuneToBlockade" value="true"/>
-    </attachment>
-    <attachment name="playerAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="destroysPUs" value="false"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="French" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
