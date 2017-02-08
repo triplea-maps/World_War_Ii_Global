@@ -1,2 +1,2 @@
 ## world_war_ii_global
-adding Ozteas 1941 setup
+This is Ozteas 1941 setup for the Global 40 game.
