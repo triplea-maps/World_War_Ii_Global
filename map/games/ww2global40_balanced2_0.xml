@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Balanced Mod" version="2.1"/>
+  <info name="World War II Global 1940 Balanced Mod" version="2.2"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -13570,8 +13570,6 @@
     </attachment>
     <attachment name="playerAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="immuneToBlockade" value="true"/>
-    </attachment>
-    <attachment name="playerAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="destroysPUs" value="false"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="French" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
@@ -15375,7 +15373,6 @@ You may also need to use edit mode to correct things listed below.<br>
 <br>* (NA) You should be able to SBR / Rocket attack an empty territory that you are blitzing.
 <br>* (NA) Each phase of combat should have all units in that phase fire before any casualty selection occurs, whereas right now in TripleA if air and subs are involved then units might be broken up into smaller groups and casualty selection done for each group.
 <br>* (EM) If you select for a bombardment from a sea zone, you should be able to select which units you want to have bombard, but currently all possible units are used.
-<br>* (PE) When Russia is not at war with Japan, Allied units should not be able to move into USSR territories on the Pacific map but Triple-A allows this
 <br>
 <br><hr><br>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 2nd Edition with Combat Move First" version="3.9"/>
+  <info name="Ozteas 1941 Global Setup" version="3.9"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1309,10 +1309,10 @@
       <!-- Germans Game Sequence -->
       <step name="germansTech" delegate="tech" player="Germans"/>
       <step name="germansTechActivation" delegate="tech_activation" player="Germans"/>
+      <step name="germansPurchase" delegate="purchase" player="Germans"/>
       <step name="germansPolitics" delegate="politics" player="Germans"/>
       <step name="germansCombatMove" delegate="move" player="Germans"/>
       <step name="germansAirborneCombatMove" delegate="specialCombatMove" player="Germans" display="Airborne Attack Move"/>
-      <step name="germansPurchase" delegate="purchase" player="Germans"/>
       <step name="germansBattle" delegate="battle" player="Germans"/>
       <step name="germansNonCombatMove" delegate="move" player="Germans" display="Non Combat Move"/>
       <step name="germansPlace" delegate="place" player="Germans"/>
@@ -1320,10 +1320,10 @@
       <!-- Russians Game Sequence -->
       <step name="russiansTech" delegate="tech" player="Russians"/>
       <step name="russiansTechActivation" delegate="tech_activation" player="Russians"/>
+      <step name="russiansPurchase" delegate="purchase" player="Russians"/>
       <step name="russiansPolitics" delegate="politics" player="Russians"/>
       <step name="russiansCombatMove" delegate="move" player="Russians"/>
       <step name="russiansAirborneCombatMove" delegate="specialCombatMove" player="Russians" display="Airborne Attack Move"/>
-      <step name="russiansPurchase" delegate="purchase" player="Russians"/>
       <step name="russiansBattle" delegate="battle" player="Russians"/>
       <step name="russiansNonCombatMove" delegate="move" player="Russians" display="Non Combat Move"/>
       <step name="russiansPlace" delegate="place" player="Russians"/>
@@ -1331,10 +1331,10 @@
       <!-- Japanese Game Sequence -->
       <step name="japaneseTech" delegate="tech" player="Japanese"/>
       <step name="japaneseTechActivation" delegate="tech_activation" player="Japanese"/>
+      <step name="japanesePurchase" delegate="purchase" player="Japanese"/>
       <step name="japanesePolitics" delegate="politics" player="Japanese"/>
       <step name="japaneseCombatMove" delegate="move" player="Japanese"/>
       <step name="japaneseAirborneCombatMove" delegate="specialCombatMove" player="Japanese" display="Airborne Attack Move"/>
-      <step name="japanesePurchase" delegate="purchase" player="Japanese"/>
       <step name="japaneseBattle" delegate="battle" player="Japanese"/>
       <step name="japaneseNonCombatMove" delegate="move" player="Japanese" display="Non Combat Move"/>
       <step name="japanesePlace" delegate="place" player="Japanese"/>
@@ -1342,18 +1342,18 @@
       <!-- Americans Game Sequence -->
       <step name="americansTech" delegate="tech" player="Americans"/>
       <step name="americansTechActivation" delegate="tech_activation" player="Americans"/>
+      <step name="americansPurchase" delegate="purchase" player="Americans"/>
       <step name="americansPolitics" delegate="politics" player="Americans"/>
       <step name="americansCombatMove" delegate="move" player="Americans"/>
       <step name="americansAirborneCombatMove" delegate="specialCombatMove" player="Americans" display="Airborne Attack Move"/>
-      <step name="americansPurchase" delegate="purchase" player="Americans"/>
       <step name="americansBattle" delegate="battle" player="Americans"/>
       <step name="americansNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
       <step name="americansPlace" delegate="place" player="Americans"/>
       <step name="americansEndTurn" delegate="endTurn" player="Americans"/>
       <!-- Chinese Game Sequence -->
+      <step name="chinesePurchase" delegate="purchase" player="Chinese"/>
       <step name="chinesePolitics" delegate="politics" player="Chinese"/>
       <step name="chineseCombatMove" delegate="move" player="Chinese"/>
-      <step name="chinesePurchase" delegate="purchase" player="Chinese"/>
       <step name="chineseBattle" delegate="battle" player="Chinese"/>
       <step name="chineseNonCombatMove" delegate="move" player="Chinese" display="Non Combat Move"/>
       <step name="chinesePlace" delegate="place" player="Chinese"/>
@@ -1361,13 +1361,13 @@
       <!-- British Game Sequence -->
       <step name="britishTech" delegate="tech" player="British"/>
       <step name="britishTechActivation" delegate="tech_activation" player="British"/>
+      <step name="britishPurchase" delegate="purchase" player="British"/>
       <!--<step name="UK_PacificTech" delegate="tech" player="UK_Pacific"/>-->
       <step name="UK_PacificTechActivation" delegate="tech_activation" player="UK_Pacific"/>
+      <step name="UK_PacificPurchase" delegate="purchase" player="UK_Pacific"/>
       <step name="britishPolitics" delegate="politics" player="British"/>
       <step name="britishCombatMove" delegate="move" player="British"/>
       <step name="britishAirborneCombatMove" delegate="specialCombatMove" player="British" display="Airborne Attack Move"/>
-      <step name="britishPurchase" delegate="purchase" player="British"/>
-      <step name="UK_PacificPurchase" delegate="purchase" player="UK_Pacific"/>
       <step name="britishBattle" delegate="battle" player="British"/>
       <step name="britishNonCombatMove" delegate="move" player="British" display="Non Combat Move">
         <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
@@ -1383,10 +1383,10 @@
       <!-- Italians Game Sequence -->
       <step name="italiansTech" delegate="tech" player="Italians"/>
       <step name="italiansTechActivation" delegate="tech_activation" player="Italians"/>
+      <step name="italiansPurchase" delegate="purchase" player="Italians"/>
       <step name="italiansPolitics" delegate="politics" player="Italians"/>
       <step name="italiansCombatMove" delegate="move" player="Italians"/>
       <step name="italiansAirborneCombatMove" delegate="specialCombatMove" player="Italians" display="Airborne Attack Move"/>
-      <step name="italiansPurchase" delegate="purchase" player="Italians"/>
       <step name="italiansBattle" delegate="battle" player="Italians"/>
       <step name="italiansNonCombatMove" delegate="move" player="Italians" display="Non Combat Move"/>
       <step name="italiansPlace" delegate="place" player="Italians"/>
@@ -1394,10 +1394,10 @@
       <!-- ANZAC Game Sequence -->
       <step name="anzacTech" delegate="tech" player="ANZAC"/>
       <step name="anzacTechActivation" delegate="tech_activation" player="ANZAC"/>
+      <step name="anzacPurchase" delegate="purchase" player="ANZAC"/>
       <step name="anzacPolitics" delegate="politics" player="ANZAC"/>
       <step name="anzacCombatMove" delegate="move" player="ANZAC"/>
       <step name="anzacAirborneCombatMove" delegate="specialCombatMove" player="ANZAC" display="Airborne Attack Move"/>
-      <step name="anzacPurchase" delegate="purchase" player="ANZAC"/>
       <step name="anzacBattle" delegate="battle" player="ANZAC"/>
       <step name="anzacNonCombatMove" delegate="move" player="ANZAC" display="Non Combat Move"/>
       <step name="anzacPlace" delegate="place" player="ANZAC"/>
@@ -1405,10 +1405,10 @@
       <!-- French Game Sequence -->
       <step name="frenchTech" delegate="tech" player="French"/>
       <step name="frenchTechActivation" delegate="tech_activation" player="French"/>
+      <step name="frenchPurchase" delegate="purchase" player="French"/>
       <step name="frenchPolitics" delegate="politics" player="French"/>
       <step name="frenchCombatMove" delegate="move" player="French"/>
       <step name="frenchAirborneCombatMove" delegate="specialCombatMove" player="French" display="Airborne Attack Move"/>
-      <step name="frenchPurchase" delegate="purchase" player="French"/>
       <step name="frenchBattle" delegate="battle" player="French"/>
       <step name="frenchNonCombatMove" delegate="move" player="French" display="Non Combat Move"/>
       <step name="frenchPlace" delegate="place" player="French"/>
@@ -2539,6 +2539,7 @@
       <option name="production" value="1"/>
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="Chinese"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Suiyuyan" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -2579,6 +2580,7 @@
       <option name="production" value="1"/>
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="Chinese"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Sikang" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -2589,6 +2591,7 @@
       <option name="production" value="1"/>
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="Chinese"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Gilbert Islands" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -2822,11 +2825,13 @@
       <!--<option name="capital" value="French"/>-->
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="New Hebrides" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Celebes" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
@@ -3055,6 +3060,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="British Somaliland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
+      <option name="originalOwner" value="British"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Alexandria" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -3124,44 +3130,55 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Morocco" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="French Equatorial Africa" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Normandy Bordeaux" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="unitProduction" value="3"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="French Central Africa" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="French Madagascar" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="French Guiana" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Algeria" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Southern France" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
       <option name="unitProduction" value="3"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Syria" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="French West Africa" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="France" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="4"/>
       <option name="unitProduction" value="10"/>
       <option name="capital" value="French"/>
       <option name="victoryCity" value="1"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Tunisia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="originalOwner" value="French"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Greater Southern Germany" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="4"/>
@@ -3197,6 +3214,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Tobruk" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
+      <option name="originalOwner" value="Italians"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Albania" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -3356,6 +3374,7 @@
     <attachment name="territoryAttachment" attachTo="Bulgaria" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
       <option name="captureUnitOnEnteringBy" value="Germans:Italians:Japanese"/>
+      <option name="originalOwner" value="Neutral_Axis"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Angola" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -3363,6 +3382,7 @@
     <attachment name="territoryAttachment" attachTo="Greece" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="captureUnitOnEnteringBy" value="British:Russians:Americans:French:ANZAC"/>
+      <option name="originalOwner" value="Neutral_Allies"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Iraq" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
@@ -3396,6 +3416,7 @@
     <attachment name="territoryAttachment" attachTo="Yugoslavia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="captureUnitOnEnteringBy" value="British:Russians:Americans:French:ANZAC"/>
+      <option name="originalOwner" value="Neutral_Allies"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Spain" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
@@ -3415,6 +3436,7 @@
     <attachment name="territoryAttachment" attachTo="Finland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="captureUnitOnEnteringBy" value="Germans:Italians:Japanese"/>
+      <option name="originalOwner" value="Neutral_Axis"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Suriname" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -3929,11 +3951,11 @@
     <attachment name="conditionAttachment_False" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="switch" value="false"/>
     </attachment>
-    <attachment name="conditionAttachmentTurn3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="rounds" value="3"/>
+    <attachment name="conditionAttachmentTurn1" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="1"/>
     </attachment>
-    <attachment name="conditionAttachmentTurn4OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="rounds" value="4-+"/>
+    <attachment name="conditionAttachmentTurn2OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="2-+"/>
     </attachment>
     <attachment name="conditionAttachment_Axis_Capture_London" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="United Kingdom" count="1"/>
@@ -3963,12 +3985,12 @@
       <option name="atWarPlayers" value="Germans:Italians:Japanese" count="3"/>
       <option name="invert" value="true"/>
     </attachment>
-    <attachment name="conditionAttachmentAmericansNotYetAtWarWithAllAndTurn3" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="conditionAttachmentAmericansNotYetAtWarWithAllAndTurn1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAmericansNotYetAtWarWithAll"/>
-      <option name="rounds" value="3"/>
+      <option name="rounds" value="1"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_May_Declare_War_On_Axis_Early" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn4OrHigher:conditionAttachment_Americans_At_War_With_At_Least_One_Axis:conditionAttachment_British_Provoked_War_With_Japan:conditionAttachment_Axis_Capture_London_Switch:conditionAttachment_Axis_Land_In_North_America_Switch"/>
+      <option name="conditions" value="conditionAttachmentTurn2OrHigher:conditionAttachment_Americans_At_War_With_At_Least_One_Axis:conditionAttachment_British_Provoked_War_With_Japan:conditionAttachment_Axis_Capture_London_Switch:conditionAttachment_Axis_Land_In_North_America_Switch"/>
       <option name="conditionType" value="OR"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_May_Declare_War_On_Axis" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -3979,12 +4001,17 @@
       <option name="atWarPlayers" value="Germans:Italians" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_May_Declare_War_On_European_Axis" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Capture_London_Switch:conditionAttachmentTurn4OrHigher:conditionAttachment_Russians_At_War_In_Europe"/>
+      <option name="conditions" value="conditionAttachment_Axis_Capture_London_Switch:conditionAttachmentTurn2OrHigher:conditionAttachment_Russians_At_War_In_Europe"/>
       <option name="conditionType" value="OR"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_And_Japanese_At_War" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="atWarPlayers" value="Americans" count="1"/>
     </attachment>
+    
+    <attachment name="conditionAttachment_Russians_And_Japanese_At_War" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+					<option name="atWarPlayers" value="Japanese" count="1"/>
+    </attachment>
+    
     <attachment name="conditionAttachmentGermansNotYetAtWarWithAmericans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="atWarPlayers" value="Germans" count="0"/>
     </attachment>
@@ -4602,7 +4629,7 @@
       <option name="when" value="before:japaneseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_War_Japanese" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentAmericansNotYetAtWarWithAllAndTurn3"/>
+      <option name="conditions" value="conditionAttachmentAmericansNotYetAtWarWithAllAndTurn1"/>
       <option name="relationshipChange" value="Japanese:Americans:anyNeutral:War"/>
       <option name="relationshipChange" value="Chinese:Americans:anyNeutral:Allied"/>
       <option name="relationshipChange" value="British:Americans:anyNeutral:Allied"/>
@@ -4670,6 +4697,16 @@
       <option name="playerProperty" value="movementRestrictionType" count="disallowed"/>
       <option name="when" value="before:americansCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment_Russians_Unrestricted_Movement" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+                	<option name="conditions" value="conditionAttachment_Russians_And_Japanese_At_War"/>
+					<option name="uses" value="1"/>
+                	<option name="players" value="Russians"/>
+                	<option name="playerAttachmentName" value="RulesAttachment" count="rulesAttachment"/>
+                	<option name="playerProperty" value="movementRestrictionTerritories" count=""/>
+                	<option name="playerProperty" value="movementRestrictionType" count="disallowed"/>
+					<option name="when" value="before:russiansCombatMove"/>
+    </attachment>
+    
     <attachment name="triggerAttachment_Russians_Allied_Americans_1" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentRussians_Neutrality_Americans_but_War_With_European_Axis:conditionAttachmentRussians_Neutrality_Americans_but_War_With_Japanese"/>
       <option name="conditionType" value="OR"/>
@@ -4812,6 +4849,11 @@
     <attachment name="rulesAttachment" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="movementRestrictionTerritories" value="1 Sea Zone:2 Sea Zone:3 Sea Zone:8 Sea Zone:9 Sea Zone:10 Sea Zone:11 Sea Zone:12 Sea Zone"/>
       <option name="movementRestrictionType" value="disallowed"/>
+    </attachment>
+
+    <attachment name="rulesAttachment" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+                	<option name="movementRestrictionTerritories" value="6 Sea Zone:2 Sea Zone:7 Sea Zone:8 Sea Zone"/>
+                	<option name="movementRestrictionType" value="disallowed"/>
     </attachment>
     <!-- Political Action Attachments -->
     <attachment name="politicalActionAttachment_Axis_To_War_With_TrueNeutrals" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -5275,219 +5317,228 @@
     <ownerInitialize>
       <!-- P40 -->
       <territoryOwner territory="Caroline Islands" owner="Japanese"/>
-      <territoryOwner territory="Iwo Jima" owner="Japanese"/>
-      <territoryOwner territory="Paulau Island" owner="Japanese"/>
-      <territoryOwner territory="Marshall Islands" owner="Japanese"/>
-      <territoryOwner territory="Shantung" owner="Japanese"/>
-      <territoryOwner territory="Formosa" owner="Japanese"/>
-      <territoryOwner territory="Kwangsi" owner="Japanese"/>
-      <territoryOwner territory="Korea" owner="Japanese"/>
-      <territoryOwner territory="Kiangsu" owner="Japanese"/>
-      <territoryOwner territory="Kiangsi" owner="Japanese"/>
-      <territoryOwner territory="Japan" owner="Japanese"/>
-      <territoryOwner territory="Jehol" owner="Japanese"/>
-      <territoryOwner territory="Okinawa" owner="Japanese"/>
-      <territoryOwner territory="Marianas" owner="Japanese"/>
-      <territoryOwner territory="Siam" owner="Japanese"/>
-      <territoryOwner territory="Manchuria" owner="Japanese"/>
-      <territoryOwner territory="Hainan" owner="Japanese"/>
-      <territoryOwner territory="Shensi" owner="Chinese"/>
-      <territoryOwner territory="Yunnan" owner="Chinese"/>
-      <territoryOwner territory="Suiyuyan" owner="Chinese"/>
-      <territoryOwner territory="Kweichow" owner="Chinese"/>
-      <territoryOwner territory="Hunan" owner="Chinese"/>
-      <territoryOwner territory="Kansu" owner="Chinese"/>
-      <territoryOwner territory="Hopei" owner="Chinese"/>
-      <territoryOwner territory="Tsinghai" owner="Chinese"/>
-      <territoryOwner territory="Szechwan" owner="Chinese"/>
-      <territoryOwner territory="Chahar" owner="Chinese"/>
-      <territoryOwner territory="Sikang" owner="Chinese"/>
-      <territoryOwner territory="Anhwe" owner="Chinese"/>
-      <!-- himalayas contain chinese capitol, so must be owned by china or they do not collect ipcs -->
-      <territoryOwner territory="Himalayas" owner="Chinese"/>
-      <territoryOwner territory="Gilbert Islands" owner="UK_Pacific"/>
-      <territoryOwner territory="Fiji" owner="UK_Pacific"/>
-      <territoryOwner territory="Ceylon" owner="UK_Pacific"/>
-      <territoryOwner territory="Samoa" owner="UK_Pacific"/>
-      <territoryOwner territory="Shan State" owner="UK_Pacific"/>
-      <territoryOwner territory="Burma" owner="UK_Pacific"/>
-      <territoryOwner territory="British Columbia" owner="British"/>
-      <territoryOwner territory="India" owner="UK_Pacific"/>
-      <territoryOwner territory="Malaya" owner="UK_Pacific"/>
-      <territoryOwner territory="Borneo" owner="UK_Pacific"/>
-      <!--<territoryOwner territory="Yukon Territory" owner="British"/>-->
-      <territoryOwner territory="Kwangtung" owner="UK_Pacific"/>
-      <territoryOwner territory="Queensland" owner="ANZAC"/>
-      <territoryOwner territory="Victoria" owner="ANZAC"/>
-      <territoryOwner territory="New Britain" owner="ANZAC"/>
-      <territoryOwner territory="Northern Territory" owner="ANZAC"/>
-      <territoryOwner territory="New Zealand" owner="ANZAC"/>
-      <territoryOwner territory="New South Wales" owner="ANZAC"/>
-      <territoryOwner territory="South Australia" owner="ANZAC"/>
-      <territoryOwner territory="Western Australia" owner="ANZAC"/>
-      <territoryOwner territory="Solomon Islands" owner="ANZAC"/>
-      <territoryOwner territory="New Guinea" owner="ANZAC"/>
-      <territoryOwner territory="Philippines" owner="Americans"/>
-      <territoryOwner territory="Line Islands" owner="Americans"/>
-      <territoryOwner territory="Mexico" owner="Americans"/>
-      <territoryOwner territory="Guam" owner="Americans"/>
-      <territoryOwner territory="Wake Island" owner="Americans"/>
-      <territoryOwner territory="Western United States" owner="Americans"/>
-      <territoryOwner territory="Alaska" owner="Americans"/>
-      <territoryOwner territory="Aleutian Islands" owner="Americans"/>
-      <territoryOwner territory="Johnston Island" owner="Americans"/>
-      <territoryOwner territory="Hawaiian Islands" owner="Americans"/>
-      <territoryOwner territory="Midway" owner="Americans"/>
-      <territoryOwner territory="Sakha" owner="Russians"/>
-      <territoryOwner territory="Russia" owner="Russians"/>
-      <territoryOwner territory="Evenkiyskiy" owner="Russians"/>
-      <territoryOwner territory="Yenisey" owner="Russians"/>
-      <territoryOwner territory="Soviet Far East" owner="Russians"/>
-      <territoryOwner territory="Amur" owner="Russians"/>
-      <territoryOwner territory="Yakut S.S.R." owner="Russians"/>
-      <territoryOwner territory="Timguska" owner="Russians"/>
-      <territoryOwner territory="Siberia" owner="Russians"/>
-      <territoryOwner territory="Kazakhstan" owner="Russians"/>
-      <territoryOwner territory="Buryatia" owner="Russians"/>
-      <territoryOwner territory="French Indo China" owner="French"/>
-      <territoryOwner territory="New Hebrides" owner="French"/>
-      <territoryOwner territory="Celebes" owner="Dutch"/>
-      <territoryOwner territory="Java" owner="Dutch"/>
-      <territoryOwner territory="Dutch New Guinea" owner="Dutch"/>
-      <territoryOwner territory="Sumatra" owner="Dutch"/>
-      <!-- original owner of kamikaze zones -->
-      <territoryOwner territory="6 Sea Zone" owner="Japanese"/>
-      <territoryOwner territory="17 Sea Zone" owner="Japanese"/>
-      <territoryOwner territory="19 Sea Zone" owner="Japanese"/>
-      <territoryOwner territory="20 Sea Zone" owner="Japanese"/>
-      <territoryOwner territory="22 Sea Zone" owner="Japanese"/>
-      <territoryOwner territory="35 Sea Zone" owner="Japanese"/>
-      <territoryOwner territory="Olgiy" owner="Mongolians"/>
-      <territoryOwner territory="Dzavhan" owner="Mongolians"/>
-      <territoryOwner territory="Tsagaan Olom" owner="Mongolians"/>
-      <territoryOwner territory="Central Mongolia" owner="Mongolians"/>
-      <territoryOwner territory="Buyant-Uhaa" owner="Mongolians"/>
-      <territoryOwner territory="Ulaanbaatar" owner="Mongolians"/>
-      <!-- E40 -->
-      <territoryOwner territory="Brazil" owner="Neutral_Allies"/>
-      <territoryOwner territory="Crete" owner="Neutral_Allies"/>
-      <territoryOwner territory="Eire" owner="Neutral_Allies"/>
-      <territoryOwner territory="Greece" owner="Neutral_Allies"/>
-      <territoryOwner territory="Northwest Persia" owner="Neutral_Allies"/>
-      <territoryOwner territory="Persia" owner="Neutral_Allies"/>
-      <territoryOwner territory="Eastern Persia" owner="Neutral_Allies"/>
-      <territoryOwner territory="Yugoslavia" owner="Neutral_Allies"/>
-      <territoryOwner territory="Bulgaria" owner="Neutral_Axis"/>
-      <territoryOwner territory="Finland" owner="Neutral_Axis"/>
-      <territoryOwner territory="Iraq" owner="Neutral_Axis"/>
-      <territoryOwner territory="Venezuela" owner="Neutral_True"/>
-      <territoryOwner territory="Colombia" owner="Neutral_True"/>
-      <territoryOwner territory="Ecuador" owner="Neutral_True"/>
-      <territoryOwner territory="Peru" owner="Neutral_True"/>
-      <territoryOwner territory="Bolivia" owner="Neutral_True"/>
-      <territoryOwner territory="Paraguay" owner="Neutral_True"/>
-      <territoryOwner territory="Suriname" owner="Dutch"/>
-      <territoryOwner territory="Chile" owner="Neutral_True"/>
-      <territoryOwner territory="Argentina" owner="Neutral_True"/>
-      <territoryOwner territory="Uruguay" owner="Neutral_True"/>
-      <territoryOwner territory="Rio de Oro" owner="Neutral_True"/>
-      <territoryOwner territory="Portuguese Guinea" owner="Neutral_True"/>
-      <territoryOwner territory="Sierra Leone" owner="Neutral_True"/>
-      <territoryOwner territory="Liberia" owner="Neutral_True"/>
-      <territoryOwner territory="Mozambique" owner="Neutral_True"/>
-      <territoryOwner territory="Angola" owner="Neutral_True"/>
-      <territoryOwner territory="Afghanistan" owner="Neutral_True"/>
-      <territoryOwner territory="Turkey" owner="Neutral_True"/>
-      <territoryOwner territory="Saudi Arabia" owner="Neutral_True"/>
-      <territoryOwner territory="Sweden" owner="Neutral_True"/>
-      <territoryOwner territory="Switzerland" owner="Neutral_True"/>
-      <territoryOwner territory="Spain" owner="Neutral_True"/>
-      <territoryOwner territory="Portugal" owner="Neutral_True"/>
-      <territoryOwner territory="West Indies" owner="Americans"/>
-      <territoryOwner territory="Central United States" owner="Americans"/>
-      <territoryOwner territory="Central America" owner="Americans"/>
-      <territoryOwner territory="Greenland" owner="Americans"/>
-      <territoryOwner territory="Southeast Mexico" owner="Americans"/>
-      <territoryOwner territory="Eastern United States" owner="Americans"/>
-      <territoryOwner territory="West India" owner="UK_Pacific"/>
-      <territoryOwner territory="Belgian Congo" owner="British"/>
-      <territoryOwner territory="Iceland" owner="British"/>
-      <territoryOwner territory="Quebec" owner="British"/>
-      <territoryOwner territory="Alberta Saskatchewan Manitoba" owner="British"/>
-      <territoryOwner territory="Trans-Jordan" owner="British"/>
-      <territoryOwner territory="British Somaliland" owner="British"/>
-      <territoryOwner territory="Alexandria" owner="British"/>
-      <territoryOwner territory="Gibraltar" owner="British"/>
-      <territoryOwner territory="New Brunswick Nova Scotia" owner="British"/>
-      <territoryOwner territory="Egypt" owner="British"/>
-      <territoryOwner territory="Union of South Africa" owner="British"/>
-      <territoryOwner territory="Cyprus" owner="British"/>
-      <territoryOwner territory="British Guiana" owner="British"/>
-      <territoryOwner territory="Gold Coast" owner="British"/>
-      <territoryOwner territory="Ontario" owner="British"/>
-      <territoryOwner territory="Scotland" owner="British"/>
-      <territoryOwner territory="South West Africa" owner="British"/>
-      <territoryOwner territory="Nigeria" owner="British"/>
-      <territoryOwner territory="Kenya" owner="British"/>
-      <territoryOwner territory="Malta" owner="British"/>
-      <territoryOwner territory="United Kingdom" owner="British"/>
-      <territoryOwner territory="Anglo Egyptian Sudan" owner="British"/>
-      <territoryOwner territory="Rhodesia" owner="British"/>
-      <territoryOwner territory="Tanganyika Territory" owner="British"/>
-      <territoryOwner territory="Newfoundland Labrador" owner="British"/>
-      <territoryOwner territory="Morocco" owner="French"/>
-      <territoryOwner territory="French Equatorial Africa" owner="French"/>
-      <territoryOwner territory="Normandy Bordeaux" owner="French"/>
-      <territoryOwner territory="French Central Africa" owner="French"/>
-      <territoryOwner territory="French Madagascar" owner="French"/>
-      <territoryOwner territory="French Guiana" owner="French"/>
-      <territoryOwner territory="Algeria" owner="French"/>
-      <territoryOwner territory="Southern France" owner="French"/>
-      <territoryOwner territory="Syria" owner="French"/>
-      <territoryOwner territory="French West Africa" owner="French"/>
-      <territoryOwner territory="France" owner="French"/>
-      <territoryOwner territory="Tunisia" owner="French"/>
-      <territoryOwner territory="Greater Southern Germany" owner="Germans"/>
-      <territoryOwner territory="Slovakia Hungary" owner="Germans"/>
-      <territoryOwner territory="Western Germany" owner="Germans"/>
-      <territoryOwner territory="Romania" owner="Germans"/>
-      <territoryOwner territory="Poland" owner="Germans"/>
-      <territoryOwner territory="Germany" owner="Germans"/>
-      <territoryOwner territory="Norway" owner="Germans"/>
-      <territoryOwner territory="Denmark" owner="Germans"/>
-      <territoryOwner territory="Holland Belgium" owner="Germans"/>
-      <territoryOwner territory="Tobruk" owner="Italians"/>
-      <territoryOwner territory="Albania" owner="Italians"/>
-      <territoryOwner territory="Northern Italy" owner="Italians"/>
-      <territoryOwner territory="Libya" owner="Italians"/>
-      <territoryOwner territory="Sicily" owner="Italians"/>
-      <territoryOwner territory="Italian Somaliland" owner="Italians"/>
-      <territoryOwner territory="Southern Italy" owner="Italians"/>
-      <territoryOwner territory="Ethiopia" owner="Italians"/>
-      <territoryOwner territory="Sardinia" owner="Italians"/>
-      <territoryOwner territory="Belarus" owner="Russians"/>
-      <territoryOwner territory="Karelia" owner="Russians"/>
-      <territoryOwner territory="Baltic States" owner="Russians"/>
-      <territoryOwner territory="Bryansk" owner="Russians"/>
-      <territoryOwner territory="Rostov" owner="Russians"/>
-      <territoryOwner territory="Nenetsia" owner="Russians"/>
-      <territoryOwner territory="Urals" owner="Russians"/>
-      <territoryOwner territory="Vyborg" owner="Russians"/>
-      <territoryOwner territory="Archangel" owner="Russians"/>
-      <territoryOwner territory="Eastern Poland" owner="Russians"/>
-      <territoryOwner territory="Bessarabia" owner="Russians"/>
-      <territoryOwner territory="Russia" owner="Russians"/>
-      <territoryOwner territory="Tambov" owner="Russians"/>
-      <territoryOwner territory="Ukraine" owner="Russians"/>
-      <territoryOwner territory="Western Ukraine" owner="Russians"/>
-      <territoryOwner territory="Novosibirsk" owner="Russians"/>
-      <territoryOwner territory="Vologda" owner="Russians"/>
-      <territoryOwner territory="Volgograd" owner="Russians"/>
-      <territoryOwner territory="Turkmenistan" owner="Russians"/>
-      <territoryOwner territory="Novgorod" owner="Russians"/>
-      <territoryOwner territory="Caucasus" owner="Russians"/>
-      <territoryOwner territory="Smolensk" owner="Russians"/>
-      <territoryOwner territory="Samara" owner="Russians"/>
+                        <territoryOwner territory="Iwo Jima" owner="Japanese"/>
+                        <territoryOwner territory="Paulau Island" owner="Japanese"/>
+                        <territoryOwner territory="Marshall Islands" owner="Japanese"/>
+                        <territoryOwner territory="Shantung" owner="Japanese"/>
+                        <territoryOwner territory="Formosa" owner="Japanese"/>
+                        <territoryOwner territory="Kwangsi" owner="Japanese"/>
+                        <territoryOwner territory="Korea" owner="Japanese"/>
+                        <territoryOwner territory="Kiangsu" owner="Japanese"/>
+                        <territoryOwner territory="Kiangsi" owner="Japanese"/>
+                        <territoryOwner territory="Japan" owner="Japanese"/>
+                        <territoryOwner territory="Jehol" owner="Japanese"/>
+                        <territoryOwner territory="Okinawa" owner="Japanese"/>
+                        <territoryOwner territory="Marianas" owner="Japanese"/>
+                        <territoryOwner territory="Siam" owner="Japanese"/>
+                        <territoryOwner territory="Manchuria" owner="Japanese"/>
+                        <territoryOwner territory="Hainan" owner="Japanese"/>
+                        <territoryOwner territory="Shensi" owner="Chinese"/>
+                        <territoryOwner territory="Yunnan" owner="Japanese"/>
+                        <territoryOwner territory="Suiyuyan" owner="Chinese"/>
+                        <territoryOwner territory="Kweichow" owner="Chinese"/>
+                        <territoryOwner territory="Hunan" owner="Chinese"/>
+                        <territoryOwner territory="Kansu" owner="Chinese"/>
+                        <territoryOwner territory="Hopei" owner="Chinese"/>
+                        <territoryOwner territory="Tsinghai" owner="Chinese"/>
+                        <territoryOwner territory="Szechwan" owner="Chinese"/>
+                        <territoryOwner territory="Chahar" owner="Japanese"/>
+                        <territoryOwner territory="Sikang" owner="Chinese"/>
+                        <territoryOwner territory="Anhwe" owner="Japanese"/>
+                        <!-- himalayas contain chinese capitol, so must be owned by china or they do not collect ipcs -->
+						<territoryOwner territory="Himalayas" owner="Chinese"/>
+                        <territoryOwner territory="Gilbert Islands" owner="UK_Pacific"/>
+                        <territoryOwner territory="Fiji" owner="UK_Pacific"/>
+                        <territoryOwner territory="Ceylon" owner="UK_Pacific"/>
+                        <territoryOwner territory="Samoa" owner="UK_Pacific"/>
+                        <territoryOwner territory="Shan State" owner="UK_Pacific"/>
+                        <territoryOwner territory="Burma" owner="UK_Pacific"/>
+                        <territoryOwner territory="British Columbia" owner="British"/>
+                        <territoryOwner territory="India" owner="UK_Pacific"/>
+                        <territoryOwner territory="Malaya" owner="UK_Pacific"/>
+                        <territoryOwner territory="Borneo" owner="UK_Pacific"/>
+                        <!--<territoryOwner territory="Yukon Territory" owner="British"/>-->
+                        <territoryOwner territory="Kwangtung" owner="UK_Pacific"/>
+                        <territoryOwner territory="Queensland" owner="ANZAC"/>
+                        <territoryOwner territory="Victoria" owner="ANZAC"/>
+                        <territoryOwner territory="New Britain" owner="ANZAC"/>
+                        <territoryOwner territory="Northern Territory" owner="ANZAC"/>
+                        <territoryOwner territory="New Zealand" owner="ANZAC"/>
+                        <territoryOwner territory="New South Wales" owner="ANZAC"/>
+                        <territoryOwner territory="South Australia" owner="ANZAC"/>
+                        <territoryOwner territory="Western Australia" owner="ANZAC"/>
+                        <territoryOwner territory="Solomon Islands" owner="ANZAC"/>
+                        <territoryOwner territory="New Guinea" owner="ANZAC"/>
+                        <territoryOwner territory="Philippines" owner="Americans"/>
+                        <territoryOwner territory="Line Islands" owner="Americans"/>
+                        <territoryOwner territory="Mexico" owner="Americans"/>
+                        <territoryOwner territory="Guam" owner="Americans"/>
+                        <territoryOwner territory="Wake Island" owner="Americans"/>
+                        <territoryOwner territory="Western United States" owner="Americans"/>
+                        <territoryOwner territory="Alaska" owner="Americans"/>
+                        <territoryOwner territory="Aleutian Islands" owner="Americans"/>
+                        <territoryOwner territory="Johnston Island" owner="Americans"/>
+                        <territoryOwner territory="Hawaiian Islands" owner="Americans"/>
+                        <territoryOwner territory="Midway" owner="Americans"/>
+                        <territoryOwner territory="Sakha" owner="Russians"/>
+                        <territoryOwner territory="Russia" owner="Russians"/>
+                        <territoryOwner territory="Evenkiyskiy" owner="Russians"/>
+                        <territoryOwner territory="Yenisey" owner="Russians"/>
+                        <territoryOwner territory="Soviet Far East" owner="Russians"/>
+                        <territoryOwner territory="Amur" owner="Russians"/>
+                        <territoryOwner territory="Yakut S.S.R." owner="Russians"/>
+                        <territoryOwner territory="Timguska" owner="Russians"/>
+                        <territoryOwner territory="Siberia" owner="Russians"/>
+                        <territoryOwner territory="Kazakhstan" owner="Russians"/>
+                        <territoryOwner territory="Buryatia" owner="Russians"/>
+                        <territoryOwner territory="French Indo China" owner="Japanese"/>
+                        <territoryOwner territory="New Hebrides" owner="ANZAC"/>
+                        <territoryOwner territory="Celebes" owner="UK_Pacific"/>
+                        <territoryOwner territory="Java" owner="ANZAC"/>
+                        <territoryOwner territory="Dutch New Guinea" owner="ANZAC"/>
+                        <territoryOwner territory="Sumatra" owner="UK_Pacific"/>
+						
+						<!-- original owner of kamikaze zones -->
+                        <territoryOwner territory="6 Sea Zone" owner="Japanese"/>
+                        <territoryOwner territory="17 Sea Zone" owner="Japanese"/>
+                        <territoryOwner territory="19 Sea Zone" owner="Japanese"/>
+                        <territoryOwner territory="20 Sea Zone" owner="Japanese"/>
+                        <territoryOwner territory="22 Sea Zone" owner="Japanese"/>
+                        <territoryOwner territory="35 Sea Zone" owner="Japanese"/>
+
+						<territoryOwner territory="Olgiy" owner="Mongolians"/>
+						<territoryOwner territory="Dzavhan" owner="Mongolians"/>
+						<territoryOwner territory="Tsagaan Olom" owner="Mongolians"/>
+						<territoryOwner territory="Central Mongolia" owner="Mongolians"/>
+						<territoryOwner territory="Buyant-Uhaa" owner="Mongolians"/>
+						<territoryOwner territory="Ulaanbaatar" owner="Mongolians"/>
+						
+						<!-- E40 -->
+						<territoryOwner territory="Brazil" owner="Neutral_Allies"/>
+						<territoryOwner territory="Crete" owner="British"/>
+						<territoryOwner territory="Eire" owner="Neutral_Allies"/>
+						<territoryOwner territory="Greece" owner="Italians"/>
+						<territoryOwner territory="Northwest Persia" owner="Neutral_Allies"/>
+						<territoryOwner territory="Persia" owner="Neutral_Allies"/>
+						<territoryOwner territory="Eastern Persia" owner="Neutral_Allies"/>
+						<territoryOwner territory="Yugoslavia" owner="Italians"/>
+						
+						<territoryOwner territory="Bulgaria" owner="Germans"/>
+						<territoryOwner territory="Finland" owner="Germans"/>
+						<territoryOwner territory="Iraq" owner="Neutral_Axis"/>
+						
+						<territoryOwner territory="Venezuela" owner="Neutral_True"/>
+						<territoryOwner territory="Colombia" owner="Neutral_True"/>
+						<territoryOwner territory="Ecuador" owner="Neutral_True"/>
+						<territoryOwner territory="Peru" owner="Neutral_True"/>
+						<territoryOwner territory="Bolivia" owner="Neutral_True"/>
+						<territoryOwner territory="Paraguay" owner="Neutral_True"/>
+						<territoryOwner territory="Suriname" owner="Dutch"/>
+						<territoryOwner territory="Chile" owner="Neutral_True"/>
+						<territoryOwner territory="Argentina" owner="Neutral_True"/>
+						<territoryOwner territory="Uruguay" owner="Neutral_True"/>
+						
+						<territoryOwner territory="Rio de Oro" owner="Neutral_True"/>
+						<territoryOwner territory="Portuguese Guinea" owner="Neutral_True"/>
+						<territoryOwner territory="Sierra Leone" owner="Neutral_True"/>
+						<territoryOwner territory="Liberia" owner="Neutral_True"/>
+						<territoryOwner territory="Mozambique" owner="Neutral_True"/>
+						<territoryOwner territory="Angola" owner="Neutral_True"/>
+						
+						<territoryOwner territory="Afghanistan" owner="Neutral_True"/>
+						<territoryOwner territory="Turkey" owner="Neutral_True"/>
+						<territoryOwner territory="Saudi Arabia" owner="Neutral_True"/>
+						
+						<territoryOwner territory="Sweden" owner="Neutral_True"/>
+						<territoryOwner territory="Switzerland" owner="Neutral_True"/>
+						<territoryOwner territory="Spain" owner="Neutral_True"/>
+						<territoryOwner territory="Portugal" owner="Neutral_True"/>
+						
+                        <territoryOwner territory="West Indies" owner="Americans"/>
+                        <territoryOwner territory="Central United States" owner="Americans"/>
+                        <territoryOwner territory="Central America" owner="Americans"/>
+                        <territoryOwner territory="Greenland" owner="Americans"/>
+                        <territoryOwner territory="Southeast Mexico" owner="Americans"/>
+                        <territoryOwner territory="Eastern United States" owner="Americans"/>
+                        <territoryOwner territory="West India" owner="UK_Pacific"/>
+                        <territoryOwner territory="Belgian Congo" owner="British"/>
+                        <territoryOwner territory="Iceland" owner="British"/>
+                        <territoryOwner territory="Quebec" owner="British"/>
+                        <territoryOwner territory="Alberta Saskatchewan Manitoba" owner="British"/>
+                        <territoryOwner territory="Trans-Jordan" owner="British"/>
+                        <territoryOwner territory="British Somaliland" owner="Italians"/>
+                        <territoryOwner territory="Alexandria" owner="British"/>
+                        <territoryOwner territory="Gibraltar" owner="British"/>
+                        <territoryOwner territory="New Brunswick Nova Scotia" owner="British"/>
+                        <territoryOwner territory="Egypt" owner="British"/>
+                        <territoryOwner territory="Union of South Africa" owner="British"/>
+                        <territoryOwner territory="Cyprus" owner="British"/>
+                        <territoryOwner territory="British Guiana" owner="British"/>
+                        <territoryOwner territory="Gold Coast" owner="British"/>
+                        <territoryOwner territory="Ontario" owner="British"/>
+                        <territoryOwner territory="Scotland" owner="British"/>
+                        <territoryOwner territory="South West Africa" owner="British"/>
+                        <territoryOwner territory="Nigeria" owner="British"/>
+                        <territoryOwner territory="Kenya" owner="British"/>
+                        <territoryOwner territory="Malta" owner="British"/>
+                        <territoryOwner territory="United Kingdom" owner="British"/>
+                        <territoryOwner territory="Anglo Egyptian Sudan" owner="British"/>
+                        <territoryOwner territory="Rhodesia" owner="British"/>
+                        <territoryOwner territory="Tanganyika Territory" owner="British"/>
+                        <territoryOwner territory="Newfoundland Labrador" owner="British"/>
+                        <territoryOwner territory="Morocco" owner="Germans"/>
+                        <territoryOwner territory="French Equatorial Africa" owner="British"/>
+                        <territoryOwner territory="Normandy Bordeaux" owner="Germans"/>
+                        <territoryOwner territory="French Central Africa" owner="Germans"/>
+                        <territoryOwner territory="French Madagascar" owner="Germans"/>
+                        <territoryOwner territory="French Guiana" owner="French"/>
+                        <territoryOwner territory="Algeria" owner="Germans"/>
+                        <territoryOwner territory="Southern France" owner="Germans"/>
+                        <territoryOwner territory="Syria" owner="Germans"/>
+                        <territoryOwner territory="French West Africa" owner="Germans"/>
+                        <territoryOwner territory="France" owner="Germans"/>
+                        <territoryOwner territory="Tunisia" owner="Italians"/>
+                        <territoryOwner territory="Greater Southern Germany" owner="Germans"/>
+                        <territoryOwner territory="Slovakia Hungary" owner="Germans"/>
+                        <territoryOwner territory="Western Germany" owner="Germans"/>
+                        <territoryOwner territory="Romania" owner="Germans"/>
+                        <territoryOwner territory="Poland" owner="Germans"/>
+                        <territoryOwner territory="Germany" owner="Germans"/>
+                        <territoryOwner territory="Norway" owner="Germans"/>
+                        <territoryOwner territory="Denmark" owner="Germans"/>
+                        <territoryOwner territory="Holland Belgium" owner="Germans"/>
+                        <territoryOwner territory="Tobruk" owner="British"/>
+                        <territoryOwner territory="Albania" owner="Italians"/>
+                        <territoryOwner territory="Northern Italy" owner="Italians"/>
+                        <territoryOwner territory="Libya" owner="Italians"/>
+                        <territoryOwner territory="Sicily" owner="Italians"/>
+                        <territoryOwner territory="Italian Somaliland" owner="Italians"/>
+                        <territoryOwner territory="Southern Italy" owner="Italians"/>
+                        <territoryOwner territory="Ethiopia" owner="British"/>
+                        <territoryOwner territory="Sardinia" owner="Italians"/>
+                        <territoryOwner territory="Belarus" owner="Russians"/>
+                        <territoryOwner territory="Karelia" owner="Russians"/>
+                        <territoryOwner territory="Baltic States" owner="Russians"/>
+                        <territoryOwner territory="Bryansk" owner="Russians"/>
+                        <territoryOwner territory="Rostov" owner="Russians"/>
+                        <territoryOwner territory="Nenetsia" owner="Russians"/>
+                        <territoryOwner territory="Urals" owner="Russians"/>
+                        <territoryOwner territory="Vyborg" owner="Russians"/>
+                        <territoryOwner territory="Archangel" owner="Russians"/>
+                        <territoryOwner territory="Eastern Poland" owner="Russians"/>
+                        <territoryOwner territory="Bessarabia" owner="Russians"/>
+                        <territoryOwner territory="Russia" owner="Russians"/>
+                        <territoryOwner territory="Tambov" owner="Russians"/>
+                        <territoryOwner territory="Ukraine" owner="Russians"/>
+                        <territoryOwner territory="Western Ukraine" owner="Russians"/>
+                        <territoryOwner territory="Novosibirsk" owner="Russians"/>
+                        <territoryOwner territory="Vologda" owner="Russians"/>
+                        <territoryOwner territory="Volgograd" owner="Russians"/>
+                        <territoryOwner territory="Turkmenistan" owner="Russians"/>
+                        <territoryOwner territory="Novgorod" owner="Russians"/>
+                        <territoryOwner territory="Caucasus" owner="Russians"/>
+                        <territoryOwner territory="Smolensk" owner="Russians"/>
+                        <territoryOwner territory="Samara" owner="Russians"/>
     </ownerInitialize>
     <unitInitialize>
       <!-- Neutrals -->
@@ -5509,371 +5560,774 @@
       <unitPlacement unitType="infantry" territory="Dzavhan" quantity="1" owner="Mongolians"/>
       <unitPlacement unitType="infantry" territory="Brazil" quantity="3" owner="Neutral_Allies"/>
       <unitPlacement unitType="infantry" territory="Persia" quantity="2" owner="Neutral_Allies"/>
-      <unitPlacement unitType="infantry" territory="Yugoslavia" quantity="5" owner="Neutral_Allies"/>
-      <unitPlacement unitType="infantry" territory="Greece" quantity="4" owner="Neutral_Allies"/>
-      <unitPlacement unitType="infantry" territory="Bulgaria" quantity="4" owner="Neutral_Axis"/>
+      
+      
+      
       <unitPlacement unitType="infantry" territory="Iraq" quantity="3" owner="Neutral_Axis"/>
-      <unitPlacement unitType="infantry" territory="Finland" quantity="4" owner="Neutral_Axis"/>
+      
       <!-- Players -->
       <!-- Japan -->
       <unitPlacement unitType="infantry" territory="Japan" quantity="6" owner="Japanese"/>
-      <unitPlacement unitType="artillery" territory="Japan" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="armour" territory="Japan" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="fighter" territory="Japan" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="tactical_bomber" territory="Japan" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="bomber" territory="Japan" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="aaGun" territory="Japan" quantity="3" owner="Japanese"/>
-      <unitPlacement unitType="airfield" territory="Japan" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="harbour" territory="Japan" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="factory_major" territory="Japan" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Manchuria" quantity="6" owner="Japanese"/>
-      <unitPlacement unitType="mech_infantry" territory="Manchuria" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="artillery" territory="Manchuria" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="aaGun" territory="Manchuria" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="fighter" territory="Manchuria" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="tactical_bomber" territory="Manchuria" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Paulau Island" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Kiangsi" quantity="3" owner="Japanese"/>
-      <unitPlacement unitType="artillery" territory="Kiangsi" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="fighter" territory="Formosa" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Shantung" quantity="3" owner="Japanese"/>
-      <unitPlacement unitType="artillery" territory="Shantung" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Kwangsi" quantity="3" owner="Japanese"/>
-      <unitPlacement unitType="artillery" territory="Kwangsi" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Iwo Jima" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Jehol" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="artillery" territory="Jehol" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Caroline Islands" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="aaGun" territory="Caroline Islands" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="airfield" territory="Caroline Islands" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="harbour" territory="Caroline Islands" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Siam" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Okinawa" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="fighter" territory="Okinawa" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Kiangsu" quantity="3" owner="Japanese"/>
-      <unitPlacement unitType="artillery" territory="Kiangsu" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="fighter" territory="Kiangsu" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="tactical_bomber" territory="Kiangsu" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Korea" quantity="4" owner="Japanese"/>
-      <unitPlacement unitType="fighter" territory="Korea" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="submarine" territory="6 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="destroyer" territory="6 Sea Zone" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="carrier" territory="6 Sea Zone" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="fighter" territory="6 Sea Zone" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="tactical_bomber" territory="6 Sea Zone" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="cruiser" territory="6 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="battleship" territory="6 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="transport" territory="6 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="submarine" territory="19 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="battleship" territory="19 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="destroyer" territory="19 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="transport" territory="19 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="destroyer" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="carrier" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="fighter" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="tactical_bomber" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="cruiser" territory="20 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="transport" territory="20 Sea Zone" quantity="1" owner="Japanese"/>
-      <!-- ANZAC -->
-      <unitPlacement unitType="infantry" territory="New South Wales" quantity="2" owner="ANZAC"/>
-      <unitPlacement unitType="aaGun" territory="New South Wales" quantity="2" owner="ANZAC"/>
-      <unitPlacement unitType="factory_minor" territory="New South Wales" quantity="1" owner="ANZAC"/>
-      <unitPlacement unitType="harbour" territory="New South Wales" quantity="1" owner="ANZAC"/>
-      <unitPlacement unitType="infantry" territory="New Zealand" quantity="1" owner="ANZAC"/>
-      <unitPlacement unitType="fighter" territory="New Zealand" quantity="2" owner="ANZAC"/>
-      <unitPlacement unitType="airfield" territory="New Zealand" quantity="1" owner="ANZAC"/>
-      <unitPlacement unitType="harbour" territory="New Zealand" quantity="1" owner="ANZAC"/>
-      <unitPlacement unitType="infantry" territory="Queensland" quantity="2" owner="ANZAC"/>
-      <unitPlacement unitType="artillery" territory="Queensland" quantity="1" owner="ANZAC"/>
-      <unitPlacement unitType="fighter" territory="Queensland" quantity="1" owner="ANZAC"/>
-      <unitPlacement unitType="airfield" territory="Queensland" quantity="1" owner="ANZAC"/>
-      <unitPlacement unitType="harbour" territory="Queensland" quantity="1" owner="ANZAC"/>
-      <unitPlacement unitType="infantry" territory="Malaya" quantity="1" owner="ANZAC"/>
-      <unitPlacement unitType="infantry" territory="Egypt" quantity="2" owner="ANZAC"/>
-      <unitPlacement unitType="destroyer" territory="62 Sea Zone" quantity="1" owner="ANZAC"/>
-      <unitPlacement unitType="transport" territory="62 Sea Zone" quantity="1" owner="ANZAC"/>
-      <unitPlacement unitType="cruiser" territory="63 Sea Zone" quantity="1" owner="ANZAC"/>
-      <!-- Americans -->
-      <unitPlacement unitType="infantry" territory="Western United States" quantity="2" owner="Americans"/>
-      <unitPlacement unitType="mech_infantry" territory="Western United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="artillery" territory="Western United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="fighter" territory="Western United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="aaGun" territory="Western United States" quantity="2" owner="Americans"/>
-      <unitPlacement unitType="airfield" territory="Western United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="harbour" territory="Western United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="factory_minor" territory="Western United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="infantry" territory="Hawaiian Islands" quantity="2" owner="Americans"/>
-      <unitPlacement unitType="fighter" territory="Hawaiian Islands" quantity="2" owner="Americans"/>
-      <unitPlacement unitType="airfield" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="harbour" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="infantry" territory="Philippines" quantity="2" owner="Americans"/>
-      <unitPlacement unitType="fighter" territory="Philippines" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="airfield" territory="Philippines" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="harbour" territory="Philippines" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="airfield" territory="Midway" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="airfield" territory="Wake Island" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="airfield" territory="Guam" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="infantry" territory="Eastern United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="fighter" territory="Eastern United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="artillery" territory="Eastern United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="aaGun" territory="Eastern United States" quantity="2" owner="Americans"/>
-      <unitPlacement unitType="airfield" territory="Eastern United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="harbour" territory="Eastern United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="factory_minor" territory="Eastern United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="infantry" territory="Central United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="mech_infantry" territory="Central United States" quantity="3" owner="Americans"/>
-      <unitPlacement unitType="armour" territory="Central United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="bomber" territory="Central United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="factory_minor" territory="Central United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="submarine" territory="26 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="destroyer" territory="26 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="cruiser" territory="26 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="transport" territory="26 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="battleship" territory="10 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="cruiser" territory="10 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="destroyer" territory="10 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="transport" territory="10 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="carrier" territory="10 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="fighter" territory="10 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="tactical_bomber" territory="10 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="destroyer" territory="35 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="submarine" territory="35 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="cruiser" territory="101 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="transport" territory="101 Sea Zone" quantity="1" owner="Americans"/>
-      <!-- Chinese -->
-      <unitPlacement unitType="infantry" territory="Szechwan" quantity="6" owner="Chinese"/>
-      <unitPlacement unitType="fighter" territory="Szechwan" quantity="1" owner="Chinese"/>
-      <unitPlacement unitType="infantry" territory="Hunan" quantity="2" owner="Chinese"/>
-      <unitPlacement unitType="infantry" territory="Yunnan" quantity="4" owner="Chinese"/>
-      <unitPlacement unitType="infantry" territory="Kweichow" quantity="2" owner="Chinese"/>
-      <unitPlacement unitType="infantry" territory="Shensi" quantity="1" owner="Chinese"/>
-      <unitPlacement unitType="infantry" territory="Suiyuyan" quantity="2" owner="Chinese"/>
-      <!-- British -->
-      <unitPlacement unitType="infantry" territory="Ontario" quantity="1" owner="British"/>
-      <unitPlacement unitType="artillery" territory="Ontario" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Quebec" quantity="1" owner="British"/>
-      <unitPlacement unitType="armour" territory="Quebec" quantity="1" owner="British"/>
-      <unitPlacement unitType="factory_minor" territory="Quebec" quantity="1" owner="British"/>
-      <unitPlacement unitType="harbour" territory="New Brunswick Nova Scotia" quantity="1" owner="British"/>
-      <unitPlacement unitType="airfield" territory="Iceland" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="United Kingdom" quantity="2" owner="British"/>
-      <unitPlacement unitType="mech_infantry" territory="United Kingdom" quantity="1" owner="British"/>
-      <unitPlacement unitType="fighter" territory="United Kingdom" quantity="2" owner="British"/>
-      <unitPlacement unitType="bomber" territory="United Kingdom" quantity="1" owner="British"/>
-      <unitPlacement unitType="aaGun" territory="United Kingdom" quantity="4" owner="British"/>
-      <unitPlacement unitType="airfield" territory="United Kingdom" quantity="1" owner="British"/>
-      <unitPlacement unitType="harbour" territory="United Kingdom" quantity="1" owner="British"/>
-      <unitPlacement unitType="factory_major" territory="United Kingdom" quantity="1" owner="British"/>
-      <unitPlacement unitType="artillery" territory="France" quantity="1" owner="British"/>
-      <unitPlacement unitType="armour" territory="France" quantity="1" owner="British"/>
-      <unitPlacement unitType="fighter" territory="Gibraltar" quantity="1" owner="British"/>
-      <unitPlacement unitType="harbour" territory="Gibraltar" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Malta" quantity="1" owner="British"/>
-      <unitPlacement unitType="fighter" territory="Malta" quantity="1" owner="British"/>
-      <unitPlacement unitType="aaGun" territory="Malta" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Alexandria" quantity="2" owner="British"/>
-      <unitPlacement unitType="artillery" territory="Alexandria" quantity="1" owner="British"/>
-      <unitPlacement unitType="armour" territory="Alexandria" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Egypt" quantity="1" owner="British"/>
-      <unitPlacement unitType="artillery" territory="Egypt" quantity="1" owner="British"/>
-      <unitPlacement unitType="mech_infantry" territory="Egypt" quantity="1" owner="British"/>
-      <unitPlacement unitType="harbour" territory="Egypt" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Anglo Egyptian Sudan" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Union of South Africa" quantity="2" owner="British"/>
-      <unitPlacement unitType="harbour" territory="Union of South Africa" quantity="1" owner="British"/>
-      <unitPlacement unitType="factory_minor" territory="Union of South Africa" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="West India" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Scotland" quantity="2" owner="British"/>
-      <unitPlacement unitType="fighter" territory="Scotland" quantity="1" owner="British"/>
-      <unitPlacement unitType="airfield" territory="Scotland" quantity="1" owner="British"/>
-      <unitPlacement unitType="aaGun" territory="Scotland" quantity="1" owner="British"/>
-      <unitPlacement unitType="destroyer" territory="71 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="cruiser" territory="91 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="cruiser" territory="98 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="destroyer" territory="98 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="carrier" territory="98 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="tactical_bomber" territory="98 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="transport" territory="98 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="destroyer" territory="106 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="transport" territory="106 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="destroyer" territory="109 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="transport" territory="109 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="cruiser" territory="110 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="battleship" territory="110 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="destroyer" territory="111 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="battleship" territory="111 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="cruiser" territory="111 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Kwangtung" quantity="2" owner="British"/>
-      <unitPlacement unitType="harbour" territory="Kwangtung" quantity="1" owner="UK_Pacific"/>
-      <unitPlacement unitType="infantry" territory="Malaya" quantity="3" owner="British"/>
-      <unitPlacement unitType="harbour" territory="Malaya" quantity="1" owner="UK_Pacific"/>
-      <unitPlacement unitType="infantry" territory="Burma" quantity="2" owner="British"/>
-      <unitPlacement unitType="fighter" territory="Burma" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="India" quantity="6" owner="British"/>
-      <unitPlacement unitType="artillery" territory="India" quantity="1" owner="British"/>
-      <unitPlacement unitType="aaGun" territory="India" quantity="3" owner="British"/>
-      <unitPlacement unitType="fighter" territory="India" quantity="1" owner="British"/>
-      <unitPlacement unitType="tactical_bomber" territory="India" quantity="1" owner="British"/>
-      <unitPlacement unitType="airfield" territory="India" quantity="1" owner="UK_Pacific"/>
-      <unitPlacement unitType="harbour" territory="India" quantity="1" owner="UK_Pacific"/>
-      <unitPlacement unitType="factory_major" territory="India" quantity="1" owner="UK_Pacific"/>
-      <unitPlacement unitType="battleship" territory="37 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="destroyer" territory="39 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="cruiser" territory="39 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="transport" territory="39 Sea Zone" quantity="1" owner="British"/>
-      <!-- French -->
-      <unitPlacement unitType="infantry" territory="France" quantity="6" owner="French"/>
-      <unitPlacement unitType="artillery" territory="France" quantity="1" owner="French"/>
-      <unitPlacement unitType="armour" territory="France" quantity="1" owner="French"/>
-      <unitPlacement unitType="aaGun" territory="France" quantity="1" owner="French"/>
-      <unitPlacement unitType="fighter" territory="France" quantity="1" owner="French"/>
-      <unitPlacement unitType="airfield" territory="France" quantity="1" owner="French"/>
-      <unitPlacement unitType="factory_major" territory="France" quantity="1" owner="French"/>
-      <unitPlacement unitType="infantry" territory="Normandy Bordeaux" quantity="1" owner="French"/>
-      <unitPlacement unitType="artillery" territory="Normandy Bordeaux" quantity="1" owner="French"/>
-      <unitPlacement unitType="harbour" territory="Normandy Bordeaux" quantity="1" owner="French"/>
-      <unitPlacement unitType="factory_minor" territory="Normandy Bordeaux" quantity="1" owner="French"/>
-      <unitPlacement unitType="infantry" territory="Southern France" quantity="1" owner="French"/>
-      <unitPlacement unitType="artillery" territory="Southern France" quantity="1" owner="French"/>
-      <unitPlacement unitType="harbour" territory="Southern France" quantity="1" owner="French"/>
-      <unitPlacement unitType="factory_minor" territory="Southern France" quantity="1" owner="French"/>
-      <unitPlacement unitType="infantry" territory="United Kingdom" quantity="2" owner="French"/>
-      <unitPlacement unitType="fighter" territory="United Kingdom" quantity="1" owner="French"/>
-      <unitPlacement unitType="infantry" territory="Syria" quantity="1" owner="French"/>
-      <unitPlacement unitType="infantry" territory="Tunisia" quantity="1" owner="French"/>
-      <unitPlacement unitType="infantry" territory="Morocco" quantity="1" owner="French"/>
-      <unitPlacement unitType="infantry" territory="Algeria" quantity="1" owner="French"/>
-      <unitPlacement unitType="infantry" territory="French West Africa" quantity="1" owner="French"/>
-      <unitPlacement unitType="destroyer" territory="72 Sea Zone" quantity="1" owner="French"/>
-      <unitPlacement unitType="destroyer" territory="93 Sea Zone" quantity="1" owner="French"/>
-      <unitPlacement unitType="cruiser" territory="93 Sea Zone" quantity="1" owner="French"/>
-      <unitPlacement unitType="cruiser" territory="110 Sea Zone" quantity="1" owner="French"/>
-      <!-- Germans -->
-      <unitPlacement unitType="infantry" territory="Holland Belgium" quantity="4" owner="Germans"/>
-      <unitPlacement unitType="artillery" territory="Holland Belgium" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="armour" territory="Holland Belgium" quantity="3" owner="Germans"/>
-      <unitPlacement unitType="fighter" territory="Holland Belgium" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Western Germany" quantity="3" owner="Germans"/>
-      <unitPlacement unitType="artillery" territory="Western Germany" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="mech_infantry" territory="Western Germany" quantity="4" owner="Germans"/>
-      <unitPlacement unitType="fighter" territory="Western Germany" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="tactical_bomber" territory="Western Germany" quantity="3" owner="Germans"/>
-      <unitPlacement unitType="aaGun" territory="Western Germany" quantity="3" owner="Germans"/>
-      <unitPlacement unitType="factory_major" territory="Western Germany" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="harbour" territory="Western Germany" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="airfield" territory="Western Germany" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Greater Southern Germany" quantity="6" owner="Germans"/>
-      <unitPlacement unitType="artillery" territory="Greater Southern Germany" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="armour" territory="Greater Southern Germany" quantity="3" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Germany" quantity="11" owner="Germans"/>
-      <unitPlacement unitType="artillery" territory="Germany" quantity="3" owner="Germans"/>
-      <unitPlacement unitType="tactical_bomber" territory="Germany" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="bomber" territory="Germany" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="factory_major" territory="Germany" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="aaGun" territory="Germany" quantity="3" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Slovakia Hungary" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="armour" territory="Slovakia Hungary" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="fighter" territory="Slovakia Hungary" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Poland" quantity="3" owner="Germans"/>
-      <unitPlacement unitType="armour" territory="Poland" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="tactical_bomber" territory="Poland" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Romania" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="armour" territory="Romania" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Norway" quantity="3" owner="Germans"/>
-      <unitPlacement unitType="fighter" territory="Norway" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Denmark" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="submarine" territory="103 Sea Zone" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="submarine" territory="108 Sea Zone" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="battleship" territory="113 Sea Zone" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="cruiser" territory="114 Sea Zone" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="transport" territory="114 Sea Zone" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="submarine" territory="117 Sea Zone" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="submarine" territory="118 Sea Zone" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="submarine" territory="124 Sea Zone" quantity="1" owner="Germans"/>
-      <!-- Italy -->
-      <unitPlacement unitType="infantry" territory="Northern Italy" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="artillery" territory="Northern Italy" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="armour" territory="Northern Italy" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="bomber" territory="Northern Italy" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="aaGun" territory="Northern Italy" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="factory_major" territory="Northern Italy" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="infantry" territory="Southern Italy" quantity="6" owner="Italians"/>
-      <unitPlacement unitType="fighter" territory="Southern Italy" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="aaGun" territory="Southern Italy" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="harbour" territory="Southern Italy" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="airfield" territory="Southern Italy" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="factory_minor" territory="Southern Italy" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="infantry" territory="Albania" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="armour" territory="Albania" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="infantry" territory="Italian Somaliland" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="infantry" territory="Ethiopia" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="artillery" territory="Ethiopia" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="infantry" territory="Libya" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="artillery" territory="Libya" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="infantry" territory="Tobruk" quantity="3" owner="Italians"/>
-      <unitPlacement unitType="artillery" territory="Tobruk" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="mech_infantry" territory="Tobruk" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="armour" territory="Tobruk" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="destroyer" territory="95 Sea Zone" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="cruiser" territory="95 Sea Zone" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="submarine" territory="95 Sea Zone" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="transport" territory="95 Sea Zone" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="destroyer" territory="96 Sea Zone" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="transport" territory="96 Sea Zone" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="cruiser" territory="97 Sea Zone" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="battleship" territory="97 Sea Zone" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="transport" territory="97 Sea Zone" quantity="1" owner="Italians"/>
-      <!-- Russia -->
-      <unitPlacement unitType="infantry" territory="Karelia" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Archangel" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Russia" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="artillery" territory="Russia" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="mech_infantry" territory="Russia" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="armour" territory="Russia" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="fighter" territory="Russia" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="tactical_bomber" territory="Russia" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="aaGun" territory="Russia" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="airfield" territory="Russia" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="factory_major" territory="Russia" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="armour" territory="Volgograd" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="mech_infantry" territory="Volgograd" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="factory_minor" territory="Volgograd" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Caucasus" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Bessarabia" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Western Ukraine" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="artillery" territory="Western Ukraine" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Eastern Poland" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Baltic States" quantity="3" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Belarus" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Novgorod" quantity="6" owner="Russians"/>
-      <unitPlacement unitType="artillery" territory="Novgorod" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="fighter" territory="Novgorod" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="aaGun" territory="Novgorod" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="airfield" territory="Novgorod" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="harbour" territory="Novgorod" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="factory_minor" territory="Novgorod" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Vyborg" quantity="3" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Ukraine" quantity="3" owner="Russians"/>
-      <unitPlacement unitType="factory_minor" territory="Ukraine" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Amur" quantity="6" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Sakha" quantity="6" owner="Russians"/>
-      <unitPlacement unitType="aaGun" territory="Sakha" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Buryatia" quantity="6" owner="Russians"/>
-      <unitPlacement unitType="cruiser" territory="115 Sea Zone" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="submarine" territory="115 Sea Zone" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="submarine" territory="127 Sea Zone" quantity="1" owner="Russians"/>
+						<unitPlacement unitType="artillery" territory="Japan" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="armour" territory="Japan" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="fighter" territory="Japan" quantity="2" owner="Japanese"/>
+						<unitPlacement unitType="tactical_bomber" territory="Japan" quantity="2" owner="Japanese"/>
+						<unitPlacement unitType="bomber" territory="Japan" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="aaGun" territory="Japan" quantity="2" owner="Japanese"/>
+						<unitPlacement unitType="airfield" territory="Japan" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="harbour" territory="Japan" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="factory_major" territory="Japan" quantity="1" owner="Japanese"/>
+						
+						<unitPlacement unitType="infantry" territory="Manchuria" quantity="6" owner="Japanese"/>
+						<unitPlacement unitType="mech_infantry" territory="Manchuria" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="artillery" territory="Manchuria" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="aaGun" territory="Manchuria" quantity="2" owner="Japanese"/>
+						<unitPlacement unitType="fighter" territory="Manchuria" quantity="2" owner="Japanese"/>
+						<unitPlacement unitType="tactical_bomber" territory="Manchuria" quantity="2" owner="Japanese"/>
+						
+						<unitPlacement unitType="infantry" territory="Paulau Island" quantity="1" owner="Japanese"/>
+						
+						<unitPlacement unitType="infantry" territory="Kiangsi" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="infantry" territory="Formosa" quantity="1" owner="Japanese"/>
+						
+				   	<unitPlacement unitType="fighter" territory="Formosa" quantity="1" owner="Japanese"/>
+						
+						<unitPlacement unitType="infantry" territory="Shantung" quantity="2" owner="Japanese"/>
+						
+						
+						<unitPlacement unitType="infantry" territory="Kwangsi" quantity="1" owner="Japanese"/>
+						
+						
+						<unitPlacement unitType="infantry" territory="Iwo Jima" quantity="1" owner="Japanese"/>
+						
+						<unitPlacement unitType="infantry" territory="Jehol" quantity="2" owner="Japanese"/>
+						
+						
+						<unitPlacement unitType="infantry" territory="Caroline Islands" quantity="3" owner="Japanese"/>
+                                                <unitPlacement unitType="artillery" territory="Caroline Islands" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="aaGun" territory="Caroline Islands" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="fighter" territory="Caroline Islands" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="airfield" territory="Caroline Islands" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="harbour" territory="Caroline Islands" quantity="1" owner="Japanese"/>
+						
+						<unitPlacement unitType="infantry" territory="Siam" quantity="2" owner="Japanese"/>
+                                                <unitPlacement unitType="artillery" territory="Siam" quantity="1" owner="Japanese"/>
+						
+						<unitPlacement unitType="infantry" territory="Okinawa" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="fighter" territory="Okinawa" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="bomber" territory="Okinawa" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="airfield" territory="Okinawa" quantity="1" owner="Japanese"/>
+						
+						<unitPlacement unitType="infantry" territory="Kiangsu" quantity="3" owner="Japanese"/>
+                                                <unitPlacement unitType="mech_infantry" territory="Kiangsu" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="artillery" territory="Kiangsu" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="armour" territory="Kiangsu" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="fighter" territory="Kiangsu" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="harbour" territory="Kiangsu" quantity="1" owner="Japanese"/>
+						
+						<unitPlacement unitType="infantry" territory="Korea" quantity="4" owner="Japanese"/>
+                                                <unitPlacement unitType="mech_infantry" territory="Korea" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="aaGun" territory="Korea" quantity="2" owner="Japanese"/>
+						<unitPlacement unitType="fighter" territory="Korea" quantity="1" owner="Japanese"/>
+
+                                                <unitPlacement unitType="infantry" territory="Chahar" quantity="2" owner="Japanese"/>
+
+                                                <unitPlacement unitType="infantry" territory="Anhwe" quantity="4" owner="Japanese"/>
+                                                <unitPlacement unitType="artillery" territory="Anhwe" quantity="1" owner="Japanese"/>
+
+                                                <unitPlacement unitType="infantry" territory="Yunnan" quantity="1" owner="Japanese"/>
+
+                                                <unitPlacement unitType="infantry" territory="French Indo China" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="fighter" territory="French Indo China" quantity="1" owner="Japanese"/>
+
+                                                <unitPlacement unitType="infantry" territory="Marianas" quantity="1" owner="Japanese"/>
+						
+						<unitPlacement unitType="submarine" territory="6 Sea Zone" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="destroyer" territory="6 Sea Zone" quantity="2" owner="Japanese"/>
+						<unitPlacement unitType="carrier" territory="6 Sea Zone" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="fighter" territory="6 Sea Zone" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="tactical_bomber" territory="6 Sea Zone" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="cruiser" territory="6 Sea Zone" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="battleship" territory="6 Sea Zone" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="transport" territory="6 Sea Zone" quantity="3" owner="Japanese"/>
+
+						
+						<unitPlacement unitType="cruiser" territory="19 Sea Zone" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="destroyer" territory="19 Sea Zone" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="transport" territory="19 Sea Zone" quantity="1" owner="Japanese"/>
+						
+						<unitPlacement unitType="submarine" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="destroyer" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="transport" territory="33 Sea Zone" quantity="2" owner="Japanese"/>
+						
+						
+						<unitPlacement unitType="submarine" territory="36 Sea Zone" quantity="1" owner="Japanese"/>
+						<unitPlacement unitType="destroyer" territory="36 Sea Zone" quantity="2" owner="Japanese"/>
+                                                <unitPlacement unitType="cruiser" territory="36 Sea Zone" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="carrier" territory="36 Sea Zone" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="fighter" territory="36 Sea Zone" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="tactical_bomber" territory="36 Sea Zone" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="battleship" territory="36 Sea Zone" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="transport" territory="36 Sea Zone" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="infantry" territory="36 Sea Zone" quantity="2" owner="Japanese"/>
+
+                                                <unitPlacement unitType="destroyer" territory="37 Sea Zone" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="transport" territory="37 Sea Zone" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="infantry" territory="37 Sea Zone" quantity="2" owner="Japanese"/>
+
+                                                <unitPlacement unitType="fighter" territory="25 Sea Zone" quantity="2" owner="Japanese"/>
+                                                <unitPlacement unitType="tactical_bomber" territory="25 Sea Zone" quantity="2" owner="Japanese"/>
+
+                                                <unitPlacement unitType="submarine" territory="25 Sea Zone" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="destroyer" territory="25 Sea Zone" quantity="1" owner="Japanese"/>
+                                                <unitPlacement unitType="carrier" territory="25 Sea Zone" quantity="2" owner="Japanese"/>
+                                                
+
+
+				
+				
+						<!-- ANZAC -->
+						<unitPlacement unitType="infantry" territory="New South Wales" quantity="1" owner="ANZAC"/>
+                                                <unitPlacement unitType="mech_infantry" territory="New South Wales" quantity="1" owner="ANZAC"/>
+                                                <unitPlacement unitType="armour" territory="New South Wales" quantity="1" owner="ANZAC"/>
+                                                <unitPlacement unitType="fighter" territory="New South Wales" quantity="1" owner="ANZAC"/>
+                                                 <unitPlacement unitType="tactical_bomber" territory="New South Wales" quantity="1" owner="ANZAC"/>
+						<unitPlacement unitType="aaGun" territory="New South Wales" quantity="1" owner="ANZAC"/>
+						<unitPlacement unitType="factory_minor" territory="New South Wales" quantity="1" owner="ANZAC"/>
+						<unitPlacement unitType="harbour" territory="New South Wales" quantity="1" owner="ANZAC"/>
+						
+						<unitPlacement unitType="infantry" territory="New Zealand" quantity="1" owner="ANZAC"/>
+                                                <unitPlacement unitType="mech_infantry" territory="New Zealand" quantity="1" owner="ANZAC"/>
+                                                <unitPlacement unitType="artillery" territory="New Zealand" quantity="1" owner="ANZAC"/>
+                                                <unitPlacement unitType="aaGun" territory="New Zealand" quantity="1" owner="ANZAC"/>
+						<unitPlacement unitType="fighter" territory="New Zealand" quantity="1" owner="ANZAC"/>
+						<unitPlacement unitType="airfield" territory="New Zealand" quantity="1" owner="ANZAC"/>
+						<unitPlacement unitType="harbour" territory="New Zealand" quantity="1" owner="ANZAC"/>
+                                                <unitPlacement unitType="factory_minor" territory="New Zealand" quantity="1" owner="ANZAC"/>
+						
+						<unitPlacement unitType="infantry" territory="Queensland" quantity="2" owner="ANZAC"/>
+						<unitPlacement unitType="artillery" territory="Queensland" quantity="1" owner="ANZAC"/>
+						<unitPlacement unitType="fighter" territory="Queensland" quantity="1" owner="ANZAC"/>
+                                                <unitPlacement unitType="aaGun" territory="Queensland" quantity="1" owner="ANZAC"/>
+						<unitPlacement unitType="airfield" territory="Queensland" quantity="1" owner="ANZAC"/>
+						<unitPlacement unitType="harbour" territory="Queensland" quantity="1" owner="ANZAC"/>
+						
+						<unitPlacement unitType="infantry" territory="Malaya" quantity="1" owner="ANZAC"/>
+						
+						<unitPlacement unitType="infantry" territory="Egypt" quantity="1" owner="ANZAC"/>
+
+                                                <unitPlacement unitType="infantry" territory="Western Australia" quantity="2" owner="ANZAC"/>
+                                                <unitPlacement unitType="aaGun" territory="Western Australia" quantity="1" owner="ANZAC"/>
+                                                <unitPlacement unitType="airfield" territory="Western Australia" quantity="1" owner="ANZAC"/>
+       
+                                                <unitPlacement unitType="infantry" territory="New Guinea" quantity="1" owner="ANZAC"/>
+
+                                                <unitPlacement unitType="infantry" territory="Shan State" quantity="1" owner="ANZAC"/>
+
+                                                <unitPlacement unitType="infantry" territory="India" quantity="1" owner="ANZAC"/>
+
+                                                <unitPlacement unitType="mech_infantry" territory="Alexandria" quantity="1" owner="ANZAC"/>
+
+                                                <unitPlacement unitType="infantry" territory="Tobruk" quantity="1" owner="ANZAC"/>
+
+                                                <unitPlacement unitType="infantry" territory="Northern Territory" quantity="1" owner="ANZAC"/>
+						
+						<unitPlacement unitType="destroyer" territory="98 Sea Zone" quantity="1" owner="ANZAC"/>
+
+						<unitPlacement unitType="transport" territory="62 Sea Zone" quantity="1" owner="ANZAC"/>
+
+                                                <unitPlacement unitType="destroyer" territory="54 Sea Zone" quantity="1" owner="ANZAC"/>
+                                                <unitPlacement unitType="submarine" territory="54 Sea Zone" quantity="1" owner="ANZAC"/>
+
+                                                <unitPlacement unitType="cruiser" territory="39 Sea Zone" quantity="1" owner="ANZAC"/>
+						
+						<unitPlacement unitType="cruiser" territory="63 Sea Zone" quantity="1" owner="ANZAC"/>
+					
+					
+						<!-- Americans -->
+						<unitPlacement unitType="infantry" territory="Western United States" quantity="4" owner="Americans"/>
+						<unitPlacement unitType="tactical_bomber" territory="Western United States" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="artillery" territory="Western United States" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="fighter" territory="Western United States" quantity="1" owner="Americans"/>
+                                                <unitPlacement unitType="bomber" territory="Western United States" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="aaGun" territory="Western United States" quantity="2" owner="Americans"/>
+						<unitPlacement unitType="airfield" territory="Western United States" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="harbour" territory="Western United States" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="factory_minor" territory="Western United States" quantity="1" owner="Americans"/>
+
+                                                <unitPlacement unitType="infantry" territory="Alaska" quantity="1" owner="Americans"/>
+						
+						<unitPlacement unitType="infantry" territory="Hawaiian Islands" quantity="2" owner="Americans"/>
+                                                <unitPlacement unitType="mech_infantry" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
+                                                <unitPlacement unitType="artillery" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="fighter" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
+                                                <unitPlacement unitType="bomber" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
+                                                <unitPlacement unitType="aaGun" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="airfield" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="harbour" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
+						
+						<unitPlacement unitType="infantry" territory="Philippines" quantity="2" owner="Americans"/>
+						<unitPlacement unitType="fighter" territory="Philippines" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="artillery" territory="Philippines" quantity="1" owner="Americans"/>
+
+<unitPlacement unitType="airfield" territory="Philippines" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="harbour" territory="Philippines" quantity="1" owner="Americans"/>
+
+						<unitPlacement unitType="infantry" territory="Central America" quantity="1" owner="Americans"/>
+                                                <unitPlacement unitType="aaGun" territory="Central America" quantity="1" owner="Americans"/>                         
+
+                                                <unitPlacement unitType="fighter" territory="Midway" quantity="1" owner="Americans"/>
+                                                <unitPlacement unitType="airfield" territory="Midway" quantity="1" owner="Americans"/>
+                                                <unitPlacement unitType="infantry" territory="Midway" quantity="1" owner="Americans"/>
+                                                
+						<unitPlacement unitType="airfield" territory="Wake Island" quantity="1" owner="Americans"/>
+                                                <unitPlacement unitType="infantry" territory="Wake Island" quantity="1" owner="Americans"/>
+
+						<unitPlacement unitType="airfield" territory="Guam" quantity="1" owner="Americans"/>
+
+						<unitPlacement unitType="infantry" territory="Eastern United States" quantity="6" owner="Americans"/>
+						<unitPlacement unitType="fighter" territory="Eastern United States" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="artillery" territory="Eastern United States" quantity="1" owner="Americans"/>
+                                                <unitPlacement unitType="bomber" territory="Eastern United States" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="aaGun" territory="Eastern United States" quantity="2" owner="Americans"/>
+						<unitPlacement unitType="airfield" territory="Eastern United States" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="harbour" territory="Eastern United States" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="factory_minor" territory="Eastern United States" quantity="1" owner="Americans"/>
+						
+						<unitPlacement unitType="infantry" territory="Central United States" quantity="4" owner="Americans"/>
+						<unitPlacement unitType="mech_infantry" territory="Central United States" quantity="4" owner="Americans"/>
+						<unitPlacement unitType="armour" territory="Central United States" quantity="2" owner="Americans"/>
+						<unitPlacement unitType="fighter" territory="Central United States" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="factory_minor" territory="Central United States" quantity="1" owner="Americans"/>
+						
+						<unitPlacement unitType="destroyer" territory="102 Sea Zone" quantity="1" owner="Americans"/>
+
+						<unitPlacement unitType="battleship" territory="26 Sea Zone" quantity="2" owner="Americans"/>
+						<unitPlacement unitType="cruiser" territory="26 Sea Zone" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="transport" territory="26 Sea Zone" quantity="1" owner="Americans"/>
+						
+						<unitPlacement unitType="submarine" territory="10 Sea Zone" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="cruiser" territory="10 Sea Zone" quantity="2" owner="Americans"/>
+						<unitPlacement unitType="destroyer" territory="10 Sea Zone" quantity="2" owner="Americans"/>
+						<unitPlacement unitType="transport" territory="10 Sea Zone" quantity="2" owner="Americans"/>
+
+						<unitPlacement unitType="carrier" territory="28 Sea Zone" quantity="2" owner="Americans"/>
+						<unitPlacement unitType="fighter" territory="28 Sea Zone" quantity="2" owner="Americans"/>
+						<unitPlacement unitType="tactical_bomber" territory="28 Sea Zone" quantity="2" owner="Americans"/> 
+                                                <unitPlacement unitType="submarine" territory="28 Sea Zone" quantity="1" owner="Americans"/>
+                                                <unitPlacement unitType="destroyer" territory="28 Sea Zone" quantity="1" owner="Americans"/>
+
+						<unitPlacement unitType="destroyer" territory="35 Sea Zone" quantity="1" owner="Americans"/>
+						<unitPlacement unitType="transport" territory="35 Sea Zone" quantity="1" owner="Americans"/>
+						
+                        <unitPlacement unitType="cruiser" territory="101 Sea Zone" quantity="1" owner="Americans"/>
+                        <unitPlacement unitType="transport" territory="101 Sea Zone" quantity="1" owner="Americans"/>
+                        <unitPlacement unitType="submarine" territory="101 Sea Zone" quantity="1" owner="Americans"/>
+                        <unitPlacement unitType="destroyer" territory="101 Sea Zone" quantity="1" owner="Americans"/>
+
+                                                <unitPlacement unitType="destroyer" territory="64 Sea Zone" quantity="1" owner="Americans"/>
+                                                <unitPlacement unitType="battleship" territory="64 Sea Zone" quantity="1" owner="Americans"/>
+						
+						
+						<!-- Chinese -->
+						<unitPlacement unitType="infantry" territory="Szechwan" quantity="6" owner="Chinese"/>
+                                                <unitPlacement unitType="aaGun" territory="Szechwan" quantity="1" owner= "Chinese"/>
+                                                <unitPlacement unitType="artillery" territory="Szechwan" quantity="1" owner= "Chinese"/>
+						<unitPlacement unitType="fighter" territory="Szechwan" quantity="1" owner="Chinese"/>
+						
+						<unitPlacement unitType="infantry" territory="Hunan" quantity="1" owner="Chinese"/>
+								
+						<unitPlacement unitType="infantry" territory="Kweichow" quantity="1" owner="Chinese"/>
+						
+						<unitPlacement unitType="infantry" territory="Shensi" quantity="2" owner="Chinese"/>
+						
+						<unitPlacement unitType="infantry" territory="Suiyuyan" quantity="2" owner="Chinese"/>
+
+                                                <unitPlacement unitType="infantry" territory="Tsinghai" quantity="1" owner="Chinese"/>
+                                                <unitPlacement unitType="infantry" territory="Sikang" quantity="4" owner="Chinese"/>
+                                                <unitPlacement unitType="infantry" territory="Kansu" quantity="1" owner="Chinese"/>
+                                                <unitPlacement unitType="infantry" territory="Hopei" quantity="1" owner="Chinese"/>
+						
+					
+						<!-- British -->
+						<unitPlacement unitType="infantry" territory="Ontario" quantity="1" owner="British"/>
+						<unitPlacement unitType="artillery" territory="Ontario" quantity="1" owner="British"/>
+                                                <unitPlacement unitType="bomber" territory="Ontario" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="infantry" territory="Quebec" quantity="1" owner="British"/>
+                        <unitPlacement unitType="armour" territory="Quebec" quantity="1" owner="British"/>
+                        <unitPlacement unitType="aaGun" territory="Quebec" quantity="1" owner="British"/>
+                        <unitPlacement unitType="fighter" territory="Quebec" quantity="1" owner="British"/>
+                        <unitPlacement unitType="factory_minor" territory="Quebec" quantity="1" owner="British"/>
+						
+                        <unitPlacement unitType="harbour" territory="New Brunswick Nova Scotia" quantity="1" owner="British"/>
+
+						<unitPlacement unitType="airfield" territory="Iceland" quantity="1" owner="British"/>
+                                                <unitPlacement unitType="infantry" territory="Iceland" quantity="1" owner="British"/>
+						
+                        <unitPlacement unitType="infantry" territory="United Kingdom" quantity="4" owner="British"/>
+                        <unitPlacement unitType="artillery" territory="United Kingdom" quantity="1" owner="British"/>
+                        <unitPlacement unitType="armour" territory="United Kingdom" quantity="1" owner="British"/>
+                        <unitPlacement unitType="fighter" territory="United Kingdom" quantity="1" owner="British"/>		
+                        <unitPlacement unitType="aaGun" territory="United Kingdom" quantity="4" owner="British"/>
+                        
+                        
+                        <unitPlacement unitType="airfield" territory="United Kingdom" quantity="1" owner="British" unitDamage="3"/>
+                        <unitPlacement unitType="harbour" territory="United Kingdom" quantity="1" owner="British" unitDamage="3"/>
+                        
+                        <unitPlacement unitType="factory_major" territory="United Kingdom" quantity="1" owner="British" unitDamage="10"/> 
+                        
+                        <unitPlacement unitType="infantry" territory="Crete" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="armour" territory="Tobruk" quantity="1" owner="British"/>
+						
+			<unitPlacement unitType="fighter" territory="Gibraltar" quantity="1" owner="British"/>
+                        <unitPlacement unitType="harbour" territory="Gibraltar" quantity="1" owner="British"/>
+                        <unitPlacement unitType="infantry" territory="Gibraltar" quantity="1" owner="British"/>
+                        <unitPlacement unitType="aaGun" territory="Gibraltar" quantity="1" owner="British"/>
+						
+			<unitPlacement unitType="infantry" territory="Malta" quantity="1" owner="British"/>
+			<unitPlacement unitType="fighter" territory="Malta" quantity="1" owner="British"/>
+                        <unitPlacement unitType="aaGun" territory="Malta" quantity="1" owner="British"/>
+                        <unitPlacement unitType="airfield" territory="Malta" quantity="1" owner="British" unitDamage="5"/>
+						
+                        <unitPlacement unitType="infantry" territory="Alexandria" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="infantry" territory="Kenya" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="infantry" territory="Alberta Saskatchewan Manitoba" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="infantry" territory="Egypt" quantity="1" owner="British"/>
+                        <unitPlacement unitType="armour" territory="Egypt" quantity="1" owner="British"/>
+			<unitPlacement unitType="mech_infantry" territory="Egypt" quantity="1" owner="British"/>
+                        <unitPlacement unitType="harbour" territory="Egypt" quantity="1" owner="British"/>
+                        <unitPlacement unitType="aaGun" territory="Egypt" quantity="1" owner="British"/>
+						
+			<unitPlacement unitType="infantry" territory="Anglo Egyptian Sudan" quantity="1" owner="British"/>
+						
+                        <unitPlacement unitType="infantry" territory="Union of South Africa" quantity="1" owner="British"/>
+                        <unitPlacement unitType="harbour" territory="Union of South Africa" quantity="1" owner="British"/>
+                        <unitPlacement unitType="factory_minor" territory="Union of South Africa" quantity="1" owner="British"/>
+                        <unitPlacement unitType="mech_infantry" territory="Union of South Africa" quantity="1" owner="British"/>
+                        <unitPlacement unitType="artillery" territory="Union of South Africa" quantity="1" owner="British"/>
+                        <unitPlacement unitType="aaGun" territory="Union of South Africa" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="infantry" territory="West India" quantity="1" owner="British"/>
+                        <unitPlacement unitType="mech_infantry" territory="West India" quantity="1" owner="British"/>
+                        <unitPlacement unitType="aaGun" territory="West India" quantity="1" owner="British"/>
+						
+			<unitPlacement unitType="infantry" territory="Scotland" quantity="1" owner="British"/>
+			<unitPlacement unitType="fighter" territory="Scotland" quantity="2" owner="British"/>
+			<unitPlacement unitType="airfield" territory="Scotland" quantity="1" owner="British"/>
+                        <unitPlacement unitType="mech_infantry" territory="Scotland" quantity="1" owner="British"/>
+                        <unitPlacement unitType="bomber" territory="Scotland" quantity="1" owner="British"/>
+                        <unitPlacement unitType="aaGun" territory="Scotland" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="infantry" territory="Trans-Jordan" quantity="1" owner="British"/>
+                        <unitPlacement unitType="artillery" territory="Trans-Jordan" quantity="1" owner="British"/>
+                        <unitPlacement unitType="armour" territory="Trans-Jordan" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="infantry" territory="Ethiopia" quantity="1" owner="British"/>
+                        <unitPlacement unitType="artillery" territory="Ethiopia" quantity="1" owner="British"/>
+                        <unitPlacement unitType="armour" territory="Ethiopia" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="infantry" territory="South West Africa" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="infantry" territory="British Columbia" quantity="1" owner="British"/>
+                        <unitPlacement unitType="mech_infantry" territory="British Columbia" quantity="1" owner="British"/>
+
+						
+			<unitPlacement unitType="carrier" territory="92 Sea Zone" quantity="1" owner="British"/>
+                        <unitPlacement unitType="tactical_bomber" territory="92 Sea Zone" quantity="1" owner="British"/>
+						
+                        <unitPlacement unitType="cruiser" territory="98 Sea Zone" quantity="1" owner="British"/>
+                        <unitPlacement unitType="destroyer" territory="98 Sea Zone" quantity="1" owner="British"/>
+                        <unitPlacement unitType="battleship" territory="98 Sea Zone" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="destroyer" territory="99 Sea Zone" quantity="1" owner="British"/>
+                        <unitPlacement unitType="transport" territory="99 Sea Zone" quantity="1" owner="British"/>
+						
+                        <unitPlacement unitType="destroyer" territory="106 Sea Zone" quantity="1" owner="British"/>
+                        <unitPlacement unitType="transport" territory="106 Sea Zone" quantity="1" owner="British"/>
+						
+                        <unitPlacement unitType="cruiser" territory="117 Sea Zone" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="transport" territory="109 Sea Zone" quantity="1" owner="British"/>
+						
+                        <unitPlacement unitType="destroyer" territory="71 Sea Zone" quantity="1" owner="British"/>
+                        <unitPlacement unitType="transport" territory="71 Sea Zone" quantity="1" owner="British"/>
+						
+                        <unitPlacement unitType="submarine" territory="82 Sea Zone" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="destroyer" territory="111 Sea Zone" quantity="1" owner="British"/>
+
+                        <unitPlacement unitType="submarine" territory="119 Sea Zone" quantity="1" owner="British"/>
+                        <unitPlacement unitType="cruiser" territory="119 Sea Zone" quantity="2" owner="British"/>
+                        <unitPlacement unitType="battleship" territory="119 Sea Zone" quantity="1" owner="British"/>
+			
+
+						<unitPlacement unitType="infantry" territory="Kwangtung" quantity="2" owner="British"/>
+                                                <unitPlacement unitType="harbour" territory="Kwangtung" quantity="1" owner="British"/>
+						
+						
+						<unitPlacement unitType="infantry" territory="Malaya" quantity="3" owner="British"/>
+						<unitPlacement unitType="harbour" territory="Malaya" quantity="1" owner="British"/>
+						
+						<unitPlacement unitType="infantry" territory="Burma" quantity="2" owner="British"/>
+						
+						
+						<unitPlacement unitType="infantry" territory="India" quantity="7" owner="British"/>
+						<unitPlacement unitType="artillery" territory="India" quantity="1" owner="British"/>
+						<unitPlacement unitType="aaGun" territory="India" quantity="4" owner="British"/>
+						<unitPlacement unitType="fighter" territory="India" quantity="1" owner="British"/>
+						<unitPlacement unitType="tactical_bomber" territory="India" quantity="1" owner="British"/>
+						<unitPlacement unitType="airfield" territory="India" quantity="1" owner="UK_Pacific"/>
+						<unitPlacement unitType="harbour" territory="India" quantity="1" owner="UK_Pacific"/>
+						<unitPlacement unitType="factory_major" territory="India" quantity="1" owner="UK_Pacific"/>
+						
+						<unitPlacement unitType="battleship" territory="37 Sea Zone" quantity="1" owner="British"/>
+                                                <unitPlacement unitType="cruiser" territory="37 Sea Zone" quantity="1" owner="British"/>
+						
+						<unitPlacement unitType="destroyer" territory="39 Sea Zone" quantity="1" owner="British"/>
+						<unitPlacement unitType="carrier" territory="39 Sea Zone" quantity="1" owner="British"/>
+                                                <unitPlacement unitType="fighter" territory="39 Sea Zone" quantity="1" owner="British"/>
+						<unitPlacement unitType="transport" territory="39 Sea Zone" quantity="1" owner="British"/>
+                                                <unitPlacement unitType="submarine" territory="39 Sea Zone" quantity="1" owner="British"/>
+						
+						
+						<!-- French -->
+
+						<unitPlacement unitType="infantry" territory="United Kingdom" quantity="2" owner="French"/>
+						<unitPlacement unitType="fighter" territory="United Kingdom" quantity="1" owner="French"/>
+                                                <unitPlacement unitType="artillery" territory="United Kingdom" quantity="1" owner="French"/>
+						
+						<unitPlacement unitType="infantry" territory="Egypt" quantity="1" owner="French"/>
+
+                                                <unitPlacement unitType="mech_infantry" territory="Alexandria" quantity="1" owner="French"/>
+
+						<unitPlacement unitType="mech_infantry" territory="French Equatorial Africa" quantity="1" owner="French"/>
+                                                <unitPlacement unitType="infantry" territory="French Equatorial Africa" quantity="1" owner="French"/>
+
+                                                <unitPlacement unitType="infantry" territory="Trans-Jordan" quantity="1" owner="French"/>
+
+                                                <unitPlacement unitType="cruiser" territory="82 Sea Zone" quantity="1" owner="French"/>
+                        <unitPlacement unitType="transport" territory="82 Sea Zone" quantity="1" owner="French"/>
+                        <unitPlacement unitType="infantry" territory="82 Sea Zone" quantity="1" owner="French"/>
+
+                        <unitPlacement unitType="destroyer" territory="98 Sea Zone" quantity="1" owner="French"/>
+
+                        <unitPlacement unitType="submarine" territory="119 Sea Zone" quantity="1" owner="French"/>
+			
+
+						
+						<!-- Germans -->
+                        <unitPlacement unitType="infantry" territory="Holland Belgium" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="aaGun" territory="Holland Belgium" quantity="1" owner="Germans"/>
+						
+                        <unitPlacement unitType="infantry" territory="Western Germany" quantity="6" owner="Germans"/>
+                        <unitPlacement unitType="artillery" territory="Western Germany" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="mech_infantry" territory="Western Germany" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="fighter" territory="Western Germany" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="tactical_bomber" territory="Western Germany" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="aaGun" territory="Western Germany" quantity="4" owner="Germans"/>
+                        <unitPlacement unitType="factory_major" territory="Western Germany" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="harbour" territory="Western Germany" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="airfield" territory="Western Germany" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="armour" territory="Western Germany" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="bomber" territory="Western Germany" quantity="1" owner="Germans"/>
+						
+                        <unitPlacement unitType="infantry" territory="Greater Southern Germany" quantity="6" owner="Germans"/>
+                        <unitPlacement unitType="mech_infantry" territory="Greater Southern Germany" quantity="1" owner="Germans"/>
+						
+                        <unitPlacement unitType="infantry" territory="Germany" quantity="6" owner="Germans"/>
+                        <unitPlacement unitType="artillery" territory="Germany" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="fighter" territory="Germany" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="tactical_bomber" territory="Germany" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="bomber" territory="Germany" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="factory_major" territory="Germany" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="aaGun" territory="Germany" quantity="4" owner="Germans"/>
+                        <unitPlacement unitType="mech_infantry" territory="Germany" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="armour" territory="Germany" quantity="1" owner="Germans"/>
+						
+                        <unitPlacement unitType="infantry" territory="Slovakia Hungary" quantity="8" owner="Germans"/>
+                        <unitPlacement unitType="armour" territory="Slovakia Hungary" quantity="3" owner="Germans"/>
+			<unitPlacement unitType="mech_infantry" territory="Slovakia Hungary" quantity="3" owner="Germans"/>
+                        <unitPlacement unitType="artillery" territory="Slovakia Hungary" quantity="2" owner="Germans"/>
+						
+                        <unitPlacement unitType="infantry" territory="Poland" quantity="8" owner="Germans"/>
+                        <unitPlacement unitType="armour" territory="Poland" quantity="3" owner="Germans"/>
+			<unitPlacement unitType="artillery" territory="Poland" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="mech_infantry" territory="Poland" quantity="3" owner="Germans"/>
+						
+                        <unitPlacement unitType="infantry" territory="Romania" quantity="6" owner="Germans"/>
+                        <unitPlacement unitType="armour" territory="Romania" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="mech_infantry" territory="Romania" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="artillery" territory="Romania" quantity="2" owner="Germans"/>
+						
+                        <unitPlacement unitType="infantry" territory="Norway" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="fighter" territory="Norway" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="mech_infantry" territory="Norway" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="aaGun" territory="Norway" quantity="1" owner="Germans"/>
+						
+                        <unitPlacement unitType="infantry" territory="Denmark" quantity="2" owner="Germans"/>
+
+                        <unitPlacement unitType="infantry" territory="Normandy Bordeaux" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="aaGun" territory="Normandy Bordeaux" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="harbour" territory="Normandy Bordeaux" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="factory_minor" territory="Normandy Bordeaux" quantity="1" owner="Germans"/>
+
+                        <unitPlacement unitType="infantry" territory="France" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="armour" territory="France" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="fighter" territory="France" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="tactical_bomber" territory="France" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="airfield" territory="France" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="factory_minor" territory="France" quantity="1" owner="Germans"/>
+
+                        <unitPlacement unitType="infantry" territory="Southern France" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="armour" territory="Southern France" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="harbour" territory="Southern France" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="factory_minor" territory="Southern France" quantity="1" owner="Germans"/>
+ 
+                        <unitPlacement unitType="infantry" territory="Morocco" quantity="1" owner="Germans"/>
+
+                        <unitPlacement unitType="infantry" territory="Algeria" quantity="1" owner="Germans"/>
+
+                        <unitPlacement unitType="infantry" territory="Tunisia" quantity="1" owner="Germans"/>
+
+                        <unitPlacement unitType="infantry" territory="Libya" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="mech_infantry" territory="Libya" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="armour" territory="Libya" quantity="1" owner="Germans"/>
+
+                        <unitPlacement unitType="infantry" territory="Southern Italy" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="fighter" territory="Southern Italy" quantity="1" owner="Germans"/>
+
+                        <unitPlacement unitType="infantry" territory="Greece" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="mech_infantry" territory="Greece" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="armour" territory="Greece" quantity="1" owner="Germans"/>
+
+                        <unitPlacement unitType="infantry" territory="Bulgaria" quantity="4" owner="Germans"/>
+
+                        <unitPlacement unitType="infantry" territory="Yugoslavia" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="artillery" territory="Yugoslavia" quantity="2" owner="Germans"/>
+
+                        <unitPlacement unitType="infantry" territory="Finland" quantity="6" owner="Germans"/>
+                        <unitPlacement unitType="artillery" territory="Finland" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="armour" territory="Finland" quantity="1" owner="Germans"/>
+		        				
+                        <unitPlacement unitType="submarine" territory="103 Sea Zone" quantity="1" owner="Germans"/>
+
+                        <unitPlacement unitType="submarine" territory="106 Sea Zone" quantity="1" owner="Germans"/>
+
+                        <unitPlacement unitType="submarine" territory="113 Sea Zone" quantity="2" owner="Germans"/>
+                        <unitPlacement unitType="destroyer" territory="113 Sea Zone" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="cruiser" territory="113 Sea Zone" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="transport" territory="113 Sea Zone" quantity="1" owner="Germans"/>
+
+                        <unitPlacement unitType="cruiser" territory="114 Sea Zone" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="transport" territory="114 Sea Zone" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="submarine" territory="114 Sea Zone" quantity="1" owner="Germans"/>
+                        
+                        <unitPlacement unitType="submarine" territory="93 Sea Zone" quantity="1" owner="Germans"/>
+                        <unitPlacement unitType="transport" territory="93 Sea Zone" quantity="1" owner="Germans"/>
+
+                        <unitPlacement unitType="battleship" territory="118 Sea Zone" quantity="1" owner="Germans" hitsTaken="1"/> 
+
+                        <unitPlacement unitType="destroyer" territory="96 Sea Zone" quantity="1" owner="Germans"/>
+
+						
+						<!-- Italy -->
+                        <unitPlacement unitType="infantry" territory="Northern Italy" quantity="2" owner="Italians"/>
+                        <unitPlacement unitType="mech_infantry" territory="Northern Italy" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="armour" territory="Northern Italy" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="fighter" territory="Northern Italy" quantity="1" owner="Italians"/>
+			<unitPlacement unitType="bomber" territory="Northern Italy" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="aaGun" territory="Northern Italy" quantity="2" owner="Italians"/>
+                        <unitPlacement unitType="factory_major" territory="Northern Italy" quantity="1" owner="Italians"/>
+						
+                        <unitPlacement unitType="infantry" territory="Southern Italy" quantity="2" owner="Italians"/>
+                        <unitPlacement unitType="fighter" territory="Southern Italy" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="artillery" territory="Southern Italy" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="aaGun" territory="Southern Italy" quantity="2" owner="Italians"/>
+                        <unitPlacement unitType="harbour" territory="Southern Italy" quantity="1" owner="Italians" unitDamage="5"/>
+                        <unitPlacement unitType="airfield" territory="Southern Italy" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="factory_minor" territory="Southern Italy" quantity="1" owner="Italians"/>
+						
+			<unitPlacement unitType="infantry" territory="Albania" quantity="1" owner="Italians"/>
+
+                        <unitPlacement unitType="armour" territory="Greece" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="infantry" territory="Greece" quantity="1" owner="Italians"/>
+						
+                        <unitPlacement unitType="infantry" territory="Italian Somaliland" quantity="1" owner="Italians"/>
+						
+                        <unitPlacement unitType="infantry" territory="British Somaliland" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="mech_infantry" territory="British Somaliland" quantity="1" owner="Italians"/>
+
+			<unitPlacement unitType="infantry" territory="Southern France" quantity="1" owner="Italians"/>
+						
+			<unitPlacement unitType="infantry" territory="Libya" quantity="2" owner="Italians"/>
+			<unitPlacement unitType="artillery" territory="Libya" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="aaGun" territory="Libya" quantity="1" owner="Italians"/>
+						
+                        <unitPlacement unitType="infantry" territory="Tunisia" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="armour" territory="Tunisia" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="mech_infantry" territory="Tunisia" quantity="1" owner="Italians"/>
+
+                        <unitPlacement unitType="infantry" territory="Sicily" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="tactical_bomber" territory="Sicily" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="airfield" territory="Sicily" quantity="1" owner="Italians"/>
+
+                        <unitPlacement unitType="infantry" territory="Romania" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="artillery" territory="Romania" quantity="1" owner="Italians"/>
+
+                        <unitPlacement unitType="infantry" territory="Yugoslavia" quantity="2" owner="Italians"/>
+						
+                        <unitPlacement unitType="destroyer" territory="95 Sea Zone" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="cruiser" territory="95 Sea Zone" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="submarine" territory="95 Sea Zone" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="transport" territory="95 Sea Zone" quantity="1" owner="Italians"/>
+						
+                        <unitPlacement unitType="cruiser" territory="96 Sea Zone" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="transport" territory="96 Sea Zone" quantity="1" owner="Italians"/>
+						
+                        <unitPlacement unitType="cruiser" territory="93 Sea Zone" quantity="1" owner="Italians"/>
+                        <unitPlacement unitType="transport" territory="93 Sea Zone" quantity="1" owner="Italians"/>
+
+                        <unitPlacement unitType="battleship" territory="97 Sea Zone" quantity="1" owner="Italians" hitsTaken="1"/>
+						
+						<!-- Russia -->
+                        <unitPlacement unitType="infantry" territory="Karelia" quantity="2" owner="Russians"/>
+                        <unitPlacement unitType="mech_infantry" territory="Karelia" quantity="1" owner="Russians"/>
+						
+                        <unitPlacement unitType="infantry" territory="Archangel" quantity="2" owner="Russians"/>
+						
+                        <unitPlacement unitType="infantry" territory="Russia" quantity="6" owner="Russians"/>
+                        <unitPlacement unitType="artillery" territory="Russia" quantity="2" owner="Russians"/>
+                        <unitPlacement unitType="mech_infantry" territory="Russia" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="armour" territory="Russia" quantity="2" owner="Russians"/>
+                        <unitPlacement unitType="fighter" territory="Russia" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="tactical_bomber" territory="Russia" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="bomber" territory="Russia" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="aaGun" territory="Russia" quantity="4" owner="Russians"/>
+                        <unitPlacement unitType="airfield" territory="Russia" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="factory_major" territory="Russia" quantity="1" owner="Russians"/>
+
+			<unitPlacement unitType="infantry" territory="Volgograd" quantity="2" owner="Russians"/>
+                        <unitPlacement unitType="artillery" territory="Volgograd" quantity="2" owner="Russians"/>			
+                        <unitPlacement unitType="armour" territory="Volgograd" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="mech_infantry" territory="Volgograd" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="fighter" territory="Volgograd" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="factory_minor" territory="Volgograd" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="aaGun" territory="Volgograd" quantity="1" owner="Russians"/>
+
+                        <unitPlacement unitType="infantry" territory="Caucasus" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="mech_infantry" territory="Caucasus" quantity="1" owner="Russians"/>
+						
+                        <unitPlacement unitType="infantry" territory="Bessarabia" quantity="3" owner="Russians"/>
+                        <unitPlacement unitType="mech_infantry" territory="Bessarabia" quantity="1" owner="Russians"/>
+                         
+
+                        <unitPlacement unitType="infantry" territory="Western Ukraine" quantity="1" owner="Russians"/>
+
+                        <unitPlacement unitType="infantry" territory="Soviet Far East" quantity="2" owner="Russians"/>
+
+                        <unitPlacement unitType="infantry" territory="Eastern Poland" quantity="2" owner="Russians"/>
+                        <unitPlacement unitType="artillery" territory="Eastern Poland" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="armour" territory="Eastern Poland" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="fighter" territory="Eastern Poland" quantity="1" owner="Russians"/>
+						
+                        <unitPlacement unitType="infantry" territory="Baltic States" quantity="2" owner="Russians"/>
+                        <unitPlacement unitType="mech_infantry" territory="Baltic States" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="artillery" territory="Baltic States" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="tactical_bomber" territory="Baltic States" quantity="1" owner="Russians"/>
+						
+                        <unitPlacement unitType="infantry" territory="Belarus" quantity="1" owner="Russians"/>
+						
+                        <unitPlacement unitType="infantry" territory="Novgorod" quantity="11" owner="Russians"/>
+                        <unitPlacement unitType="mech_infantry" territory="Novgorod" quantity="2" owner="Russians"/>
+                        <unitPlacement unitType="fighter" territory="Novgorod" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="aaGun" territory="Novgorod" quantity="4" owner="Russians"/>
+                        <unitPlacement unitType="airfield" territory="Novgorod" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="harbour" territory="Novgorod" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="factory_minor" territory="Novgorod" quantity="1" owner="Russians"/>
+						
+                        <unitPlacement unitType="infantry" territory="Vyborg" quantity="2" owner="Russians"/>
+                        <unitPlacement unitType="artillery" territory="Vyborg" quantity="1" owner="Russians"/>
+						
+                        <unitPlacement unitType="infantry" territory="Ukraine" quantity="4" owner="Russians"/>
+                        <unitPlacement unitType="artillery" territory="Ukraine" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="armour" territory="Ukraine" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="aaGun" territory="Ukraine" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="factory_minor" territory="Ukraine" quantity="1" owner="Russians"/>
+						
+			<unitPlacement unitType="infantry" territory="Amur" quantity="4" owner="Russians"/>
+                        <unitPlacement unitType="fighter" territory="Amur" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="aaGun" territory="Amur" quantity="2" owner="Russians"/>
+
+			<unitPlacement unitType="infantry" territory="Sakha" quantity="1" owner="Russians"/>
+
+			<unitPlacement unitType="infantry" territory="Siberia" quantity="2" owner="Russians"/>
+
+			<unitPlacement unitType="infantry" territory="Buryatia" quantity="4" owner="Russians"/>
+                        <unitPlacement unitType="mech_infantry" territory="Buryatia" quantity="2" owner="Russians"/>
+                        <unitPlacement unitType="armour" territory="Buryatia" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="artillery" territory="Buryatia" quantity="1" owner="Russians"/>
+
+                        <unitPlacement unitType="infantry" territory="Yakut S.S.R." quantity="6" owner="Russians"/>
+
+                        <unitPlacement unitType="infantry" territory="Yenisey" quantity="4" owner="Russians"/>
+                        <unitPlacement unitType="artillery" territory="Yenisey" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="mech_infantry" territory="Yenisey" quantity="2" owner="Russians"/>
+                        <unitPlacement unitType="armour" territory="Yenisey" quantity="1" owner="Russians"/>
+
+                        <unitPlacement unitType="infantry" territory="Evenkiyskiy" quantity="1" owner="Russians"/>
+
+                        <unitPlacement unitType="infantry" territory="Urals" quantity="1" owner="Russians"/>
+
+                        <unitPlacement unitType="infantry" territory="Nenetsia" quantity="1" owner="Russians"/>
+
+                        <unitPlacement unitType="infantry" territory="Timguska" quantity="4" owner="Russians"/>
+
+                        <unitPlacement unitType="infantry" territory="Novosibirsk" quantity="1" owner="Russians"/>
+
+                        <unitPlacement unitType="infantry" territory="Samara" quantity="1" owner="Russians"/>
+ 
+                        <unitPlacement unitType="infantry" territory="Kazakhstan" quantity="1" owner="Russians"/>
+
+                        <unitPlacement unitType="infantry" territory="Turkmenistan" quantity="1" owner="Russians"/>
+       
+                        <unitPlacement unitType="infantry" territory="Smolensk" quantity="2" owner="Russians"/>
+
+                       <unitPlacement unitType="infantry" territory="Bryansk" quantity="2" owner="Russians"/>
+
+                       <unitPlacement unitType="infantry" territory="Tambov" quantity="1" owner="Russians"/>
+
+                       <unitPlacement unitType="infantry" territory="Rostov" quantity="2" owner="Russians"/>
+
+                       <unitPlacement unitType="infantry" territory="Vologda" quantity="1" owner="Russians"/>
+						
+                        <unitPlacement unitType="cruiser" territory="115 Sea Zone" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="submarine" territory="115 Sea Zone" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="transport" territory="115 Sea Zone" quantity="1" owner="Russians"/>
+
+                        <unitPlacement unitType="submarine" territory="127 Sea Zone" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="destroyer" territory="127 Sea Zone" quantity="1" owner="Russians"/>
+
+                        <unitPlacement unitType="submarine" territory="100 Sea Zone" quantity="1" owner="Russians"/>
+                        <unitPlacement unitType="transport" territory="100 Sea Zone" quantity="1" owner="Russians"/>
+
+                        <unitPlacement unitType="destroyer" territory="5 Sea Zone" quantity="1" owner="Russians"/>
     </unitInitialize>
     <resourceInitialize>
-      <resourceGiven player="Germans" resource="PUs" quantity="30"/>
+      <resourceGiven player="Germans" resource="PUs" quantity="48"/>
       <resourceGiven player="Russians" resource="PUs" quantity="37"/>
-      <resourceGiven player="Japanese" resource="PUs" quantity="26"/>
-      <resourceGiven player="British" resource="PUs" quantity="28"/>
-      <resourceGiven player="UK_Pacific" resource="PUs" quantity="17"/>
-      <resourceGiven player="ANZAC" resource="PUs" quantity="10"/>
-      <resourceGiven player="Italians" resource="PUs" quantity="10"/>
+      <resourceGiven player="Japanese" resource="PUs" quantity="31"/>
+      <resourceGiven player="British" resource="PUs" quantity="29"/>
+      <resourceGiven player="UK_Pacific" resource="PUs" quantity="24"/>
+      <resourceGiven player="ANZAC" resource="PUs" quantity="14"/>
+      <resourceGiven player="Italians" resource="PUs" quantity="14"/>
       <resourceGiven player="Americans" resource="PUs" quantity="52"/>
-      <resourceGiven player="Chinese" resource="PUs" quantity="12"/>
-      <resourceGiven player="French" resource="PUs" quantity="19"/>
+      <resourceGiven player="Chinese" resource="PUs" quantity="9"/>
+      <resourceGiven player="French" resource="PUs" quantity="0"/>
       <!--<resourceGiven player="Dutch" resource="PUs" quantity="0"/>-->
       <resourceGiven player="Japanese" resource="SuicideAttackTokens" quantity="6"/>
     </resourceInitialize>
@@ -5911,7 +6365,7 @@
       <relationship player1="Japanese" player2="UK_Pacific" type="Neutrality" roundValue="1"/>
       <relationship player1="Japanese" player2="Italians" type="Allied" roundValue="1"/>
       <relationship player1="Japanese" player2="ANZAC" type="Neutrality" roundValue="1"/>
-      <relationship player1="Japanese" player2="French" type="Neutrality" roundValue="1"/>
+      <relationship player1="Japanese" player2="French" type="War" roundValue="1"/>
       <relationship player1="Japanese" player2="Dutch" type="Neutrality" roundValue="1"/>
       <relationship player1="Japanese" player2="Neutral_Axis" type="Friendly_Neutral" roundValue="1"/>
       <relationship player1="Japanese" player2="Neutral_Allies" type="Unfriendly_Neutral" roundValue="1"/>
@@ -6370,7 +6824,25 @@
 <b>Global 1940 Second Edition</b><br>
 <br>
 <b>Credits:</b> Bung, Veqryn<br><br>
+<br>
+<b>Oztea's 1941 Global Setup</b><br>
+<br>
 
+<br><em>Great Britain stands alone, struggling to hold together its Empire, beset by the European Axis. Victories for the Allies have been far and few between. France has surrendered to Germany and Italy, the Greek campaign has ended in failure, the Royal Air Force has suffered heavy losses as British cities are bombed daily, and the gains made in North Africa are in jeporady as German reinforcements arrive. Yet worse still, the German Battleship Bismark and a myraid of U-Boats are marauding the North Atlantic and threatening to starve the United Kingdom of supplies and into submission. But a whole new war is on the horizon as Operation Barbarossa is set to begin in earnest, German forces are poised to cut deep into the Soviet Union. And in the east, the Japanese Empire is poised to launch a series of surprise attacks on the colonies of the West and the forces of the United States, plunging the world into a truly global war. The year is 1941, battles have been fought, but the war has just begun.</em><br>
+<br>
+
+<b>Note</b><br>
+This is Ozteas 1941 set up for the Global 1940 game. Politically the game begins as if it was the the third turn. Germany is at war with France, UK, and ANZAC. Italy is at war with France, UK, and ANZAC. Japan is at war with China and France.<br>
+<br>
+
+<b>Special Rules:</b><br>
+Soviet naval units in the Pacific Theatre must remain adjacent to original Soviet territory while the Soviet Union is neutral to Japan.<br>
+The Japanese Kamikaze special rule is deactivated when using the 1941 set up (It has been left active. It can be turned off in Game Options.).<br>
+<br>
+Additional information may be found here:www.axisandallies.org/forums/index.php?topic=30919.0<br>
+<br>
+Mod by b<br>
+<br>                
 <b>Note</b><br>
 This game uses the latest Global 1940 2nd Edition (successor to Alpha +3) rules, as posted on Larry's website.<br>
 To blitz move mech_infantry with armour, you must click on them both at the same time (use CTRL to create waypoints).<br>
@@ -6433,7 +6905,6 @@ You may also need to use edit mode to correct things listed below.<br>
 <br>* (NA) You should be able to SBR / Rocket attack an empty territory that you are blitzing.
 <br>* (NA) Each phase of combat should have all units in that phase fire before any casualty selection occurs, whereas right now in TripleA if air and subs are involved then units might be broken up into smaller groups and casualty selection done for each group.
 <br>* (EM) If you select for a bombardment from a sea zone, you should be able to select which units you want to have bombard, but currently all possible units are used.
-<br>* (EM) If you are purchasing a carrier which is the only valid landing space, Triple-A won't let you use your planes to attack because you haven't been through the purchase phase yet.
 <br>
 <br><hr><br>
 
