@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Balanced Mod3 with Combat Move First" version="3.0"/>
+  <info name="World War II Global 1940 Balanced Mod3 with Combat Move First" version="3.1"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -3767,7 +3767,7 @@
     </attachment>
 <attachment name="objectiveAttachment_Japanese_6_Home_Islands" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="3"/>
-      <option name="atWarPlayers" value="Americans:British:ANZAC:French" count="1"/>
+      <option name="atWarPlayers" value="Americans" count="1"/>
       <option name="directOwnershipTerritories" value="Okinawa:Iwo Jima" count="2"/>
     </attachment>
 
@@ -15236,7 +15236,7 @@
 <ul>
 <li>5 PUs if Axis controls Dutch New Guinea, New Guinea, New Britain and Solomon Islands. (This modifies Japan's "Strategic Perimeter" objective).</li>
 <li>5 PUs if Axis controls Midway, Wake Island, Guam.</li>
-<li>3 PUs if Japan controls Iwo Jima and Okinawa and is at war with any of the Western Allies.</li>
+<li>3 PUs if Japan controls Iwo Jima and Okinawa and is at war with the United States.</li>
 </ul>
 
 <b>USA</b>
