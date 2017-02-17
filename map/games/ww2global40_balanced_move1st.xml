@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Balanced Mod3 with Combat Move First" version="3.1"/>
+  <info name="World War II Global 1940 Balanced Mod3 with Combat Move First" version="3.2"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1350,7 +1350,9 @@
       <step name="americansBattle" delegate="battle" player="Americans"/>
       <step name="americansNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
       <step name="americansPlace" delegate="place" player="Americans"/>
-      <step name="americansEndTurn" delegate="endTurn" player="Americans"/>
+      <step name="americansEndTurn" delegate="endTurn" player="Americans">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
       <!-- Chinese Game Sequence -->
       <step name="chinesePolitics" delegate="politics" player="Chinese"/>
       <step name="chineseCombatMove" delegate="move" player="Chinese"/>
@@ -1358,7 +1360,9 @@
       <step name="chineseBattle" delegate="battle" player="Chinese"/>
       <step name="chineseNonCombatMove" delegate="move" player="Chinese" display="Non Combat Move"/>
       <step name="chinesePlace" delegate="place" player="Chinese"/>
-      <step name="chineseEndTurn" delegate="endTurn" player="Chinese"/>
+      <step name="chineseEndTurn" delegate="endTurn" player="Chinese">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
       <!-- British Game Sequence -->
       <step name="britishTech" delegate="tech" player="British"/>
       <step name="britishTechActivation" delegate="tech_activation" player="British"/>
@@ -1379,7 +1383,7 @@
       </step>
       <step name="UK_PacificPlace" delegate="place" player="UK_Pacific"/>
       <step name="UK_PacificEndTurn" delegate="endTurn" player="UK_Pacific">
-        <stepProperty name="turnSummaryPlayers" value="British:UK_Pacific"/>
+        <stepProperty name="turnSummaryPlayers" value="Americans:Chinese:British:UK_Pacific"/>
       </step>
       <!-- Italians Game Sequence -->
       <step name="italiansTech" delegate="tech" player="Italians"/>
@@ -1402,7 +1406,9 @@
       <step name="anzacBattle" delegate="battle" player="ANZAC"/>
       <step name="anzacNonCombatMove" delegate="move" player="ANZAC" display="Non Combat Move"/>
       <step name="anzacPlace" delegate="place" player="ANZAC"/>
-      <step name="anzacEndTurn" delegate="endTurn" player="ANZAC"/>
+      <step name="anzacEndTurn" delegate="endTurn" player="ANZAC">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
       <!-- French Game Sequence -->
       <step name="frenchTech" delegate="tech" player="French"/>
       <step name="frenchTechActivation" delegate="tech_activation" player="French"/>
@@ -1413,7 +1419,9 @@
       <step name="frenchBattle" delegate="battle" player="French"/>
       <step name="frenchNonCombatMove" delegate="move" player="French" display="Non Combat Move"/>
       <step name="frenchPlace" delegate="place" player="French"/>
-      <step name="frenchEndTurn" delegate="endTurn" player="French"/>
+      <step name="frenchEndTurn" delegate="endTurn" player="French">
+        <stepProperty name="turnSummaryPlayers" value="ANZAC:French"/>
+      </step>
       <step name="endRoundStep" delegate="endRound"/>
     </sequence>
   </gamePlay>
@@ -4014,22 +4022,22 @@
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_British" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_French" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_ANZAC" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
@@ -4052,22 +4060,22 @@
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_Russians_War_With_Japanese" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_British_War_With_Japanese" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_Americans_War_With_Japanese" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_French_War_With_Japanese" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
@@ -15531,6 +15539,9 @@ These changes to units are things other than price/movement which you can see in
 <b>Credits to Veqryn for almost all related Engine code that allows this map to work.</b>
 <br><br><hr><br>
 <br>Change Log:
+<br>BM3.2: Fixes USSR objective. Includes combined posting US/C/UK + ANZ/Fr
+<br>BM3 ...
+<br>BM2.2. Fixes China getting convoyed
 <br>BM2.1: Fixes Vichy bug
 <br>
 <br>3.9

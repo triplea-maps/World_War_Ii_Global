@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Balanced Mod3" version="3.1"/>
+  <info name="World War II Global 1940 Balanced Mod3" version="3.2"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4014,22 +4014,22 @@
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_British" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_French" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_ANZAC" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
@@ -4052,27 +4052,27 @@
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_Russians_War_With_Japanese" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_British_War_With_Japanese" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_Americans_War_With_Japanese" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_French_War_With_Japanese" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_ANZAC_War_With_Japanese" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
@@ -15190,7 +15190,7 @@
     <property name="notes">
       <value><![CDATA[  
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
-<b>G40 Balanced - Balance Mod 3.0</b><br>
+<b>G40 Balanced - Balance Mod 3.2</b><br>
 <br>
 <b>Original Game Credits:</b> Bung, Veqryn<br><br>
 
