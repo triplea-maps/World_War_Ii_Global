@@ -1349,7 +1349,9 @@
       <step name="americansBattle" delegate="battle" player="Americans"/>
       <step name="americansNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
       <step name="americansPlace" delegate="place" player="Americans"/>
-      <step name="americansEndTurn" delegate="endTurn" player="Americans"/>
+      <step name="americansEndTurn" delegate="endTurn" player="Americans">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
       <!-- Chinese Game Sequence -->
       <step name="chinesePolitics" delegate="politics" player="Chinese"/>
       <step name="chineseCombatMove" delegate="move" player="Chinese"/>
@@ -1357,7 +1359,9 @@
       <step name="chineseBattle" delegate="battle" player="Chinese"/>
       <step name="chineseNonCombatMove" delegate="move" player="Chinese" display="Non Combat Move"/>
       <step name="chinesePlace" delegate="place" player="Chinese"/>
-      <step name="chineseEndTurn" delegate="endTurn" player="Chinese"/>
+      <step name="chineseEndTurn" delegate="endTurn" player="Chinese">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
       <!-- British Game Sequence -->
       <step name="britishTech" delegate="tech" player="British"/>
       <step name="britishTechActivation" delegate="tech_activation" player="British"/>
@@ -1370,7 +1374,7 @@
       <step name="UK_PacificPurchase" delegate="purchase" player="UK_Pacific"/>
       <step name="britishBattle" delegate="battle" player="British"/>
       <step name="britishNonCombatMove" delegate="move" player="British" display="Non Combat Move">
-        <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
+        <stepProperty name="combinedTurns" value="Americans:Chinese:British:UK_Pacific"/>
       </step>
       <step name="britishNoAirCheckPlace" delegate="placeNoAirCheck" player="British"/>
       <step name="britishEndTurn" delegate="endTurn" player="British">
@@ -1378,7 +1382,7 @@
       </step>
       <step name="UK_PacificPlace" delegate="place" player="UK_Pacific"/>
       <step name="UK_PacificEndTurn" delegate="endTurn" player="UK_Pacific">
-        <stepProperty name="turnSummaryPlayers" value="British:UK_Pacific"/>
+        <stepProperty name="turnSummaryPlayers" value="Americans:Chinese:British:UK_Pacific"/>
       </step>
       <!-- Italians Game Sequence -->
       <step name="italiansTech" delegate="tech" player="Italians"/>
@@ -1401,7 +1405,9 @@
       <step name="anzacBattle" delegate="battle" player="ANZAC"/>
       <step name="anzacNonCombatMove" delegate="move" player="ANZAC" display="Non Combat Move"/>
       <step name="anzacPlace" delegate="place" player="ANZAC"/>
-      <step name="anzacEndTurn" delegate="endTurn" player="ANZAC"/>
+      <step name="anzacEndTurn" delegate="endTurn" player="ANZAC">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
       <!-- French Game Sequence -->
       <step name="frenchTech" delegate="tech" player="French"/>
       <step name="frenchTechActivation" delegate="tech_activation" player="French"/>
@@ -1412,7 +1418,9 @@
       <step name="frenchBattle" delegate="battle" player="French"/>
       <step name="frenchNonCombatMove" delegate="move" player="French" display="Non Combat Move"/>
       <step name="frenchPlace" delegate="place" player="French"/>
-      <step name="frenchEndTurn" delegate="endTurn" player="French"/>
+      <step name="frenchEndTurn" delegate="endTurn" player="French">
+        <stepProperty name="turnSummaryPlayers" value="ANZAC:French"/>
+      </step>
       <step name="endRoundStep" delegate="endRound"/>
     </sequence>
   </gamePlay>
@@ -6051,7 +6059,7 @@
     <property name="Use Triggers" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Tech Development" value="true" editable="true">
+    <property name="Tech Development" value="false" editable="true">
       <boolean/>
     </property>
     <property name="Remove All Tech Tokens At End Of Turn" value="true" editable="true">
@@ -6415,7 +6423,6 @@ You may also need to use edit mode to correct things listed below.<br>
 <br>* (EM) If UK Pacific captures Japan, the money should go to UK Pacific, even if UK Pacific's capital is occupied.
 <br>* (EM) You must place all units you purchased if you are able to, or as many as you can. Any units not placed get refunded to you (TripleA instead carries them over to the next turn).
 <br>* (PE) The victory conditions must be held for a full continuous round after they are achieved (so for example if Italy takes Egypt as the 8th European VC, then the Axis must hold 8 VCs continuously until Italy's next turn).
-<br>* (NA) During an SBR, AA fire and casualty selection should be done on a per-facility-being-attacked basis.
 <br>* (EM) Rocket damage to an airfield should occur after scrambling, which means if an airbase is disabled by the rocket attack, it could still scramble this turn.
 <br>* (PE) Paratroopers (airborne) may not attack multiple territories from a single airbase.
 <br>
@@ -6429,8 +6436,6 @@ You may also need to use edit mode to correct things listed below.<br>
 <br>* (PE) Only non-air units that did not move during combat move and did not participate in combat, may move during non-combat-move.
 <br>* (PE) Transports can only be loaded in 1 phase (not both), and unloaded in 1 phase (not both).
 <br>* (PE) Transports if unloading for amphibious assault, must unload all their units, and may not hold back some units while offloading other units.
-<br>* (NA) Rocket attacks should all be chosen first, before any dice and results are shown.
-<br>* (NA) You should be able to SBR / Rocket attack an empty territory that you are blitzing.
 <br>* (NA) Each phase of combat should have all units in that phase fire before any casualty selection occurs, whereas right now in TripleA if air and subs are involved then units might be broken up into smaller groups and casualty selection done for each group.
 <br>* (EM) If you select for a bombardment from a sea zone, you should be able to select which units you want to have bombard, but currently all possible units are used.
 <br>* (EM) If you are purchasing a carrier which is the only valid landing space, Triple-A won't let you use your planes to attack because you haven't been through the purchase phase yet.

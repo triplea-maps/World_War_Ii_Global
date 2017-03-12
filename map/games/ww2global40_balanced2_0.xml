@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Balanced Mod" version="2.2"/>
+  <info name="World War II Global 1940 Balanced Mod3" version="3.2"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1379,7 +1379,7 @@
       </step>
       <step name="UK_PacificPlace" delegate="place" player="UK_Pacific"/>
       <step name="UK_PacificEndTurn" delegate="endTurn" player="UK_Pacific">
-        <stepProperty name="turnSummaryPlayers" value="British:UK_Pacific"/>
+        <stepProperty name="turnSummaryPlayers" value="Americans:Chinese:British:UK_Pacific"/>
       </step>
       <!-- Italians Game Sequence -->
       <step name="italiansTech" delegate="tech" player="Italians"/>
@@ -1413,7 +1413,9 @@
       <step name="frenchBattle" delegate="battle" player="French"/>
       <step name="frenchNonCombatMove" delegate="move" player="French" display="Non Combat Move"/>
       <step name="frenchPlace" delegate="place" player="French"/>
-      <step name="frenchEndTurn" delegate="endTurn" player="French"/>
+      <step name="frenchEndTurn" delegate="endTurn" player="French">
+        <stepProperty name="turnSummaryPlayers" value="ANZAC:French"/>
+      </step>
       <step name="endRoundStep" delegate="endRound"/>
     </sequence>
   </gamePlay>
@@ -3734,11 +3736,7 @@
       <option name="objectiveValue" value="3"/>
       <option name="directOwnershipTerritories" value="Bulgaria:Finland:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Albania:Northern Italy:Southern Italy" count="each"/>
     </attachment>
-    <attachment name="objectiveAttachment_Russians_3_Berlin" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="objectiveValue" value="10"/>
-      <option name="directOwnershipTerritories" value="Germany" count="1"/>
-      <option name="uses" value="1"/>
-    </attachment>
+
     <!-- Japanese Objectives -->
     <attachment name="conditionAttachment_Japanese_1_Not_Attacked_French_Indo_China" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="French Indo China" count="1"/>
@@ -3769,6 +3767,13 @@
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Wake Island:Midway:Guam" count="3"/>
     </attachment>
+<attachment name="objectiveAttachment_Japanese_6_Home_Islands" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="3"/>
+      <option name="atWarPlayers" value="Americans" count="1"/>
+      <option name="directOwnershipTerritories" value="Okinawa:Iwo Jima" count="2"/>
+    </attachment>
+
+
     <!-- British Objectives -->
     <attachment name="objectiveAttachment_British_1_Original" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="3"/>
@@ -3811,7 +3816,7 @@
     <attachment name="objectiveAttachment_ANZAC_3_Pacific_Supply_Lines" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentANZAC_At_War_With_Japanese"/>
       <option name="objectiveValue" value="3"/>
-      <option name="alliedOwnershipTerritories" value="Samoa:Gilbert Islands:Fiji" count="3"/>
+      <option name="alliedOwnershipTerritories" value="Samoa:Gilbert Islands:Fiji:Solomon Islands" count="4"/>
     </attachment>
     <!-- Italians Objectives -->
     <attachment name="objectiveAttachment_Italians_1_Control_The_Mediterranean" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -3973,12 +3978,15 @@
       <option name="directOwnershipTerritories" value="Caucasus" count="1"/>
     </attachment>
     <!-- Russians Conditions -->
+ <attachment name="conditionAttachmentTurn3OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="3-+"/>
+    </attachment>
     <attachment name="conditionAttachment_Russians_1_Convoy_Clear" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="enemyExclusionTerritories" value="125 Sea Zone" count="1"/>
       <option name="unitPresence" value="battleship:carrier:submarine:destroyer:cruiser" count="0"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_1_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_1_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Archangel" count="1"/>
       <option name="atWarPlayers" value="Germans:Italians" count="1"/>
     </attachment>
@@ -3991,7 +3999,7 @@
       <option name="unitPresence" value="battleship:carrier:submarine:destroyer:cruiser" count="0"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_3_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_3_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_3_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Amur" count="1"/>
       <option name="atWarPlayers" value="Germans:Italians" count="1"/>
     </attachment>
@@ -4003,27 +4011,27 @@
       <option name="alliedExclusionTerritories" value="original"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_Russians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_British" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_French" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_ANZAC" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_2_Russians_At_War"/>
     </attachment>
@@ -4046,27 +4054,27 @@
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_Russians_War_With_Japanese" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_British_War_With_Japanese" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_Americans_War_With_Japanese" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_French_War_With_Japanese" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_ANZAC_War_With_Japanese" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
@@ -14868,7 +14876,7 @@
     <property name="Use Triggers" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Tech Development" value="true" editable="true">
+    <property name="Tech Development" value="false" editable="true">
       <boolean/>
     </property>
     <property name="Remove All Tech Tokens At End Of Turn" value="true" editable="true">
@@ -15184,11 +15192,11 @@
     <property name="notes">
       <value><![CDATA[  
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
-<b>G40 Balanced - Balance Mod 2.0</b><br>
+<b>G40 Balanced - Balance Mod 3.2</b><br>
 <br>
 <b>Original Game Credits:</b> Bung, Veqryn<br><br>
 
-<b>Mod Squad:</b> Adam514 (co-originator and oracle), Deathbringer1974 (chief executive troll), dust (good at math), dss85 (playtester and game breaker), Gencre (general haha), redrum (XML high priest), Regularkid (co-originator and king of noobs), Young Grasshopper (topper goodwill ambassador)<br><br>
+<b>Mod Squad:</b> Adam514 (co-originator and oracle), Deathbringer1974 (chief executive troll), dust (good at math), dss85 (playtester and game breaker), Gencre (general haha), redrum (XML high priest), Regularkid (co-originator and king of noobs), simon33 (bug chaser), Young Grasshopper (topper goodwill ambassador)<br><br>
 <br><hr><br>
 
 <b>**REVISIONS**</b><br><br>
@@ -15220,16 +15228,17 @@
 <ul>
 <li>3 PUs if Russia is at war with European Axis, and there are no non-Russian Allied units in any originally Russian territory.</li>
 <li>3 PUs for each originally German, Italian, or Pro-Axis neutral territory that Russia controls <b>in mainland Europe.</b> (This modifies Russia's "Spread of Communism" objective). </li>
-<li>2 PUs for each of the following Lend-Lease lanes that is "open" (i.e., the specified Sea Zone has no enemy warships and the specified territory is Allied controlled) when Russia is at war with European Axis: (1) sz 125, Archangel ; (2) sz 80, Persia; (3) sz 5, Amur (This modifies Russia's "Lend Lease" objective).</li>
+<li>2 PUs for each of the following Lend-Lease lanes that is "open" (i.e., the specified Sea Zone has no enemy warships and the specified territory is Allied controlled) when Russia is at war with European Axis beyond Round 2: (1) sz 125, Archangel ; (2) sz 80, Persia; (3) sz 5, Amur (This modifies Russia's "Lend Lease" objective).</li>
 <li>An additional 2 PUs per each "open" Lend-Lease lane, when Russia is at war with European Axis, if Japan has also declared war on Russia.</li> 
 <br>
-<b>Note:</b> An Axis power may not move its units into originally Russian territory unless that Axis power is at war with Russia. Also, when not at war with Japan, Russia may not move its units into any non-Russian Allied territory in Asia, other than Syria, Trans-Jordan, Iraq, Persia, NorthWest Persia, and East Persia. 
+<b>Note:</b> An Axis power may not move its units into originally Russian territory unless that Axis power is at war with Russia. Also, when not at war with Japan, Russia may not move its units into any non-Russian Allied territory in Asia, other than Syria, Trans-Jordan, Iraq, Persia, NorthWest Persia, and East Persia. The National Objective for Russia's first capture of Berlin has been removed.
 </ul>
 
 <b>Japan</b>
 <ul>
 <li>5 PUs if Axis controls Dutch New Guinea, New Guinea, New Britain and Solomon Islands. (This modifies Japan's "Strategic Perimeter" objective).</li>
 <li>5 PUs if Axis controls Midway, Wake Island, Guam.</li>
+<li>3 PUs if Japan controls Iwo Jima and Okinawa and is at war with the United States.</li>
 </ul>
 
 <b>USA</b>
@@ -15266,7 +15275,7 @@
 <b>ANZAC</b>
 <ul>
 <li>3 PUs if ANZAC is at war with the Japanese and Dutch New Guinea, New Guinea, New Britain and Solomon Islands are controlled by the Allies (other than the Dutch). (This modifies ANZAC's "Strategic Islands" objective).</li>
-<li>3 PUs if ANZAC is at war with the Japanese and Gilbert Islands, Fiji, and Samoa are Allied controlled.</li>
+<li>3 PUs if ANZAC is at war with the Japanese and Solomon Islands, Gilbert Islands, Fiji, and Samoa are Allied controlled.</li>
 <li>3 PUs if ANZAC is at war with the Japanese, controls all of its original territories, and Malaya is Allied controlled. (This modifies ANZAC's "Control Original And Malaya" objective).</li>
 </ul>
 
@@ -15355,7 +15364,6 @@ You may also need to use edit mode to correct things listed below.<br>
 <br>* (EM) If UK Pacific captures Japan, the money should go to UK Pacific, even if UK Pacific's capital is occupied.
 <br>* (EM) You must place all units you purchased if you are able to, or as many as you can. Any units not placed get refunded to you (TripleA instead carries them over to the next turn).
 <br>* (PE) The victory conditions must be held for a full continuous round after they are achieved (so for example if Italy takes Egypt as the 8th European VC, then the Axis must hold 8 VCs continuously until Italy's next turn).
-<br>* (NA) During an SBR, AA fire and casualty selection should be done on a per-facility-being-attacked basis.
 <br>* (EM) Rocket damage to an airfield should occur after scrambling, which means if an airbase is disabled by the rocket attack, it could still scramble this turn.
 <br>* (PE) Paratroopers (airborne) may not attack multiple territories from a single airbase.
 <br>
@@ -15369,8 +15377,6 @@ You may also need to use edit mode to correct things listed below.<br>
 <br>* (PE) Only non-air units that did not move during combat move and did not participate in combat, may move during non-combat-move.
 <br>* (PE) Transports can only be loaded in 1 phase (not both), and unloaded in 1 phase (not both).
 <br>* (PE) Transports if unloading for amphibious assault, must unload all their units, and may not hold back some units while offloading other units.
-<br>* (NA) Rocket attacks should all be chosen first, before any dice and results are shown.
-<br>* (NA) You should be able to SBR / Rocket attack an empty territory that you are blitzing.
 <br>* (NA) Each phase of combat should have all units in that phase fire before any casualty selection occurs, whereas right now in TripleA if air and subs are involved then units might be broken up into smaller groups and casualty selection done for each group.
 <br>* (EM) If you select for a bombardment from a sea zone, you should be able to select which units you want to have bombard, but currently all possible units are used.
 <br>
