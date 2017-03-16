@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Balanced Mod3 with Combat Move First" version="3.2"/>
+  <info name="World War II Global 1940 Balanced Mod3 with Combat Move First" version="3.3"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4050,12 +4050,12 @@
       <option name="atWarPlayers" value="Germans:Italians" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_1_Lend_Lease_War_With_Japanese" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_1_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_1_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Archangel" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_3_Lend_Lease_War_With_Japanese" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_3_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_3_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Amur" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
@@ -4080,7 +4080,7 @@
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_2_Lend_Lease_Persia_ANZAC_War_With_Japanese" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_2_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Persia" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
