@@ -2319,7 +2319,6 @@
     <attachment name="unitAttachment" attachTo="marine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
       <option name="transportCost" value="4"/>
-      <option name="isMarine" value="true"/>
       <option name="attack" value="1"/>
       <option name="defense" value="1"/>
       <!--<option name="artillerySupportable" value="false"/>-->
@@ -15274,7 +15273,7 @@
 <br><br>
 
 
-<b>New Unit - Marines:</b> Cost 5; Attack at 1 (2 during amphibious assaults); Defend at 2; No bonus from artillery; Can be loaded onto cruisers and battleships (1 to a ship). <br><br>
+<b>New Unit - Marines:</b> Cost 4; Attack at 1; Defend at 1; No bonus from artillery; Can be loaded onto cruisers and battleships (1 to a ship). <br><br>
 <b>Note:</b> During amphibious assaults, Battleships and Cruisers may bombard any adjacent territory in which an amphibious assault is occurring, regardless of where they unloaded their marines.
 
 <br><br>

@@ -15487,7 +15487,7 @@ Fighters and/or Tactical bombers can be scrambled from any territory bordering a
 
 <b>Strategic Bombing Runs (SBR)</b><br>
 Bombing can now happen against both types of ICs, harbours, and airfields (attackers choice)[tactical bombers can not target factories though]. Fighters can participate in the bombing run as escorts. Fighters in the territory being bombed can be launched as interceptors (no airfield necessary).<br><br>
-<b>If interceptors are launched:</b> a one-round air battle takes place right away all air involved roll at 1 (jets rolls at 2). Either attacking bombers or fighters can be taken as casualties.<br><br>
+<b>If interceptors are launched:</b> a one-round air battle takes place right away all involved. Bombers roll at 1 and fighters involved roll at 2 (jets rolls at 3). Either attacking bombers or fighters can be taken as casualties.<br><br>
 After the air battle, or if there were no interceptors, the escorts are retreated and any bombers/tacs remaining can now be divied up to attack specific targets. Each target rolls its built-in AA gun against the bombers/tacs targetting it. If there is an AA gun in the territory being bombed it does <b>not</b> roll because its there to defend combat units and not complexes/bases.
 <br><br>
 
