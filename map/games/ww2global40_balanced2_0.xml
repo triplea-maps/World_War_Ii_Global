@@ -14071,7 +14071,7 @@
     <attachment name="techAbilityAttachment" attachTo="rocket" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="rocketDiceNumber" value="1:airfield"/>
       <option name="rocketDistance" value="4"/>
-      <option name="rocketNumberPerTerritory" value="1"/>
+      <option name="rocketNumberPerTerritory" value="200"/>
     </attachment>
     <attachment name="techAbilityAttachment" attachTo="Airborne_Forces" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="airborneForces" value="true"/>
@@ -14972,7 +14972,7 @@
     <property name="All Rockets Attack" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Rocket Attacks Per Factory Infinite" value="true" editable="false">
+    <property name="Strictly rule compliant rockets" value="false" editable="true">
       <boolean/>
     </property>
     <property name="Rockets Can Fly Over Impassables" value="false" editable="false">
