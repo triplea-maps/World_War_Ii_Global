@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Balanced Mod3" version="3.2"/>
+  <info name="World War II Global 1940 Balanced Mod3" version="3.3"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4044,12 +4044,12 @@
       <option name="atWarPlayers" value="Germans:Italians" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_1_Lend_Lease_War_With_Japanese" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_1_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_1_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Archangel" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_3_Lend_Lease_War_With_Japanese" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_3_Convoy_Clear"/>
+      <option name="conditions" value="conditionAttachment_Russians_3_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
       <option name="directOwnershipTerritories" value="Amur" count="1"/>
       <option name="conditions" value="conditionAttachment_Russians_Provoked_War_With_Japan"/>
     </attachment>
@@ -14071,7 +14071,7 @@
     <attachment name="techAbilityAttachment" attachTo="rocket" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="rocketDiceNumber" value="1:airfield"/>
       <option name="rocketDistance" value="4"/>
-      <option name="rocketNumberPerTerritory" value="1"/>
+      <option name="rocketNumberPerTerritory" value="200"/>
     </attachment>
     <attachment name="techAbilityAttachment" attachTo="Airborne_Forces" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="airborneForces" value="true"/>
@@ -14972,7 +14972,7 @@
     <property name="All Rockets Attack" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Rocket Attacks Per Factory Infinite" value="true" editable="false">
+    <property name="Strictly rule compliant rockets" value="false" editable="true">
       <boolean/>
     </property>
     <property name="Rockets Can Fly Over Impassables" value="false" editable="false">
@@ -15192,7 +15192,7 @@
     <property name="notes">
       <value><![CDATA[  
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
-<b>G40 Balanced - Balance Mod 3.2</b><br>
+<b>G40 Balanced - Balance Mod 3.3</b><br>
 <br>
 <b>Original Game Credits:</b> Bung, Veqryn<br><br>
 
@@ -15487,7 +15487,7 @@ Fighters and/or Tactical bombers can be scrambled from any territory bordering a
 
 <b>Strategic Bombing Runs (SBR)</b><br>
 Bombing can now happen against both types of ICs, harbours, and airfields (attackers choice)[tactical bombers can not target factories though]. Fighters can participate in the bombing run as escorts. Fighters in the territory being bombed can be launched as interceptors (no airfield necessary).<br><br>
-<b>If interceptors are launched:</b> a one-round air battle takes place right away all air involved roll at 1 (jets rolls at 2). Either attacking bombers or fighters can be taken as casualties.<br><br>
+<b>If interceptors are launched:</b> a one-round air battle takes place right away all involved. Bombers roll at 1 and fighters involved roll at 2 (jets rolls at 3). Either attacking bombers or fighters can be taken as casualties.<br><br>
 After the air battle, or if there were no interceptors, the escorts are retreated and any bombers/tacs remaining can now be divied up to attack specific targets. Each target rolls its built-in AA gun against the bombers/tacs targetting it. If there is an AA gun in the territory being bombed it does <b>not</b> roll because its there to defend combat units and not complexes/bases.
 <br><br>
 

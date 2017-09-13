@@ -5084,7 +5084,7 @@
     <property name="All Rockets Attack" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Rocket Attack Per Factory Restricted" value="true" editable="false">
+    <property name="Strictly rule compliant rockets" value="false" editable="true">
       <boolean/>
     </property>
     <property name="Rockets Can Fly Over Impassables" value="false" editable="false">
