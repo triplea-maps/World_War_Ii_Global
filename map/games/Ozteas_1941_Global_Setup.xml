@@ -1368,7 +1368,7 @@
       <step name="britishPolitics" delegate="politics" player="British"/>
       <step name="britishCombatMove" player="British" delegate="move">
         <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
-     </step>
+      </step>
       <step name="britishAirborneCombatMove" delegate="specialCombatMove" player="British" display="Airborne Attack Move"/>
       <step name="britishBattle" delegate="battle" player="British"/>
       <step name="britishNonCombatMove" delegate="move" player="British" display="Non Combat Move">
