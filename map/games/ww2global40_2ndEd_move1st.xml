@@ -1368,7 +1368,9 @@
       <!--<step name="UK_PacificTech" delegate="tech" player="UK_Pacific"/>-->
       <step name="UK_PacificTechActivation" delegate="tech_activation" player="UK_Pacific"/>
       <step name="britishPolitics" delegate="politics" player="British"/>
-      <step name="britishCombatMove" delegate="move" player="British"/>
+      <step name="britishCombatMove" player="British" delegate="move">
+        <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
+      </step>
       <step name="britishAirborneCombatMove" delegate="specialCombatMove" player="British" display="Airborne Attack Move"/>
       <step name="britishPurchase" delegate="purchase" player="British"/>
       <step name="UK_PacificPurchase" delegate="purchase" player="UK_Pacific"/>
@@ -2723,9 +2725,7 @@
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Mexico" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="2"/>
-      <option name="changeUnitOwners" value="British"/>
-      <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="production" value="2"/>      
     </attachment>
     <attachment name="territoryAttachment" attachTo="Guam" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -2740,13 +2740,9 @@
     <attachment name="territoryAttachment" attachTo="Western United States" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="10"/>
       <option name="victoryCity" value="1"/>
-      <option name="changeUnitOwners" value="British"/>
-      <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Alaska" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
-      <option name="changeUnitOwners" value="British"/>
-      <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Aleutian Islands" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
