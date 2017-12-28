@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Ozteas 1941 Global Setup" version="3.9"/>
+  <info name="Ozteas 1941 Global Setup" version="3.9.1"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1366,9 +1366,7 @@
       <step name="UK_PacificTechActivation" delegate="tech_activation" player="UK_Pacific"/>
       <step name="UK_PacificPurchase" delegate="purchase" player="UK_Pacific"/>
       <step name="britishPolitics" delegate="politics" player="British"/>
-      <step name="britishCombatMove" player="British" delegate="move">
-        <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
-      </step>
+      <step name="britishCombatMove" delegate="move" player="British"/>
       <step name="britishAirborneCombatMove" delegate="specialCombatMove" player="British" display="Airborne Attack Move"/>
       <step name="britishBattle" delegate="battle" player="British"/>
       <step name="britishNonCombatMove" delegate="move" player="British" display="Non Combat Move">
@@ -2721,6 +2719,8 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Mexico" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
+      <option name="changeUnitOwners" value="British"/>
+      <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Guam" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -2735,9 +2735,13 @@
     <attachment name="territoryAttachment" attachTo="Western United States" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="10"/>
       <option name="victoryCity" value="1"/>
+      <option name="changeUnitOwners" value="British"/>
+      <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Alaska" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
+      <option name="changeUnitOwners" value="British"/>
+      <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Aleutian Islands" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -2833,22 +2837,26 @@
       <option name="production" value="3"/>
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="Dutch"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Java" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="4"/>
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="Dutch"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Dutch New Guinea" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
       <!--<option name="capital" value="Dutch"/>-->
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="Dutch"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Sumatra" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="4"/>
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="Dutch"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Olgiy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -5284,7 +5292,7 @@
     <attachment name="techAbilityAttachment" attachTo="rocket" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="rocketDiceNumber" value="1:airfield"/>
       <option name="rocketDistance" value="4"/>
-      <option name="rocketNumberPerTerritory" value="200"/>
+      <option name="rocketNumberPerTerritory" value="1"/>
     </attachment>
     <attachment name="techAbilityAttachment" attachTo="Airborne_Forces" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="airborneForces" value="true"/>
@@ -6597,7 +6605,7 @@
     <property name="All Rockets Attack" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Strictly rule compliant rockets" value="false" editable="true">
+    <property name="Rocket Attacks Per Factory Infinite" value="true" editable="false">
       <boolean/>
     </property>
     <property name="Rockets Can Fly Over Impassables" value="false" editable="false">
@@ -6883,6 +6891,7 @@ You may also need to use edit mode to correct things listed below.<br>
 <br>* (EM) If UK Pacific captures Japan, the money should go to UK Pacific, even if UK Pacific's capital is occupied.
 <br>* (EM) You must place all units you purchased if you are able to, or as many as you can. Any units not placed get refunded to you (TripleA instead carries them over to the next turn).
 <br>* (PE) The victory conditions must be held for a full continuous round after they are achieved (so for example if Italy takes Egypt as the 8th European VC, then the Axis must hold 8 VCs continuously until Italy's next turn).
+<br>* (NA) During an SBR, AA fire and casualty selection should be done on a per-facility-being-attacked basis.
 <br>* (EM) Rocket damage to an airfield should occur after scrambling, which means if an airbase is disabled by the rocket attack, it could still scramble this turn.
 <br>* (PE) Paratroopers (airborne) may not attack multiple territories from a single airbase.
 <br>
@@ -6896,6 +6905,8 @@ You may also need to use edit mode to correct things listed below.<br>
 <br>* (PE) Only non-air units that did not move during combat move and did not participate in combat, may move during non-combat-move.
 <br>* (PE) Transports can only be loaded in 1 phase (not both), and unloaded in 1 phase (not both).
 <br>* (PE) Transports if unloading for amphibious assault, must unload all their units, and may not hold back some units while offloading other units.
+<br>* (NA) Rocket attacks should all be chosen first, before any dice and results are shown.
+<br>* (NA) You should be able to SBR / Rocket attack an empty territory that you are blitzing.
 <br>* (NA) Each phase of combat should have all units in that phase fire before any casualty selection occurs, whereas right now in TripleA if air and subs are involved then units might be broken up into smaller groups and casualty selection done for each group.
 <br>* (EM) If you select for a bombardment from a sea zone, you should be able to select which units you want to have bombard, but currently all possible units are used.
 <br>
