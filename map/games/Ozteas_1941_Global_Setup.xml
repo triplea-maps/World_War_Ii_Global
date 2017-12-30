@@ -2833,22 +2833,26 @@
       <option name="production" value="3"/>
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="Dutch"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Java" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="4"/>
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="Dutch"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Dutch New Guinea" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
       <!--<option name="capital" value="Dutch"/>-->
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="Dutch"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Sumatra" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="4"/>
       <option name="changeUnitOwners" value="British"/>
       <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
+      <option name="originalOwner" value="Dutch"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Olgiy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
