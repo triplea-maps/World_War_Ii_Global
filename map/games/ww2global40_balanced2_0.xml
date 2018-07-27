@@ -13630,6 +13630,13 @@
       <option name="when" value="after:japanesePolitics"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_Russians_Allied_Americans_6" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentRussians_Neutrality_Americans_but_War_With_European_Axis:conditionAttachmentRussians_Neutrality_Americans_but_War_With_Japanese"/>
+      <option name="conditionType" value="OR"/>
+      <option name="relationshipChange" value="Russians:Americans:anyNeutral:Allied"/>
+      <option name="when" value="after:americansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="triggerAttachment_Russians_War_TrueNeutral" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentRussiansNotYetAtWarWithTrueNeutralsButAlliesAre"/>
       <option name="relationshipChange" value="Russians:Neutral_True:anyNeutral:War"/>
