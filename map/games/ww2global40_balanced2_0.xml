@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Balanced Mod3" version="3.3"/>
+  <info name="World War II Global 1940 Balanced Mod3" version="3.4"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -2751,6 +2751,8 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Mexico" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
+      <option name="changeUnitOwners" value="British"/>
+      <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Guam" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -2765,9 +2767,13 @@
     <attachment name="territoryAttachment" attachTo="Western United States" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="10"/>
       <option name="victoryCity" value="1"/>
+      <option name="changeUnitOwners" value="British"/>
+      <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Alaska" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
+      <option name="changeUnitOwners" value="British"/>
+      <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Aleutian Islands" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -3763,7 +3769,11 @@
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Wake Island:Midway:Guam" count="3"/>
     </attachment>
-<attachment name="objectiveAttachment_Japanese_6_Home_Islands" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="HomeIslands" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Japan Iwo Jima/Okinawa bonus"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Japanese_6_Home_Islands" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="HomeIslands"/>
       <option name="objectiveValue" value="3"/>
       <option name="atWarPlayers" value="Americans" count="1"/>
       <option name="directOwnershipTerritories" value="Okinawa:Iwo Jima" count="2"/>
@@ -3784,9 +3794,12 @@
     <attachment name="conditionAttachment_British_2_Southern_Europe_Beach_Head" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Sicily:Sardinia:Greece:Southern Italy" count="2"/>
     </attachment>
+    <attachment name="Sth_Europe" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="UK bonus for two out of Sicily/Sardinia/Rome/Greece"/>
+    </attachment>
     <attachment name="objectiveAttachment_British_2_Southern_Europe_Beach_Head" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="3"/>
-      <option name="conditions" value="conditionAttachment_UK_unit_presence:conditionAttachment_British_2_Southern_Europe_Beach_Head"/>
+      <option name="conditions" value="conditionAttachment_UK_unit_presence:conditionAttachment_British_2_Southern_Europe_Beach_Head:Sth_Europe"/>
     </attachment>
     <attachment name="objectiveAttachment_British_4_Control_Convoy_Lanes" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="3"/>
@@ -3876,7 +3889,11 @@
       <option name="alliedOwnershipTerritories" value="Wake Island:Midway:Guam" count="3"/>
       <option name="atWarPlayers" value="Japanese" count="1"/>
     </attachment>
+    <attachment name="Forward_Bases" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="USA bonus for Islands surrounding the Carolines inclusive"/>
+    </attachment>
     <attachment name="objectiveAttachment_Americans_9_Vital_Forward_Bases" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="Forward_Bases"/>
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Marianas:Marshall Islands:Paulau Island:Caroline Islands" count="4"/>
     </attachment>
@@ -4035,9 +4052,13 @@
       <option name="conditions" value="conditionAttachment_Russians_2_Lend_Lease_Persia_Russians:conditionAttachment_Russians_2_Lend_Lease_Persia_British:conditionAttachment_Russians_2_Lend_Lease_Persia_Americans:conditionAttachment_Russians_2_Lend_Lease_Persia_French:conditionAttachment_Russians_2_Lend_Lease_Persia_ANZAC"/>
       <option name="conditionType" value="OR"/>
     </attachment>
+    <attachment name="USSRBonus4JapanDOW" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="USSR Lend Lease bonus for Japan declaring war on it"/>
+    </attachment>
     <attachment name="conditionAttachment_Russians_Provoked_War_With_Japan" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="Russians:Japanese:War"/>
       <option name="atWarPlayers" value="Germans:Italians" count="1"/>
+      <option name="conditions" value="USSRBonus4JapanDOW"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_1_Lend_Lease_War_With_Japanese" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Russians_1_Convoy_Clear:conditionAttachmentTurn3OrHigher"/>
@@ -4295,7 +4316,7 @@
       <option name="directPresenceTerritories" value="Normandy Bordeaux:Southern France:Holland Belgium" count="1"/>
       <option name="atWarPlayers" value="Japanese:Germans:Italians" count="1"/>
       <!-- any land unit includes aaGuns but does not include 'facilities' -->
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:marine:aaGun" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_9_Western_Europe_Beach_Head" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Normandy Bordeaux:Holland Belgium:Southern France" count="2"/>
@@ -4306,7 +4327,11 @@
       <!-- any land unit includes aaGuns but does not include 'facilities' -->
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
     </attachment>
+    <attachment name="NorthAfricaObjective" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="USA bonus for North Africa"/>
+    </attachment>
     <attachment name="conditionAttachment_Americans_11_North_Africa_Beach_Head" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="NorthAfricaObjective"/>
       <option name="alliedOwnershipTerritories" value="Morocco:Algeria:Tunisia" count="3"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_Major_Factory_Eastern" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -4714,6 +4739,9 @@
       <option name="resourceCount" value="3"/>
     </attachment>
     <!-- Chinese Triggers -->
+    <attachment name="Guerrillas" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Chinese Guerrilla Fighters"/>
+    </attachment>
     <attachment name="triggerAttachment_Chinese_Artillery_Supplies" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="objectiveAttachment_Chinese_1_Burma_Road"/>
       <option name="frontier" value="productionChinese_Burma_Road_Open"/>
@@ -4799,73 +4827,73 @@
       <option name="when" value="after:anzacBattle"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Yunnan" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Yunnan:conditionAttachment_Japanese_Own_Yunnan_Empty"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Own_Yunnan:conditionAttachment_Japanese_Own_Yunnan_Empty:Guerrillas"/>
       <option name="placement" value="Yunnan:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Szechwan" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Szechwan:conditionAttachment_Japanese_Own_Szechwan_Empty"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Own_Szechwan:conditionAttachment_Japanese_Own_Szechwan_Empty:Guerrillas"/>
       <option name="placement" value="Szechwan:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Sikang" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Sikang:conditionAttachment_Japanese_Own_Sikang_Empty"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Own_Sikang:conditionAttachment_Japanese_Own_Sikang_Empty:Guerrillas"/>
       <option name="placement" value="Sikang:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Hunan" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Hunan:conditionAttachment_Japanese_Own_Hunan_Empty"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Own_Hunan:conditionAttachment_Japanese_Own_Hunan_Empty:Guerrillas"/>
       <option name="placement" value="Hunan:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Kweichow" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Kweichow:conditionAttachment_Japanese_Own_Kweichow_Empty"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Own_Kweichow:conditionAttachment_Japanese_Own_Kweichow_Empty:Guerrillas"/>
       <option name="placement" value="Kweichow:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Tsinghai" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Tsinghai:conditionAttachment_Japanese_Own_Tsinghai_Empty"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Own_Tsinghai:conditionAttachment_Japanese_Own_Tsinghai_Empty:Guerrillas"/>
       <option name="placement" value="Tsinghai:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Shensi" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Shensi:conditionAttachment_Japanese_Own_Shensi_Empty"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Own_Shensi:conditionAttachment_Japanese_Own_Shensi_Empty:Guerrillas"/>
       <option name="placement" value="Shensi:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Hopei" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Hopei:conditionAttachment_Japanese_Own_Hopei_Empty"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Own_Hopei:conditionAttachment_Japanese_Own_Hopei_Empty:Guerrillas"/>
       <option name="placement" value="Hopei:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Kansu" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Kansu:conditionAttachment_Japanese_Own_Kansu_Empty"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Own_Kansu:conditionAttachment_Japanese_Own_Kansu_Empty:Guerrillas"/>
       <option name="placement" value="Kansu:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Suiyuyan" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Suiyuyan:conditionAttachment_Japanese_Own_Suiyuyan_Empty"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Own_Suiyuyan:conditionAttachment_Japanese_Own_Suiyuyan_Empty:Guerrillas"/>
       <option name="placement" value="Suiyuyan:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Chahar" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Chahar:conditionAttachment_Japanese_Own_Chahar_Empty"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Own_Chahar:conditionAttachment_Japanese_Own_Chahar_Empty:Guerrillas"/>
       <option name="placement" value="Chahar:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Guerilla_Anhwe" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Anhwe:conditionAttachment_Japanese_Own_Anhwe_Empty"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Own_Anhwe:conditionAttachment_Japanese_Own_Anhwe_Empty:Guerrillas"/>
       <option name="placement" value="Anhwe:infantry"/>
       <option name="uses" value="999"/>
       <option name="when" value="before:chineseCombatMove"/>
@@ -4966,6 +4994,9 @@
     <attachment name="conditionAttachment_Germany_Occupies_Southern_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Southern France" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_Japanese_Occupies_Southern_France" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Southern France" count="1"/>
+    </attachment>
     <attachment name="triggerAttachment_Italy_Occupies_Southern_France" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Italy_Occupies_Southern_France"/>
       <option name="when" value="before:italiansNonCombatMove"/>
@@ -4981,6 +5012,17 @@
       <option name="players" value="French"/>
       <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
       <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Occupies_Southern_France" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France"/>
+      <option name="when" value="before:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="players" value="French"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="Vichy_active" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Use Vichy Rules"/>
     </attachment>
     <!-- Vichy Fleet -->
     <attachment name="conditionAttachment_Fleet_Can_Turn_Vichy_Destroyer" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5010,28 +5052,28 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Destroyer_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_No_Allied_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Vichy_Destroyer"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_No_Allied_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Vichy_Destroyer:Vichy_active"/>
       <option name="placement" value="93 Sea Zone:destroyer"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Destroyer_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Destroyer_Destroyer_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_No_Allied_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Vichy_Destroyer_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_No_Allied_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Vichy_Destroyer_2:Vichy_active"/>
       <option name="placement" value="93 Sea Zone:destroyer"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Destroyer_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Cruiser_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_No_Allied_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Vichy_Cruiser"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_No_Allied_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Vichy_Cruiser:Vichy_active"/>
       <option name="placement" value="93 Sea Zone:cruiser"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Cruiser_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Destroyer_Cruiser_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_No_Allied_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Vichy_Cruiser_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_No_Allied_Units_In_Southern_France:conditionAttachment_Fleet_Can_Turn_Vichy_Cruiser_2:Vichy_active"/>
       <option name="placement" value="93 Sea Zone:cruiser"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5100,21 +5142,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Infantry_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Infantry"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Infantry:Vichy_active"/>
       <option name="placement" value="Morocco:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Infantry_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Infantry_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Infantry_2:Vichy_active"/>
       <option name="placement" value="Morocco:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Infantry_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Infantry_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Infantry_3:Vichy_active"/>
       <option name="placement" value="Morocco:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5126,21 +5168,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Artillery_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Artillery"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Artillery:Vichy_active"/>
       <option name="placement" value="Morocco:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Artillery_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Artillery_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Artillery_2:Vichy_active"/>
       <option name="placement" value="Morocco:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Artillery_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Artillery_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Artillery_3:Vichy_active"/>
       <option name="placement" value="Morocco:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5152,14 +5194,14 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Fighter_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Fighter"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Fighter:Vichy_active"/>
       <option name="placement" value="Morocco:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Fighter_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Morocco_3_Fighter_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Fighter_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Morocco_Can_Turn_Vichy_Fighter_2:Vichy_active"/>
       <option name="placement" value="Morocco:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5172,7 +5214,7 @@
       <option name="changeOwnership" value="Morocco:French:Neutral_Axis:true"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Morocco_2" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Morocco_3:1:true:true:false:false"/>
@@ -5240,21 +5282,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Infantry_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Infantry"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Infantry:Vichy_active"/>
       <option name="placement" value="Tunisia:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Infantry_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Infantry_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Infantry_2:Vichy_active"/>
       <option name="placement" value="Tunisia:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Infantry_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Infantry_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Infantry_3:Vichy_active"/>
       <option name="placement" value="Tunisia:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5266,21 +5308,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Artillery_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Artillery"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Artillery:Vichy_active"/>
       <option name="placement" value="Tunisia:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Artillery_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Artillery_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Artillery_2:Vichy_active"/>
       <option name="placement" value="Tunisia:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Artillery_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Artillery_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Artillery_3:Vichy_active"/>
       <option name="placement" value="Tunisia:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5292,14 +5334,14 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Fighter_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Fighter"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Fighter:Vichy_active"/>
       <option name="placement" value="Tunisia:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Fighter_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Tunisia_3_Fighter_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Fighter_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Tunisia_Can_Turn_Vichy_Fighter_2:Vichy_active"/>
       <option name="placement" value="Tunisia:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5312,7 +5354,7 @@
       <option name="changeOwnership" value="Tunisia:French:Neutral_Axis:true"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Tunisia_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Tunisia_3:1:true:true:false:false"/>
@@ -5380,21 +5422,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Infantry_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Infantry"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Infantry:Vichy_active"/>
       <option name="placement" value="Algeria:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Infantry_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Infantry_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Infantry_2:Vichy_active"/>
       <option name="placement" value="Algeria:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Infantry_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Infantry_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Infantry_3:Vichy_active"/>
       <option name="placement" value="Algeria:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5406,21 +5448,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Artillery_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Artillery"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Artillery:Vichy_active"/>
       <option name="placement" value="Algeria:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Artillery_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Artillery_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Artillery_2:Vichy_active"/>
       <option name="placement" value="Algeria:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Artillery_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Artillery_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Artillery_3:Vichy_active"/>
       <option name="placement" value="Algeria:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5432,14 +5474,14 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Fighter_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Fighter"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Fighter:Vichy_active"/>
       <option name="placement" value="Algeria:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Fighter_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Algeria_3_Fighter_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Fighter_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Algeria_Can_Turn_Vichy_Fighter_2:Vichy_active"/>
       <option name="placement" value="Algeria:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5452,7 +5494,7 @@
       <option name="changeOwnership" value="Algeria:French:Neutral_Axis:true"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Algeria_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Algeria_3:1:true:true:false:false"/>
@@ -5520,21 +5562,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Syria_3_Infantry_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Infantry"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Infantry:Vichy_active"/>
       <option name="placement" value="Syria:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Syria_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Syria_3_Infantry_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Infantry_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Infantry_2:Vichy_active"/>
       <option name="placement" value="Syria:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Syria_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Syria_3_Infantry_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Infantry_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Infantry_3:Vichy_active"/>
       <option name="placement" value="Syria:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5546,21 +5588,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Syria_3_Artillery_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Artillery"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Artillery:Vichy_active"/>
       <option name="placement" value="Syria:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Syria_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Syria_3_Artillery_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Artillery_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Artillery_2:Vichy_active"/>
       <option name="placement" value="Syria:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Syria_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Syria_3_Artillery_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Artillery_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Artillery_3:Vichy_active"/>
       <option name="placement" value="Syria:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5572,14 +5614,14 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Syria_3_Fighter_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Fighter"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Fighter:Vichy_active"/>
       <option name="placement" value="Syria:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Syria_3_Fighter_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Syria_3_Fighter_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Fighter_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Syria_Can_Turn_Vichy_Fighter_2:Vichy_active"/>
       <option name="placement" value="Syria:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5592,7 +5634,7 @@
       <option name="changeOwnership" value="Syria:French:Neutral_Axis:true"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Syria_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Syria_3:1:true:true:false:false"/>
@@ -5660,21 +5702,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Infantry_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Infantry"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Infantry:Vichy_active"/>
       <option name="placement" value="French Indo China:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Infantry_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Infantry_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Infantry_2:Vichy_active"/>
       <option name="placement" value="French Indo China:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Infantry_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Infantry_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Infantry_3:Vichy_active"/>
       <option name="placement" value="French Indo China:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5686,21 +5728,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Artillery_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Artillery"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Artillery:Vichy_active"/>
       <option name="placement" value="French Indo China:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Artillery_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Artillery_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Artillery_2:Vichy_active"/>
       <option name="placement" value="French Indo China:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Artillery_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Artillery_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Artillery_3:Vichy_active"/>
       <option name="placement" value="French Indo China:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5712,14 +5754,14 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Fighter_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Fighter"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Fighter:Vichy_active"/>
       <option name="placement" value="French Indo China:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Fighter_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3_Fighter_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Fighter_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Indo_China_Can_Turn_Vichy_Fighter_2:Vichy_active"/>
       <option name="placement" value="French Indo China:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5732,7 +5774,7 @@
       <option name="changeOwnership" value="French Indo China:French:Neutral_Axis:true"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active:Vichy_active"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_3:1:true:true:false:false"/>
@@ -5800,21 +5842,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Infantry_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Infantry"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Infantry:Vichy_active"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Infantry_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Infantry_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Infantry_2:Vichy_active"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Infantry_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Infantry_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Infantry_3:Vichy_active"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5826,21 +5868,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Artillery_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Artillery"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Artillery:Vichy_active"/>
       <option name="placement" value="French Madagascar:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Artillery_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Artillery_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Artillery_2:Vichy_active"/>
       <option name="placement" value="French Madagascar:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Artillery_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Artillery_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Artillery_3:Vichy_active"/>
       <option name="placement" value="French Madagascar:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5852,14 +5894,14 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Fighter_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Fighter"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Fighter:Vichy_active"/>
       <option name="placement" value="French Madagascar:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Fighter_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3_Fighter_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Fighter_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Madagascar_Can_Turn_Vichy_Fighter_2:Vichy_active"/>
       <option name="placement" value="French Madagascar:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5872,7 +5914,7 @@
       <option name="changeOwnership" value="French Madagascar:French:Neutral_Axis:true"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_3:1:true:true:false:false"/>
@@ -5940,21 +5982,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Infantry_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Infantry"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Infantry:Vichy_active"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Infantry_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Infantry_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Infantry_2:Vichy_active"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Infantry_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Infantry_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Infantry_3:Vichy_active"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5966,21 +6008,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Artillery_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Artillery"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Artillery:Vichy_active"/>
       <option name="placement" value="French West Africa:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Artillery_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Artillery_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Artillery_2:Vichy_active"/>
       <option name="placement" value="French West Africa:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Artillery_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Artillery_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Artillery_3:Vichy_active"/>
       <option name="placement" value="French West Africa:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -5992,14 +6034,14 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Fighter_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Fighter"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Fighter:Vichy_active"/>
       <option name="placement" value="French West Africa:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Fighter_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_3_Fighter_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Fighter_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_West_Africa_Can_Turn_Vichy_Fighter_2:Vichy_active"/>
       <option name="placement" value="French West Africa:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -6080,21 +6122,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Infantry_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Infantry"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Infantry:Vichy_active"/>
       <option name="placement" value="French Central Africa:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Infantry_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Infantry_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Infantry_2:Vichy_active"/>
       <option name="placement" value="French Central Africa:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Infantry_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Infantry_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Infantry_3:Vichy_active"/>
       <option name="placement" value="French Central Africa:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -6106,21 +6148,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Artillery_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Artillery"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Artillery:Vichy_active"/>
       <option name="placement" value="French Central Africa:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Artillery_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Artillery_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Artillery_2:Vichy_active"/>
       <option name="placement" value="French Central Africa:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Artillery_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Artillery_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Artillery_3:Vichy_active"/>
       <option name="placement" value="French Central Africa:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -6132,14 +6174,14 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Fighter_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Fighter"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Fighter:Vichy_active"/>
       <option name="placement" value="French Central Africa:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Fighter_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3_Fighter_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Fighter_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Fighter_2:Vichy_active"/>
       <option name="placement" value="French Central Africa:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -6152,7 +6194,7 @@
       <option name="changeOwnership" value="French Central Africa:French:Neutral_Axis:true"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_3:1:true:true:false:false"/>
@@ -6220,21 +6262,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Infantry_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Infantry"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Infantry:Vichy_active"/>
       <option name="placement" value="Southern France:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Infantry_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Infantry_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Infantry_2:Vichy_active"/>
       <option name="placement" value="Southern France:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Infantry_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Infantry_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Infantry_3:Vichy_active"/>
       <option name="placement" value="Southern France:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -6246,21 +6288,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Artillery_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Artillery"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Artillery:Vichy_active"/>
       <option name="placement" value="Southern France:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Artillery_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Artillery_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Artillery_2:Vichy_active"/>
       <option name="placement" value="Southern France:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Artillery_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Artillery_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Artillery_3:Vichy_active"/>
       <option name="placement" value="Southern France:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -6272,14 +6314,14 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Fighter_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Fighter"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Fighter:Vichy_active"/>
       <option name="placement" value="Southern France:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Fighter_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Southern_France_3_Fighter_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Fighter_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_Southern_France_Can_Turn_Vichy_Fighter_2:Vichy_active"/>
       <option name="placement" value="Southern France:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -6292,7 +6334,7 @@
       <option name="changeOwnership" value="Southern France:French:Neutral_Axis:true"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Southern_France_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_Southern_France_3:1:true:true:false:false"/>
@@ -6360,21 +6402,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Infantry_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Infantry"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Infantry:Vichy_active"/>
       <option name="placement" value="French Guiana:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Infantry_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Infantry_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Infantry_2:Vichy_active"/>
       <option name="placement" value="French Guiana:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Infantry_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Infantry_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Infantry_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Infantry_3:Vichy_active"/>
       <option name="placement" value="French Guiana:infantry"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -6386,21 +6428,21 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Artillery_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Artillery"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Artillery:Vichy_active"/>
       <option name="placement" value="French Guiana:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Artillery_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Artillery_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Artillery_2:Vichy_active"/>
       <option name="placement" value="French Guiana:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Artillery_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Artillery_Place_3" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Artillery_3"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Artillery_3:Vichy_active"/>
       <option name="placement" value="French Guiana:artillery"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -6412,14 +6454,14 @@
       <option name="when" value="after:frenchPolitics"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Fighter_Place" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Fighter"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Fighter:Vichy_active"/>
       <option name="placement" value="French Guiana:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Fighter_Remove:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3_Fighter_Place_2" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Fighter_2"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:conditionAttachment_French_Guiana_Can_Turn_Vichy_Fighter_2:Vichy_active"/>
       <option name="placement" value="French Guiana:fighter"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
@@ -6432,7 +6474,7 @@
       <option name="changeOwnership" value="French Guiana:French:Neutral_Axis:true"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Guiana_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
+      <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
       <option name="activateTrigger" value="triggerAttachment_Axis_Conquer_All_France_French_Guiana_3:1:true:true:false:false"/>
@@ -6815,35 +6857,72 @@
       <option name="uses" value="1"/>
       <option name="removeUnits" value="93 Sea Zone:destroyer:cruiser" count="1000"/>
     </attachment>
+    <attachment name="triggerAttachment_Japanese_Occupies_Southern_France_Fleet_Scuddle" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="93 Sea Zone:destroyer:cruiser" count="1000"/>
+    </attachment>
     <attachment name="conditionAttachment_Vichy_France_Facilities_in_Southern_France" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Southern France" count="1"/>
       <option name="unitPresence" value="factory_minor" count="1"/>
     </attachment>
+    <attachment name="triggerAttachment_Germans_Occupies_Southern_France_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germany_Occupies_Southern_France"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Southern France:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germans_Occupies_Southern_France_Army_Disband_Facilities" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germany_Occupies_Southern_France"/>
+      <option name="when" value="after:germansPlace"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Southern France:factory_minor:harbour" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Southern_France_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italy_Occupies_Southern_France"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Southern France:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Occupies_Southern_France_Army_Disband_Facilities" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italy_Occupies_Southern_France"/>
+      <option name="when" value="after:italiansPlace"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Southern France:factory_minor:harbour" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japan_Occupies_Southern_France_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Southern France:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japan_Occupies_Southern_France_Army_Disband_Facilities" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France"/>
+      <option name="when" value="after:italiansPlace"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Southern France:factory_minor:harbour" count="1000"/>
+    </attachment>
     <attachment name="triggerAttachment_Italy_Occupies_Southern_France_Facilities" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Italy_Occupies_Southern_France:conditionAttachment_Vichy_France_Facilities_in_Southern_France"/>
-      <option name="when" value="after:italiansNonCombatMove"/>
+      <option name="when" value="after:italiansPlace"/>
       <option name="uses" value="1"/>
       <option name="placement" value="Southern France:factory_minor"/>
       <option name="placement" value="Southern France:harbour"/>
     </attachment>
     <attachment name="triggerAttachment_Germany_Occupies_Southern_France_Facilities" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Germany_Occupies_Southern_France:conditionAttachment_Vichy_France_Facilities_in_Southern_France"/>
-      <option name="when" value="after:germansNonCombatMove"/>
+      <option name="when" value="after:germansPlace"/>
       <option name="uses" value="1"/>
       <option name="placement" value="Southern France:factory_minor"/>
       <option name="placement" value="Southern France:harbour"/>
     </attachment>
-    <attachment name="triggerAttachment_Germans_Occupies_Southern_France_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Germany_Occupies_Southern_France"/>
-      <option name="when" value="after:germansNonCombatMove"/>
+    <attachment name="triggerAttachment_Japanese_Occupies_Southern_France_Facilities" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France:conditionAttachment_Vichy_France_Facilities_in_Southern_France"/>
+      <option name="when" value="after:japanesePlace"/>
       <option name="uses" value="1"/>
-      <option name="removeUnits" value="Southern France:infantry:artillery:fighter:factory_minor:harbour" count="1000"/>
-    </attachment>
-    <attachment name="triggerAttachment_Italy_Occupies_Southern_France_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Italy_Occupies_Southern_France"/>
-      <option name="when" value="after:italiansNonCombatMove"/>
-      <option name="uses" value="1"/>
-      <option name="removeUnits" value="Southern France:infantry:artillery:fighter:factory_minor:harbour" count="1000"/>
+      <option name="placement" value="Southern France:factory_minor"/>
+      <option name="placement" value="Southern France:harbour"/>
     </attachment>
     <attachment name="triggerAttachment_Germany_Occupies_Morocco_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Germany_Occupies_Southern_France"/>
@@ -6938,6 +7017,54 @@
     <attachment name="triggerAttachment_Italy_Occupies_French_Indo_China_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Italy_Occupies_Southern_France"/>
       <option name="when" value="after:italiansNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="French Indo China:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Occupies_Morocco_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Morocco:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Occupies_Algeria_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Algeria:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Occupies_Tunisia_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Tunisia:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Syria_France_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="Syria:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Occupies_French_West_Africa_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="French West Africa:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Occupies_French_Equatorial_Africa_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="French Equatorial Africa:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Occupies_French_Madagascar_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+      <option name="uses" value="1"/>
+      <option name="removeUnits" value="French Madagascar:infantry:artillery:fighter" count="1000"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Occupies_French_Indo_China_Army_Disband" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Occupies_Southern_France"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
       <option name="uses" value="1"/>
       <option name="removeUnits" value="French Indo China:infantry:artillery:fighter" count="1000"/>
     </attachment>
@@ -14968,7 +15095,7 @@
     <property name="All Rockets Attack" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Strictly rule compliant rockets" value="false" editable="true">
+    <property name="Rocket Attacks Per Factory Infinite" value="true" editable="false">
       <boolean/>
     </property>
     <property name="Rockets Can Fly Over Impassables" value="false" editable="false">
@@ -15169,6 +15296,27 @@
       <boolean/>
     </property>
     <property name="Limit SBR Damage To Factory Production" value="false" editable="false">
+      <boolean/>
+    </property>
+    <property name="Use Vichy Rules" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="USSR Lend Lease bonus for Japan declaring war on it" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="USA bonus for North Africa" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="USA bonus for Islands surrounding the Carolines inclusive" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="UK bonus for two out of Sicily/Sardinia/Rome/Greece" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="Japan Iwo Jima/Okinawa bonus" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="Chinese Guerrilla Fighters" value="true" editable="true">
       <boolean/>
     </property>
     <!-- Neutrals related -->
@@ -15483,7 +15631,7 @@ Fighters and/or Tactical bombers can be scrambled from any territory bordering a
 
 <b>Strategic Bombing Runs (SBR)</b><br>
 Bombing can now happen against both types of ICs, harbours, and airfields (attackers choice)[tactical bombers can not target factories though]. Fighters can participate in the bombing run as escorts. Fighters in the territory being bombed can be launched as interceptors (no airfield necessary).<br><br>
-<b>If interceptors are launched:</b> a one-round air battle takes place right away all involved. Bombers roll at 1 and fighters involved roll at 2 (jets rolls at 3). Either attacking bombers or fighters can be taken as casualties.<br><br>
+<b>If interceptors are launched:</b> a one-round air battle takes place right away all involved. Bombers roll at 1 and fighters involved roll at 2 (jets roll at 3). Either attacking bombers or fighters can be taken as casualties.<br><br>
 After the air battle, or if there were no interceptors, the escorts are retreated and any bombers/tacs remaining can now be divied up to attack specific targets. Each target rolls its built-in AA gun against the bombers/tacs targetting it. If there is an AA gun in the territory being bombed it does <b>not</b> roll because its there to defend combat units and not complexes/bases.
 <br><br>
 
@@ -15528,6 +15676,14 @@ These changes to units are things other than price/movement which you can see in
 <b>Credits to Veqryn for almost all related Engine code that allows this map to work.</b>
 <br><br><hr><br>
 <br>Change Log:
+<br>
+<br>BM3.4 Marine now qualifies for landings on Normandy/Holland/Sth France objective
+<br>Options for Balanced Mod changes
+<br>
+<br>
+<br>4.0
+<br>Corrected UK_Pacific handling for US territories
+<br>
 <br>BM2.1: Fixes Vichy bug
 <br>
 <br>3.9

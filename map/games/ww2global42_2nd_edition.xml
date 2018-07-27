@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1942 2nd Edition" version="3.9"/>
+  <info name="World War II Global 1942 2nd Edition" version="4.0"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -2725,6 +2725,8 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Mexico" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
+      <option name="changeUnitOwners" value="British"/>
+      <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Guam" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -2741,9 +2743,13 @@
     <attachment name="territoryAttachment" attachTo="Western United States" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="10"/>
       <option name="victoryCity" value="1"/>
+      <option name="changeUnitOwners" value="British"/>
+      <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Alaska" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
+      <option name="changeUnitOwners" value="British"/>
+      <option name="whenCapturedByGoesTo" value="British:UK_Pacific"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Aleutian Islands" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -6163,7 +6169,7 @@
     <property name="All Rockets Attack" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Strictly rule compliant rockets" value="false" editable="true">
+    <property name="Rocket Attacks Per Factory Infinite" value="true" editable="false">
       <boolean/>
     </property>
     <property name="Rockets Can Fly Over Impassables" value="false" editable="false">
@@ -6646,6 +6652,9 @@ These changes to units are things other than price/movement which you can see in
 <b>Credits to Veqryn for almost all related Engine code that allows this map to work.</b>
 <br><br><hr><br>
 <br>Change Log:
+<br>
+<br>4.0
+<br>Corrected UK_Pacific handling for US territories
 <br>
 <br>3.9
 <br>Stopped British fighters from dying if UK Pacific could place a carrier under them.

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Original" version="2.9"/>
+  <info name="World War II Global 1940 Original" version="2.9.1"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.5.2"/>
   <diceSides value="6"/>
@@ -5086,7 +5086,7 @@
     <property name="All Rockets Attack" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Strictly rule compliant rockets" value="false" editable="true">
+    <property name="Rocket Attack Per Factory Restricted" value="true" editable="false">
       <boolean/>
     </property>
     <property name="Rockets Can Fly Over Impassables" value="false" editable="false">
@@ -5516,6 +5516,9 @@ These changes to units are things other than price/movement which you can see in
 <b>Credits to Veqryn for almost all related Engine code that allows this map to work.</b>
 <br><br><hr><br>
 <br>Change Log:
+<br>
+<br>2.9.1
+<br>Corrected UK_Pacific handling for US territories
 <br>
 <br>2.8
 <br>Deleted connection between 115 Sea Zones and Poland, and changed map tiles to show a connection.
