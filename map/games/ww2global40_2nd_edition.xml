@@ -1378,7 +1378,9 @@
       <step name="britishEndTurn" delegate="endTurn" player="British">
         <stepProperty name="skipPosting" value="true"/>
       </step>
-      <step name="UK_PacificPlace" delegate="place" player="UK_Pacific"/>
+      <step name="UK_PacificPlace" delegate="place" player="UK_Pacific">
+        <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
+      </step>
       <step name="UK_PacificEndTurn" delegate="endTurn" player="UK_Pacific">
         <stepProperty name="turnSummaryPlayers" value="Americans:Chinese:British:UK_Pacific"/>
       </step>
