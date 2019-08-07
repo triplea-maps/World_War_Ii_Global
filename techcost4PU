@@ -2007,6 +2007,7 @@
     </attachment>
     <!-- Players Tech -->
     <attachment name="techAttachment" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
+      <option name="techCost" value="4"/>
       <option name="superSub" value="false"/>
       <option name="jetPower" value="false"/>
       <option name="shipyards" value="false"/>
@@ -2019,6 +2020,7 @@
       <option name="warBonds" value="false"/>
     </attachment>
     <attachment name="techAttachment" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
+      <option name="techCost" value="4"/>
       <option name="superSub" value="false"/>
       <option name="jetPower" value="false"/>
       <option name="shipyards" value="false"/>
@@ -2031,6 +2033,7 @@
       <option name="warBonds" value="false"/>
     </attachment>
     <attachment name="techAttachment" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
+      <option name="techCost" value="4"/>
       <option name="superSub" value="false"/>
       <option name="jetPower" value="false"/>
       <option name="shipyards" value="false"/>
@@ -2043,6 +2046,7 @@
       <option name="warBonds" value="false"/>
     </attachment>
     <attachment name="techAttachment" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
+      <option name="techCost" value="4"/>
       <option name="superSub" value="false"/>
       <option name="jetPower" value="false"/>
       <option name="shipyards" value="false"/>
@@ -2055,6 +2059,7 @@
       <option name="warBonds" value="false"/>
     </attachment>
     <attachment name="techAttachment" attachTo="British" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
+      <option name="techCost" value="4"/>
       <option name="superSub" value="false"/>
       <option name="jetPower" value="false"/>
       <option name="shipyards" value="false"/>
@@ -2067,6 +2072,7 @@
       <option name="warBonds" value="false"/>
     </attachment>
     <attachment name="techAttachment" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
+      <option name="techCost" value="4"/>
       <option name="superSub" value="false"/>
       <option name="jetPower" value="false"/>
       <option name="shipyards" value="false"/>
@@ -2079,6 +2085,7 @@
       <option name="warBonds" value="false"/>
     </attachment>
     <attachment name="techAttachment" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
+      <option name="techCost" value="4"/>
       <option name="superSub" value="false"/>
       <option name="jetPower" value="false"/>
       <option name="shipyards" value="false"/>
@@ -2091,6 +2098,7 @@
       <option name="warBonds" value="false"/>
     </attachment>
     <attachment name="techAttachment" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
+      <option name="techCost" value="4"/>
       <option name="superSub" value="false"/>
       <option name="jetPower" value="false"/>
       <option name="shipyards" value="false"/>
@@ -2103,6 +2111,7 @@
       <option name="warBonds" value="false"/>
     </attachment>
     <attachment name="techAttachment" attachTo="French" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
+      <option name="techCost" value="4"/>
       <option name="superSub" value="false"/>
       <option name="jetPower" value="false"/>
       <option name="shipyards" value="false"/>
