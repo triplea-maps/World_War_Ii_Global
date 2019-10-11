@@ -5043,13 +5043,18 @@
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachment_Morocco_No_Canadian_Units" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Morocco" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_Morocco_No_Russian_Units" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Morocco" count="1"/>
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Morocco_Can_Turn_Vichy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Morocco_No_British_Units:conditionAttachment_Morocco_No_American_Units:conditionAttachment_Morocco_No_ANZAC_Units:conditionAttachment_Morocco_No_Russian_Units"/>
+      <option name="conditions" value="conditionAttachment_Morocco_No_British_Units:conditionAttachment_Morocco_No_American_Units:conditionAttachment_Morocco_No_ANZAC_Units:conditionAttachment_Morocco_No_Canadian_Units:conditionAttachment_Morocco_No_Russian_Units"/>
       <option name="conditionType" value="AND"/>
     </attachment>
     <attachment name="conditionAttachment_Morocco_Can_Turn_Vichy_Infantry" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5183,13 +5188,18 @@
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachment_Tunisia_No_Canadian_Units" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Tunisia" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_Tunisia_No_Russian_Units" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Tunisia" count="1"/>
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Tunisia_Can_Turn_Vichy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Tunisia_No_British_Units:conditionAttachment_Tunisia_No_American_Units:conditionAttachment_Tunisia_No_ANZAC_Units:conditionAttachment_Tunisia_No_Russian_Units"/>
+      <option name="conditions" value="conditionAttachment_Tunisia_No_British_Units:conditionAttachment_Tunisia_No_American_Units:conditionAttachment_Tunisia_No_ANZAC_Units:conditionAttachment_Tunisia_No_Canadian_Units:conditionAttachment_Tunisia_No_Russian_Units"/>
       <option name="conditionType" value="AND"/>
     </attachment>
     <attachment name="conditionAttachment_Tunisia_Can_Turn_Vichy_Infantry" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5323,13 +5333,18 @@
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachment_Algeria_No_Canadian_Units" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Algeria" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_Algeria_No_Russian_Units" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Algeria" count="1"/>
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Algeria_Can_Turn_Vichy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Algeria_No_British_Units:conditionAttachment_Algeria_No_American_Units:conditionAttachment_Algeria_No_ANZAC_Units:conditionAttachment_Algeria_No_Russian_Units"/>
+      <option name="conditions" value="conditionAttachment_Algeria_No_British_Units:conditionAttachment_Algeria_No_American_Units:conditionAttachment_Algeria_No_ANZAC_Units:conditionAttachment_Algeria_No_Canadian_Units:conditionAttachment_Algeria_No_Russian_Units"/>
       <option name="conditionType" value="AND"/>
     </attachment>
     <attachment name="conditionAttachment_Algeria_Can_Turn_Vichy_Infantry" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5463,13 +5478,18 @@
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachment_Syria_No_Canadian_Units" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Syria" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_Syria_No_Russian_Units" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Syria" count="1"/>
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Syria_Can_Turn_Vichy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Syria_No_British_Units:conditionAttachment_Syria_No_American_Units:conditionAttachment_Syria_No_ANZAC_Units:conditionAttachment_Syria_No_Russian_Units"/>
+      <option name="conditions" value="conditionAttachment_Syria_No_British_Units:conditionAttachment_Syria_No_American_Units:conditionAttachment_Syria_No_ANZAC_Units:conditionAttachment_Syria_No_Canadian_Units:conditionAttachment_Syria_No_Russian_Units"/>
       <option name="conditionType" value="AND"/>
     </attachment>
     <attachment name="conditionAttachment_Syria_Can_Turn_Vichy_Infantry" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5603,13 +5623,18 @@
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachment_French_Indo_China_No_Canadian_Units" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="French Indo China" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_French_Indo_China_No_Russian_Units" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="French Indo China" count="1"/>
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_French_Indo_China_Can_Turn_Vichy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_French_Indo_China_No_British_Units:conditionAttachment_French_Indo_China_No_American_Units:conditionAttachment_French_Indo_China_No_ANZAC_Units:conditionAttachment_French_Indo_China_No_Russian_Units"/>
+      <option name="conditions" value="conditionAttachment_French_Indo_China_No_British_Units:conditionAttachment_French_Indo_China_No_American_Units:conditionAttachment_French_Indo_China_No_ANZAC_Units:conditionAttachment_French_Indo_China_No_Canadian_Units:conditionAttachment_French_Indo_China_No_Russian_Units"/>
       <option name="conditionType" value="AND"/>
     </attachment>
     <attachment name="conditionAttachment_French_Indo_China_Can_Turn_Vichy_Infantry" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5743,13 +5768,18 @@
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachment_French_Madagascar_No_Canadian_Units" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="French Madagascar" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_French_Madagascar_No_Russian_Units" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="French Madagascar" count="1"/>
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_French_Madagascar_Can_Turn_Vichy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_French_Madagascar_No_British_Units:conditionAttachment_French_Madagascar_No_American_Units:conditionAttachment_French_Madagascar_No_ANZAC_Units:conditionAttachment_French_Madagascar_No_Russian_Units"/>
+      <option name="conditions" value="conditionAttachment_French_Madagascar_No_British_Units:conditionAttachment_French_Madagascar_No_American_Units:conditionAttachment_French_Madagascar_No_ANZAC_Units:conditionAttachment_French_Madagascar_No_Canadian_Units:conditionAttachment_French_Madagascar_No_Russian_Units"/>
       <option name="conditionType" value="AND"/>
     </attachment>
     <attachment name="conditionAttachment_French_Madagascar_Can_Turn_Vichy_Infantry" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5888,8 +5918,13 @@
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachment_French_West_Africa_No_Canadian_Units" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="French West Africa" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_French_West_Africa_Can_Turn_Vichy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_French_West_Africa_No_British_Units:conditionAttachment_French_West_Africa_No_American_Units:conditionAttachment_French_West_Africa_No_ANZAC_Units:conditionAttachment_French_West_Africa_No_Russian_Units"/>
+      <option name="conditions" value="conditionAttachment_French_West_Africa_No_British_Units:conditionAttachment_French_West_Africa_No_American_Units:conditionAttachment_French_West_Africa_No_ANZAC_Units:conditionAttachment_French_West_Africa_No_Canadian_Units:conditionAttachment_French_West_Africa_No_Russian_Units"/>
       <option name="conditionType" value="AND"/>
     </attachment>
     <attachment name="conditionAttachment_French_West_Africa_Can_Turn_Vichy_Infantry" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -6023,13 +6058,18 @@
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachment_French_Central_Africa_No_Canadian_Units" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="French Central Africa" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_French_Central_Africa_No_Russian_Units" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="French Central Africa" count="1"/>
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_French_Central_Africa_Can_Turn_Vichy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_French_Central_Africa_No_British_Units:conditionAttachment_French_Central_Africa_No_American_Units:conditionAttachment_French_Central_Africa_No_ANZAC_Units:conditionAttachment_French_Central_Africa_No_Russian_Units"/>
+      <option name="conditions" value="conditionAttachment_French_Central_Africa_No_British_Units:conditionAttachment_French_Central_Africa_No_American_Units:conditionAttachment_French_Central_Africa_No_ANZAC_Units:conditionAttachment_French_Central_Africa_No_Canadian_Units:conditionAttachment_French_Central_Africa_No_Russian_Units"/>
       <option name="conditionType" value="AND"/>
     </attachment>
     <attachment name="conditionAttachment_French_Central_Africa_Can_Turn_Vichy_Infantry" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -6163,13 +6203,18 @@
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachment_Southern_France_No_Canadian_Units" attachTo="Canada" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Southern France" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_Southern_France_No_Russian_Units" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Southern France" count="1"/>
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Southern_France_Can_Turn_Vichy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Southern_France_No_British_Units:conditionAttachment_Southern_France_No_American_Units:conditionAttachment_Southern_France_No_ANZAC_Units:conditionAttachment_Southern_France_No_Russian_Units"/>
+      <option name="conditions" value="conditionAttachment_Southern_France_No_British_Units:conditionAttachment_Southern_France_No_American_Units:conditionAttachment_Southern_France_No_ANZAC_Units:conditionAttachment_Southern_France_No_Canadian_Units:conditionAttachment_Southern_France_No_Russian_Units"/>
       <option name="conditionType" value="AND"/>
     </attachment>
     <attachment name="conditionAttachment_Southern_France_Can_Turn_Vichy_Infantry" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
