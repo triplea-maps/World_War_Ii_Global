@@ -15595,6 +15595,7 @@ At the start of the game Germany and Italy are at war with the UK and ANZAC and 
 <li>Germany/Italy/Japan can declare war on USA or Russia or China at any time.</li>
 <li>If Germany/Italy/Japan is at war with one of USA or Russia or China it doesn't affect relations with the other.</li>
 <li>While not yet at war with the USA, Japan may not move into sea zones within 2 spaces of Western USA or Alaska.</li>
+<li>If Japan attacks a Russian territory next to Mongolia, all Mongolian territories and units are transferred to Russia. This does not occur if the Russia previously attacked Korea or any Japan-controlled territory bordering Mongolia.</li>
 </ul>
 <br><b>Russia</b>
 <ul>
