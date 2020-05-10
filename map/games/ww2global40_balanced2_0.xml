@@ -1454,7 +1454,7 @@
       <result resourceOrUnit="tactical_bomber" quantity="1"/>
     </productionRule>
     <productionRule name="buyBomber">
-      <cost resource="PUs" quantity="12"/>
+      <cost resource="PUs" quantity="14"/>
       <result resourceOrUnit="bomber" quantity="1"/>
     </productionRule>
     <productionRule name="buyTransport">
@@ -15345,11 +15345,11 @@
     <property name="notes">
       <value><![CDATA[  
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
-<b>G40 Balanced - Balance Mod 3.3</b><br>
+<b>G40 Balanced - Balance Mod 4.0</b><br>
 <br>
 <b>Original Game Credits:</b> Bung, Veqryn<br><br>
 
-<b>Mod Squad:</b> Adam514 (co-originator and oracle), Deathbringer1974 (chief executive troll), dust (good at math), dss85 (playtester and game breaker), Gencre (general haha), redrum (XML high priest), Regularkid (co-originator and king of noobs), simon33 (bug chaser), Young Grasshopper (topper goodwill ambassador)<br><br>
+<b>Mod Squad:</b> Adam514 (co-originator and oracle), Regularkid aka DudewithOpinions (co-originator and king of noobs), Deathbringer1974 (chief executive troll), dust (good at math), dss85 (playtester and game breaker), Gencre (general haha), redrum (XML high priest), simon33 (bug chaser), Young Grasshopper (topper goodwill ambassador)<br><br>
 <br><hr><br>
 
 <b>**REVISIONS**</b><br><br>
@@ -15357,6 +15357,8 @@
 <hr><br>
 
 <b>Revised Air Raid Rules:</b> Fighters attack and defend at 2. Strategic and tactical bombers attack at 1.<br><br>
+
+<b>Revised Bomber Cost:</b> Strategic Bombers now cost 14 PUs.<br><br>
 
 <b>Revised Capital Capture Rules:</b> The capture of a player's capital results in the plunder of that player's PUs only the <b>first</b> time the capital is taken. Subsequent recapture of the same capital results in the player's PUs being destroyed.<br><br>
 
