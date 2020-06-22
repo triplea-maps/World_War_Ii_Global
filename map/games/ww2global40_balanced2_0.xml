@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Balanced Mod3" version="3.4"/>
+  <info name="World War II Global 1940 Balanced Mod3" version="4.0"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1454,7 +1454,7 @@
       <result resourceOrUnit="tactical_bomber" quantity="1"/>
     </productionRule>
     <productionRule name="buyBomber">
-      <cost resource="PUs" quantity="12"/>
+      <cost resource="PUs" quantity="14"/>
       <result resourceOrUnit="bomber" quantity="1"/>
     </productionRule>
     <productionRule name="buyTransport">
@@ -15345,11 +15345,11 @@
     <property name="notes">
       <value><![CDATA[  
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
-<b>G40 Balanced - Balance Mod 3.3</b><br>
+<b>G40 Balanced - Balance Mod 4.0</b><br>
 <br>
 <b>Original Game Credits:</b> Bung, Veqryn<br><br>
 
-<b>Mod Squad:</b> Adam514 (co-originator and oracle), Deathbringer1974 (chief executive troll), dust (good at math), dss85 (playtester and game breaker), Gencre (general haha), redrum (XML high priest), Regularkid (co-originator and king of noobs), simon33 (bug chaser), Young Grasshopper (topper goodwill ambassador)<br><br>
+<b>Mod Squad:</b> Adam514 (co-originator and oracle), Regularkid aka DudewithOpinions (co-originator and king of noobs), Deathbringer1974 (chief executive troll), dust (good at math), dss85 (playtester and game breaker), Gencre (general haha), redrum (XML high priest), simon33 (bug chaser), Young Grasshopper (topper goodwill ambassador)<br><br>
 <br><hr><br>
 
 <b>**REVISIONS**</b><br><br>
@@ -15686,6 +15686,7 @@ These changes to units are things other than price/movement which you can see in
 <b>Credits to Veqryn for almost all related Engine code that allows this map to work.</b>
 <br><br><hr><br>
 <br>Change Log:
+<br>BM4.0 Bombers now costing 14
 <br>
 <br>BM3.4 Marine now qualifies for landings on Normandy/Holland/Sth France objective
 <br>Options for Balanced Mod changes
