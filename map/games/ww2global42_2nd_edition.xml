@@ -6451,7 +6451,7 @@ You may also need to use edit mode to correct things listed below.<br>
 <br>* (PE) TripleA should not allow non-combat moves to be done during combat move phase.
 <br>* (PE) Only non-air units that did not move during combat move and did not participate in combat, may move during non-combat-move.
 <br>* (PE) Transports can only be loaded in 1 phase (not both), and unloaded in 1 phase (not both).
-<br>* (PE) Transports if unloading for amphibious assault, must unload all their units, and may not hold back some units while offloading other units.
+<br>* (PE) Transports if unloading for amphibious assault must unload all units loaded in the combat move phase and may not hold back some units while offloading other units unless the units held back were loaded in previous rounds.
 <br>* (NA) Each phase of combat should have all units in that phase fire before any casualty selection occurs, whereas right now in TripleA if air and subs are involved then units might be broken up into smaller groups and casualty selection done for each group.
 <br>* (EM) If you select for a bombardment from a sea zone, you should be able to select which units you want to have bombard, but currently all possible units are used.
 <br>

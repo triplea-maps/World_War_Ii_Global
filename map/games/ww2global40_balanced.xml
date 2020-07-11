@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Balanced Mod3" version="3.4"/>
+  <info name="World War II Global 1940 Balanced Mod3" version="4.0"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -15358,8 +15358,6 @@
 
 <b>Revised Air Raid Rules:</b> Fighters attack and defend at 2. Strategic and tactical bombers attack at 1.<br><br>
 
-<b>Revised Bomber Cost:</b> Strategic Bombers now cost 14 PUs.<br><br>
-
 <b>Revised Capital Capture Rules:</b> The capture of a player's capital results in the plunder of that player's PUs only the <b>first</b> time the capital is taken. Subsequent recapture of the same capital results in the player's PUs being destroyed.<br><br>
 
 <b>Revised Victory Conditions:</b> If Germany is Allied controlled, an Axis victory in the Pacific requires 7 (rather than 6) Pacific VCs. If Japan is Allied controlled, an Axis victory in Europe requires 9 (rather than 8) Europe VCs. 
@@ -15531,7 +15529,7 @@ You may also need to use edit mode to correct things listed below.<br>
 <br>* (PE) TripleA should not allow non-combat moves to be done during combat move phase.
 <br>* (PE) Only non-air units that did not move during combat move and did not participate in combat, may move during non-combat-move.
 <br>* (PE) Transports can only be loaded in 1 phase (not both), and unloaded in 1 phase (not both).
-<br>* (PE) Transports if unloading for amphibious assault, must unload all their units, and may not hold back some units while offloading other units.
+<br>* (PE) Transports if unloading for amphibious assault must unload all units loaded in the combat move phase and may not hold back some units while offloading other units unless the units held back were loaded in previous rounds.
 <br>* (NA) Each phase of combat should have all units in that phase fire before any casualty selection occurs, whereas right now in TripleA if air and subs are involved then units might be broken up into smaller groups and casualty selection done for each group.
 <br>* (EM) If you select for a bombardment from a sea zone, you should be able to select which units you want to have bombard, but currently all possible units are used.
 <br>
@@ -15688,6 +15686,7 @@ These changes to units are things other than price/movement which you can see in
 <b>Credits to Veqryn for almost all related Engine code that allows this map to work.</b>
 <br><br><hr><br>
 <br>Change Log:
+<br>BM4.0 Bombers now costing 14
 <br>
 <br>BM3.4 Marine now qualifies for landings on Normandy/Holland/Sth France objective
 <br>Options for Balanced Mod changes
