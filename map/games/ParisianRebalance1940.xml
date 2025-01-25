@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 Parisian Rebalance" version="1.0"/>
+  <info name="World War II Global 1940 French Rebalance" version="2.0"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1216,6 +1216,7 @@
     <player name="Italians" optional="false"/>
     <player name="ANZAC" optional="false"/>
     <player name="French" optional="false"/>
+    <player name="Free_French" optional="true"/>
     <player name="Dutch" optional="true"/>
     <player name="Mongolians" optional="true"/>
     <player name="Neutral_Axis" optional="true"/>
@@ -1230,13 +1231,14 @@
     <alliance player="UK_Pacific" alliance="Allies"/>
     <alliance player="ANZAC" alliance="Allies"/>
     <alliance player="French" alliance="Allies"/>
+    <alliance player="Free_French" alliance="Allies"/>
     <alliance player="Germans" alliance="Axis"/>
     <alliance player="Japanese" alliance="Axis"/>
     <alliance player="Italians" alliance="Axis"/>
-    <alliance player="Dutch" alliance="Dutch"/>
-    <alliance player="Mongolians" alliance="Mongolians"/>
-    <alliance player="Neutral_Axis" alliance="Neutral_Axis"/>
-    <alliance player="Neutral_Allies" alliance="Neutral_Allies"/>
+    <alliance player="Dutch" alliance="Allies"/>
+    <alliance player="Mongolians" alliance="Allies"/>
+    <alliance player="Neutral_Axis" alliance="Axis"/>
+    <alliance player="Neutral_Allies" alliance="Allies"/>
     <alliance player="Neutral_True" alliance="Neutral_True"/>
   </playerList>
   <unitList>
@@ -3185,7 +3187,6 @@
     <attachment name="territoryAttachment" attachTo="Normandy Bordeaux" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="unitProduction" value="3"/>
-      <option name="originalOwner" value="Neutral_Axis"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="French Central Africa" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -3206,7 +3207,6 @@
     <attachment name="territoryAttachment" attachTo="Southern France" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
       <option name="unitProduction" value="3"/>
-      <option name="originalOwner" value="Neutral_Axis"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Syria" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -3923,7 +3923,7 @@
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="objectiveAttachment_Chinese_1_Burma_Road" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="objectiveValue" value="3"/>
+      <option name="objectiveValue" value="6"/>
       <option name="conditions" value="conditionAttachmentJapaneseDoNotControlBurmaRoad"/>
     </attachment>
     <!-- Victory Conditions -->
@@ -5044,6 +5044,72 @@
     <attachment name="Vichy_active" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Use Vichy Rules"/>
     </attachment>
+    <attachment name="TriggerAttachment_GermansCreateFree_French" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_1_Lose_France"/>
+      <option name="when" value="after:germansBattle"/>
+      <option name="uses" value="1"/>
+      <option name="changeOwnership" value="Morocco:French:Free_French:false"/>
+      <option name="changeOwnership" value="Algeria:French:Free_French:false"/>
+      <option name="changeOwnership" value="Tunisia:French:Free_French:false"/>
+      <option name="changeOwnership" value="Libya:French:Free_French:false"/>
+      <option name="changeOwnership" value="Tobruk:French:Free_French:false"/>
+      <option name="changeOwnership" value="French West Africa:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Central Africa:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Equatorial Africa:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Madagascar:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Guiana:French:Free_French:false"/>
+      <option name="changeOwnership" value="Syria:French:Free_French:false"/>
+      <option name="changeOwnership" value="Normandy Bordeaux:French:Italians:true"/>    <!-- Swap to Axis then back to Allies to convert ownership of facilities -->
+      <option name="changeOwnership" value="Normandy Bordeaux:Italians:Free_French:true"/>
+      <option name="changeOwnership" value="Southern France:French:Italians:true"/>
+      <option name="changeOwnership" value="Southern France:Italians:Free_French:true"/>
+      <option name="changeOwnership" value="New Hebrides:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Indo China:French:Free_French:false"/>
+    </attachment>
+    <attachment name="TriggerAttachment_ItaliansCreateFree_French" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_1_Lose_France"/>
+      <option name="when" value="after:italiansBattle"/>
+      <option name="uses" value="1"/>
+      <option name="changeOwnership" value="Morocco:French:Free_French:false"/>
+      <option name="changeOwnership" value="Algeria:French:Free_French:false"/>
+      <option name="changeOwnership" value="Tunisia:French:Free_French:false"/>
+      <option name="changeOwnership" value="Libya:French:Free_French:false"/>
+      <option name="changeOwnership" value="Tobruk:French:Free_French:false"/>
+      <option name="changeOwnership" value="French West Africa:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Central Africa:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Equatorial Africa:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Madagascar:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Guiana:French:Free_French:false"/>
+      <option name="changeOwnership" value="Syria:French:Free_French:false"/>
+      <option name="changeOwnership" value="Normandy Bordeaux:French:Italians:true"/>    <!-- Swap to Axis then back to Allies to convert ownership of facilities -->
+      <option name="changeOwnership" value="Normandy Bordeaux:Italians:Free_French:true"/>
+      <option name="changeOwnership" value="Southern France:French:Italians:true"/>
+      <option name="changeOwnership" value="Southern France:Italians:Free_French:true"/>
+      <option name="changeOwnership" value="New Hebrides:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Indo China:French:Free_French:false"/>
+    </attachment>
+    <attachment name="TriggerAttachment_JapaneseCreateFree_French" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_1_Lose_France"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="uses" value="1"/>
+      <option name="changeOwnership" value="Morocco:French:Free_French:false"/>
+      <option name="changeOwnership" value="Algeria:French:Free_French:false"/>
+      <option name="changeOwnership" value="Tunisia:French:Free_French:false"/>
+      <option name="changeOwnership" value="Libya:French:Free_French:false"/>
+      <option name="changeOwnership" value="Tobruk:French:Free_French:false"/>
+      <option name="changeOwnership" value="French West Africa:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Central Africa:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Equatorial Africa:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Madagascar:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Guiana:French:Free_French:false"/>
+      <option name="changeOwnership" value="Syria:French:Free_French:false"/>
+      <option name="changeOwnership" value="Normandy Bordeaux:French:Italians:true"/>    <!-- Swap to Axis then back to Allies to convert ownership of facilities -->
+      <option name="changeOwnership" value="Normandy Bordeaux:Italians:Free_French:true"/>
+      <option name="changeOwnership" value="Southern France:French:Italians:true"/>
+      <option name="changeOwnership" value="Southern France:Italians:Free_French:true"/>
+      <option name="changeOwnership" value="New Hebrides:French:Free_French:false"/>
+      <option name="changeOwnership" value="French Indo China:French:Free_French:false"/>
+    </attachment>
     <!-- Vichy Fleet -->
     <attachment name="conditionAttachment_Fleet_Can_Turn_Vichy_Destroyer" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="93 Sea Zone" count="1"/>
@@ -5231,7 +5297,7 @@
       <option name="conditions" value="conditionAttachment_False"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
-      <option name="changeOwnership" value="Morocco:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="Morocco:Free_French:Neutral_Axis:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Morocco_2" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Morocco_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
@@ -5371,7 +5437,7 @@
       <option name="conditions" value="conditionAttachment_False"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
-      <option name="changeOwnership" value="Tunisia:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="Tunisia:Free_French:Neutral_Axis:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Tunisia_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Tunisia_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
@@ -5511,7 +5577,7 @@
       <option name="conditions" value="conditionAttachment_False"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
-      <option name="changeOwnership" value="Algeria:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="Algeria:Free_French:Neutral_Axis:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Algeria_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Algeria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
@@ -5651,7 +5717,7 @@
       <option name="conditions" value="conditionAttachment_False"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
-      <option name="changeOwnership" value="Syria:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="Syria:Free_French:Neutral_Axis:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Syria_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Syria_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
@@ -5791,7 +5857,7 @@
       <option name="conditions" value="conditionAttachment_False"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
-      <option name="changeOwnership" value="French Indo China:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="French Indo China:Free_French:Neutral_Axis:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Indo_China_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Indo_China_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active:Vichy_active"/>
@@ -5931,7 +5997,7 @@
       <option name="conditions" value="conditionAttachment_False"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
-      <option name="changeOwnership" value="French Madagascar:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="French Madagascar:Free_French:Neutral_Axis:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Madagascar_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Madagascar_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
@@ -6071,7 +6137,7 @@
       <option name="conditions" value="conditionAttachment_False"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
-      <option name="changeOwnership" value="French West Africa:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="French West Africa:Free_French:Neutral_Axis:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_West_Africa_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_West_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch"/>
@@ -6211,7 +6277,7 @@
       <option name="conditions" value="conditionAttachment_False"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
-      <option name="changeOwnership" value="French Central Africa:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="French Central Africa:Free_French:Neutral_Axis:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Central_Africa_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Central_Africa_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
@@ -6351,7 +6417,7 @@
       <option name="conditions" value="conditionAttachment_False"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
-      <option name="changeOwnership" value="Southern France:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="Southern France:Free_French:Neutral_Axis:true"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_Southern_France_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_Southern_France_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
@@ -6491,7 +6557,7 @@
       <option name="conditions" value="conditionAttachment_False"/>
       <option name="when" value="after:frenchPolitics"/>
       <option name="uses" value="1"/>
-      <option name="changeOwnership" value="French Guiana:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="French Guiana:Free_French:Neutral_Axis:false"/>
     </attachment>
     <attachment name="triggerAttachment_Axis_Conquer_All_France_French_Guiana_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Conquer_All_France:conditionAttachment_French_Guiana_Can_Turn_Vichy:conditionAttachment_French_Territory_May_Turn_Vichy_Switch:Vichy_active"/>
@@ -6508,16 +6574,6 @@
       <option name="directPresenceTerritories" value="Southern France" count="1"/>
       <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:marine:fighter:tactical_bomber:bomber" count="1"/>
       <option name="invert" value="true"/>
-    </attachment>
-    <attachment name="triggerAttachment_Normandy_turn_Neutral" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Normandy_No_French_Units"/>
-      <option name="when" value="after:frenchPolitics"/>
-      <option name="changeOwnership" value="Normandy Bordeaux:French:Neutral_Axis:true"/>
-    </attachment>
-    <attachment name="triggerAttachment_Southern_France_turn_Neutral" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Southern_France_No_French_Units"/>
-      <option name="when" value="after:frenchPolitics"/>
-      <option name="changeOwnership" value="Southern France:French:Neutral_Axis:true"/>
     </attachment>
     <!-- Capture of Allied Capitals -->
     <attachment name="conditionAttachment_British_1_Lose_United_Kingdom" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -13596,6 +13652,8 @@
       <option name="relationshipChange" value="Italians:Americans:anyNeutral:War"/>
       <option name="relationshipChange" value="Americans:Neutral_Allies:anyNeutral:Friendly_Neutral"/>
       <option name="relationshipChange" value="Americans:Neutral_Axis:anyNeutral:Unfriendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Free_French:anyNeutral:Custodianship"/>
+      <option name="relationshipChange" value="Japanese:Free_French:anyNeutral:War"/>
       <!--<option name="relationshipChange" value="Japanese:British:anyNeutral:War"/>
 					<option name="relationshipChange" value="Japanese:UK_Pacific:anyNeutral:War"/>
 					<option name="relationshipChange" value="Japanese:ANZAC:anyNeutral:War"/>
@@ -14046,12 +14104,16 @@
       <option name="conditions" value="conditionAttachmentJapaneseNotYetAtWarWithFrench"/>
       <option name="relationshipChange" value="Japanese:French:War"/>
       <option name="relationshipChange" value="Chinese:French:Allied"/>
+      <option name="relationshipChange" value="Japanese:Free_French:War"/>
+      <option name="relationshipChange" value="Chinese:Free_French:Allied"/>
       <option name="text" value="Japanese_War_French"/>
     </attachment>
     <attachment name="politicalActionAttachment_French_To_War_With_Japanese" attachTo="French" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachmentJapaneseNotYetAtWarWithFrench"/>
       <option name="relationshipChange" value="Japanese:French:War"/>
       <option name="relationshipChange" value="Chinese:French:Allied"/>
+      <option name="relationshipChange" value="Japanese:Free_French:War"/>
+      <option name="relationshipChange" value="Chinese:Free_French:Allied"/>
       <option name="text" value="French_War_Japanese"/>
     </attachment>
     <attachment name="politicalActionAttachment_Axis_To_War_With_Russians" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -14063,6 +14125,7 @@
       <option name="relationshipChange" value="Russians:French:Allied"/>
       <option name="relationshipChange" value="Russians:Neutral_Allies:Friendly_Neutral"/>
       <option name="relationshipChange" value="Russians:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="relationshipChange" value="Russians:Free_French:Allied"/>
       <option name="text" value="Axis_War_Russians"/>
     </attachment>
     <attachment name="politicalActionAttachment_Axis_To_War_With_Russians" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -14074,6 +14137,7 @@
       <option name="relationshipChange" value="Russians:French:Allied"/>
       <option name="relationshipChange" value="Russians:Neutral_Allies:Friendly_Neutral"/>
       <option name="relationshipChange" value="Russians:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="relationshipChange" value="Russians:Free_French:Allied"/>
       <option name="text" value="Axis_War_Russians"/>
     </attachment>
     <attachment name="politicalActionAttachment_Russians_To_War_With_Germans" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -14085,6 +14149,7 @@
       <option name="relationshipChange" value="Russians:French:Allied"/>
       <option name="relationshipChange" value="Russians:Neutral_Allies:Friendly_Neutral"/>
       <option name="relationshipChange" value="Russians:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="relationshipChange" value="Russians:Free_French:Allied"/>
       <option name="text" value="Russians_War_Germans"/>
     </attachment>
     <attachment name="politicalActionAttachment_Russians_To_War_With_Italians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -14096,6 +14161,7 @@
       <option name="relationshipChange" value="Russians:French:Allied"/>
       <option name="relationshipChange" value="Russians:Neutral_Allies:Friendly_Neutral"/>
       <option name="relationshipChange" value="Russians:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="relationshipChange" value="Russians:Free_French:Allied"/>
       <option name="text" value="Russians_War_Italians"/>
     </attachment>
     <attachment name="politicalActionAttachment_British_To_War_With_Japanese" attachTo="British" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -14108,6 +14174,7 @@
       <option name="relationshipChange" value="Chinese:UK_Pacific:Allied"/>
       <option name="relationshipChange" value="Chinese:ANZAC:Allied"/>
       <option name="relationshipChange" value="Chinese:Dutch:Friendly"/>
+      <option name="relationshipChange" value="Japanese:Free_French:War"/>
       <option name="text" value="British_War_Japanese"/>
     </attachment>
     <attachment name="politicalActionAttachment_ANZAC_To_War_With_Japanese" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -14120,6 +14187,7 @@
       <option name="relationshipChange" value="Chinese:UK_Pacific:Allied"/>
       <option name="relationshipChange" value="Chinese:ANZAC:Allied"/>
       <option name="relationshipChange" value="Chinese:Dutch:Friendly"/>
+      <option name="relationshipChange" value="Japanese:Free_French:War"/>
       <option name="text" value="British_War_Japanese"/>
     </attachment>
     <attachment name="politicalActionAttachment_Japanese_To_War_With_Allies" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -14130,6 +14198,7 @@
       <option name="relationshipChange" value="Japanese:ANZAC:War"/>
       <option name="relationshipChange" value="Japanese:Dutch:War"/>
       <option name="relationshipChange" value="Japanese:French:War"/>
+      <option name="relationshipChange" value="Japanese:Free_French:War"/>
       <option name="relationshipChange" value="Germans:Americans:War"/>
       <option name="relationshipChange" value="Italians:Americans:War"/>
       <option name="relationshipChange" value="Chinese:Americans:Allied"/>
@@ -14170,6 +14239,7 @@
       <option name="relationshipChange" value="Americans:Dutch:Friendly"/>
       <option name="relationshipChange" value="Americans:Neutral_Allies:Friendly_Neutral"/>
       <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Free_French:Custodianship"/>
       <option name="text" value="Japanese_War_Americans_Only"/>
     </attachment>
     <attachment name="politicalActionAttachment_Germans_To_War_With_Americans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -14183,6 +14253,7 @@
       <option name="relationshipChange" value="Americans:Dutch:Friendly"/>
       <option name="relationshipChange" value="Americans:Neutral_Allies:Friendly_Neutral"/>
       <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Free_French:Custodianship"/>
       <option name="text" value="Axis_War_Americans"/>
     </attachment>
     <attachment name="politicalActionAttachment_Italians_To_War_With_Americans" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -14196,6 +14267,7 @@
       <option name="relationshipChange" value="Americans:Dutch:Friendly"/>
       <option name="relationshipChange" value="Americans:Neutral_Allies:Friendly_Neutral"/>
       <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Free_French:Custodianship"/>
       <option name="text" value="Axis_War_Americans"/>
     </attachment>
     <attachment name="politicalActionAttachment_Americans_To_War_With_Japanese" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -14209,6 +14281,7 @@
       <option name="relationshipChange" value="Americans:Dutch:Friendly"/>
       <option name="relationshipChange" value="Americans:Neutral_Allies:Friendly_Neutral"/>
       <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Free_French:Custodianship"/>
       <option name="text" value="Americans_War_Japanese"/>
     </attachment>
     <attachment name="politicalActionAttachment_Americans_To_War_With_Germans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -14222,6 +14295,7 @@
       <option name="relationshipChange" value="Americans:Dutch:Friendly"/>
       <option name="relationshipChange" value="Americans:Neutral_Allies:Friendly_Neutral"/>
       <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Free_French:Custodianship"/>
       <option name="text" value="Americans_War_Germans"/>
     </attachment>
     <attachment name="politicalActionAttachment_Americans_To_War_With_Italians" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -14235,6 +14309,7 @@
       <option name="relationshipChange" value="Americans:Dutch:Friendly"/>
       <option name="relationshipChange" value="Americans:Neutral_Allies:Friendly_Neutral"/>
       <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Free_French:Custodianship"/>
       <option name="text" value="Americans_War_Italians"/>
     </attachment>
     <!-- Tech Ability Attachment -->
@@ -14568,7 +14643,8 @@
       <unitPlacement unitType="aaGun" territory="Caroline Islands" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="airfield" territory="Caroline Islands" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="harbour" territory="Caroline Islands" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="Siam" quantity="2" owner="Japanese"/>
+      <unitPlacement unitType="infantry" territory="Siam" quantity="1" owner="Japanese"/>
+      <unitPlacement unitType="artillery" territory="Siam" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="infantry" territory="Okinawa" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="fighter" territory="Okinawa" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="infantry" territory="Kiangsu" quantity="3" owner="Japanese"/>
@@ -14612,6 +14688,7 @@
       <unitPlacement unitType="infantry" territory="Malaya" quantity="1" owner="ANZAC"/>
       <unitPlacement unitType="infantry" territory="Egypt" quantity="2" owner="ANZAC"/>
       <unitPlacement unitType="destroyer" territory="62 Sea Zone" quantity="1" owner="ANZAC"/>
+      <unitPlacement unitType="submarine" territory="62 Sea Zone" quantity="1" owner="ANZAC"/>
       <unitPlacement unitType="transport" territory="62 Sea Zone" quantity="1" owner="ANZAC"/>
       <unitPlacement unitType="cruiser" territory="63 Sea Zone" quantity="1" owner="ANZAC"/>
       <!-- Americans -->
@@ -14769,6 +14846,7 @@
       <unitPlacement unitType="destroyer" territory="93 Sea Zone" quantity="1" owner="French"/>
       <unitPlacement unitType="cruiser" territory="93 Sea Zone" quantity="1" owner="French"/>
       <unitPlacement unitType="cruiser" territory="110 Sea Zone" quantity="1" owner="French"/>
+      <unitPlacement unitType="infantry" territory="French Indo China" quantity="1" owner="French"/>
       <!-- Germans -->
       <unitPlacement unitType="infantry" territory="Holland Belgium" quantity="4" owner="Germans"/>
       <unitPlacement unitType="artillery" territory="Holland Belgium" quantity="2" owner="Germans"/>
@@ -15004,6 +15082,21 @@
       <relationship player1="Neutral_Allies" player2="Neutral_True" type="Strict_Neutral" roundValue="1"/>
       <relationship player1="Neutral_Allies" player2="Mongolians" type="Strict_Neutral" roundValue="1"/>
       <relationship player1="Neutral_True" player2="Mongolians" type="Strict_Neutral" roundValue="1"/>
+      <relationship player1="Free_French" player2="Germans" type="War" roundValue="1"/>
+      <relationship player1="Free_French" player2="Russians" type="Neutrality" roundValue="1"/>
+      <relationship player1="Free_French" player2="Japanese" type="Neutrality" roundValue="1"/>
+      <relationship player1="Free_French" player2="Americans" type="Neutrality" roundValue="1"/>
+      <relationship player1="Free_French" player2="Chinese" type="Neutrality" roundValue="1"/>
+      <relationship player1="Free_French" player2="British" type="Custodianship" roundValue="1"/>
+      <relationship player1="Free_French" player2="UK_Pacific" type="Custodianship" roundValue="1"/>
+      <relationship player1="Free_French" player2="Italians" type="War" roundValue="1"/>
+      <relationship player1="Free_French" player2="ANZAC" type="Custodianship" roundValue="1"/>
+      <relationship player1="Free_French" player2="French" type="Allied" roundValue="1"/>
+      <relationship player1="Free_French" player2="Dutch" type="Allied" roundValue="1"/>
+      <relationship player1="Free_French" player2="Neutral_Axis" type="Unfriendly_Neutral" roundValue="1"/>
+      <relationship player1="Free_French" player2="Neutral_Allies" type="Friendly_Neutral" roundValue="1"/>
+      <relationship player1="Free_French" player2="Neutral_True" type="Strict_Neutral" roundValue="1"/>
+      <relationship player1="Free_French" player2="Mongolians" type="Strict_Neutral" roundValue="1"/>
     </relationshipInitialize>
   </initialize>
   <propertyList>
@@ -15374,22 +15467,22 @@
     <property name="Use Vichy Rules" value="true" editable="true">
       <boolean/>
     </property>
-    <property name="USSR Lend Lease bonus for Japan declaring war on it" value="true" editable="true">
+    <property name="USSR Lend Lease bonus for Japan declaring war on it" value="false" editable="true">
       <boolean/>
     </property>
-    <property name="USA bonus for North Africa" value="true" editable="true">
+    <property name="USA bonus for North Africa" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="USA bonus for Islands surrounding the Carolines inclusive" value="true" editable="true">
+    <property name="USA bonus for Islands surrounding the Carolines inclusive" value="false" editable="true">
       <boolean/>
     </property>
-    <property name="UK bonus for two out of Sicily/Sardinia/Rome/Greece" value="true" editable="true">
+    <property name="UK bonus for two out of Sicily/Sardinia/Rome/Greece" value="false" editable="true">
       <boolean/>
     </property>
-    <property name="Japan Iwo Jima/Okinawa bonus" value="true" editable="true">
+    <property name="Japan Iwo Jima/Okinawa bonus" value="false" editable="true">
       <boolean/>
     </property>
-    <property name="Chinese Guerrilla Fighters" value="true" editable="true">
+    <property name="Chinese Guerrilla Fighters" value="false" editable="true">
       <boolean/>
     </property>
     <!-- Neutrals related -->
@@ -15409,11 +15502,13 @@
     <property name="notes">
       <value><![CDATA[  
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
-<b>Global 1940 Parisian Rebalance 1.0</b><br><br>
+<b>Global 1940 French Rebalance 2.0</b><br><br>
 A mod by simon33 to Balanced Mod 4 to improve some frustrating limitations dating back to the original edition of Global 1940. Predominantly this is to make it much more worthwhile for Paris to be retaken by the allies. Also, in a sea lion game Canada is kept fighting in a similar way to India, with a separate economy.<br><br>
-This is mostly a minimum change variant so many other changes I have thought about in the past have not been included.<br><br>
 <b>Changes:</b><br>
-<ul><li>Normandy & Southern France change to pro-Axis neutral if unoccupied, french owned and France has fallen. Also they are originally owned by the pro-Axis neutrals. If it is desired to liberate them to France on liberation of Paris, edit mode must be used.</li>
+<ul><li>All Origianlly French territories turn Free French if Paris falls. This allows USA, UK and Anzac to walk in to these territories and activate them similar to Dutch territories</li>
+<li>Some Balanced Mod changes are turned off by default, Burma Rd objective reverts to 6PUs</li>
+<li>French infantry on French Indo China, with an infantry on Siam upgraded to an artillery</li>
+<li>Adds a sub in sz62</li>
 <li>British Columbia through to Nova Scotia turn Canadian if London falls. They have 0 PUs in this scenario but can earn them later. In the event that London is liberated, these PUs cannot be spent, or alternatively, the troops bought cannot be placed.<br>
 <b>Theme:</b> If London falls, the Canadians will keep fighting but the rest of the empire may not unify under any particular leader and may not contribute to the war effort.</li>
 </ul><br><br>
@@ -15529,13 +15624,13 @@ With the exception of Southern France (see discussion of "Zone Libere" below), V
 <br><br>
 Fly-over restrictions applicable to other Neutral territories do not apply to Vichy French territory.
 <br><br>
-<b>Fleet at Toulon:</b> In addition to the change in French territorial control, the Armistice changes control of the the French fleet in sz 93, from French to Pro-Axis neutral. The Vichy French fleet maintains a strictly defensive posture. It may not be moved. It may not be captured by the Axis. The fleet is immediately destroyed if any power, other than the Free French, occupies Southern France 
+<b>Fleet at Toulon:</b> In addition to the change in French territorial control, the Armistice changes control of the the French fleet in sz 93, from French to Pro-Axis neutral. The Vichy French fleet maintains a strictly defensive posture. It may not be moved. It may not be captured by the Axis. The fleet is immediately destroyed if any power, other than the Free_French, occupies Southern France 
 <br><br>
 <b>"Zone Libre":</b> Any Axis occupation of Southern France following the Armistice results in the scuttling of the Vichy French Fleet at Toulon and the disbandment of all remaining Vichy French forces. These forces are removed at the end of the Axis player's turn in which the occupation of Southern France takes place. Any formerly Vichy French forces that were previously commandeered by the Axis are unaffected by this change.
 <br><br>
 <b>Armistice's Effect on National Objectives:</b> Following the armistice, Southern France is considered Axis-controlled for purposes of Italy's "Roman Empire" objective. Otherwise, the Vichy France arrangement has no impact on National Objectives. Tunisia, Algeria and Morocco must still be directly occupied by Germany or Italy to achieve Italy's "North Africa" objective. Japanese occupation of French Indo China still negates Japan's "Trade With America" objective. 
 <br><br>
-<b>Liberation of France:</b> The Allied liberation of France effectively terminates the Armistice. Any territory and forces still under Vichy French control (including any surviving fleet in sz 93) revert back to Free French control. The Vichy French forces in the Southern France and sz 93 will also revert back if Southern France is liberated by the Free French. 
+<b>Liberation of France:</b> The Allied liberation of France effectively terminates the Armistice. Any territory and forces still under Vichy French control (including any surviving fleet in sz 93) revert back to Free_French control. The Vichy French forces in the Southern France and sz 93 will also revert back if Southern France is liberated by the Free_French. 
 
 
 <br><br>

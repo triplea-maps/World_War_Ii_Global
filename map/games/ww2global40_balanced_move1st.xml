@@ -1311,9 +1311,15 @@
       <step name="germansTech" delegate="tech" player="Germans"/>
       <step name="germansTechActivation" delegate="tech_activation" player="Germans"/>
       <step name="germansPolitics" delegate="politics" player="Germans"/>
-      <step name="germansCombatMove" delegate="move" player="Germans"/>
-      <step name="germansAirborneCombatMove" delegate="specialCombatMove" player="Germans" display="Airborne Attack Move"/>
-      <step name="germansPurchase" delegate="purchase" player="Germans"/>
+      <step name="germansCombatMove" delegate="move" player="Germans">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="germansAirborneCombatMove" delegate="specialCombatMove" player="Germans" display="Airborne Attack Move">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="germansPurchase" delegate="purchase" player="Germans">
+        <stepProperty name="skipPosting" value="false"/>
+      </step>
       <step name="germansBattle" delegate="battle" player="Germans"/>
       <step name="germansNonCombatMove" delegate="move" player="Germans" display="Non Combat Move"/>
       <step name="germansPlace" delegate="place" player="Germans"/>
@@ -1322,9 +1328,15 @@
       <step name="russiansTech" delegate="tech" player="Russians"/>
       <step name="russiansTechActivation" delegate="tech_activation" player="Russians"/>
       <step name="russiansPolitics" delegate="politics" player="Russians"/>
-      <step name="russiansCombatMove" delegate="move" player="Russians"/>
-      <step name="russiansAirborneCombatMove" delegate="specialCombatMove" player="Russians" display="Airborne Attack Move"/>
-      <step name="russiansPurchase" delegate="purchase" player="Russians"/>
+      <step name="russiansCombatMove" delegate="move" player="Russians">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="russiansAirborneCombatMove" delegate="specialCombatMove" player="Russians" display="Airborne Attack Move">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="russiansPurchase" delegate="purchase" player="Russians">
+        <stepProperty name="skipPosting" value="false"/>
+      </step>
       <step name="russiansBattle" delegate="battle" player="Russians"/>
       <step name="russiansNonCombatMove" delegate="move" player="Russians" display="Non Combat Move"/>
       <step name="russiansPlace" delegate="place" player="Russians"/>
@@ -1333,9 +1345,15 @@
       <step name="japaneseTech" delegate="tech" player="Japanese"/>
       <step name="japaneseTechActivation" delegate="tech_activation" player="Japanese"/>
       <step name="japanesePolitics" delegate="politics" player="Japanese"/>
-      <step name="japaneseCombatMove" delegate="move" player="Japanese"/>
-      <step name="japaneseAirborneCombatMove" delegate="specialCombatMove" player="Japanese" display="Airborne Attack Move"/>
-      <step name="japanesePurchase" delegate="purchase" player="Japanese"/>
+      <step name="japaneseCombatMove" delegate="move" player="Japanese">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="japaneseAirborneCombatMove" delegate="specialCombatMove" player="Japanese" display="Airborne Attack Move">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="japanesePurchase" delegate="purchase" player="Japanese">
+        <stepProperty name="skipPosting" value="false"/>
+      </step>
       <step name="japaneseBattle" delegate="battle" player="Japanese"/>
       <step name="japaneseNonCombatMove" delegate="move" player="Japanese" display="Non Combat Move"/>
       <step name="japanesePlace" delegate="place" player="Japanese"/>
@@ -1344,9 +1362,15 @@
       <step name="americansTech" delegate="tech" player="Americans"/>
       <step name="americansTechActivation" delegate="tech_activation" player="Americans"/>
       <step name="americansPolitics" delegate="politics" player="Americans"/>
-      <step name="americansCombatMove" delegate="move" player="Americans"/>
-      <step name="americansAirborneCombatMove" delegate="specialCombatMove" player="Americans" display="Airborne Attack Move"/>
-      <step name="americansPurchase" delegate="purchase" player="Americans"/>
+      <step name="americansCombatMove" delegate="move" player="Americans">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="americansAirborneCombatMove" delegate="specialCombatMove" player="Americans" display="Airborne Attack Move">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="americansPurchase" delegate="purchase" player="Americans">
+        <stepProperty name="skipPosting" value="false"/>
+      </step>
       <step name="americansBattle" delegate="battle" player="Americans"/>
       <step name="americansNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
       <step name="americansPlace" delegate="place" player="Americans"/>
@@ -1355,8 +1379,12 @@
       </step>
       <!-- Chinese Game Sequence -->
       <step name="chinesePolitics" delegate="politics" player="Chinese"/>
-      <step name="chineseCombatMove" delegate="move" player="Chinese"/>
-      <step name="chinesePurchase" delegate="purchase" player="Chinese"/>
+      <step name="chineseCombatMove" delegate="move" player="Chinese">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="chinesePurchase" delegate="purchase" player="Chinese">
+        <stepProperty name="skipPosting" value="false"/>
+      </step>
       <step name="chineseBattle" delegate="battle" player="Chinese"/>
       <step name="chineseNonCombatMove" delegate="move" player="Chinese" display="Non Combat Move"/>
       <step name="chinesePlace" delegate="place" player="Chinese"/>
@@ -1371,10 +1399,15 @@
       <step name="britishPolitics" delegate="politics" player="British"/>
       <step name="britishCombatMove" player="British" delegate="move">
         <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
+        <stepProperty name="skipPosting" value="true"/>
       </step>
-      <step name="britishAirborneCombatMove" delegate="specialCombatMove" player="British" display="Airborne Attack Move"/>
+      <step name="britishAirborneCombatMove" delegate="specialCombatMove" player="British" display="Airborne Attack Move">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
       <step name="britishPurchase" delegate="purchase" player="British"/>
-      <step name="UK_PacificPurchase" delegate="purchase" player="UK_Pacific"/>
+      <step name="UK_PacificPurchase" delegate="purchase" player="UK_Pacific">
+        <stepProperty name="skipPosting" value="false"/>
+      </step>
       <step name="britishBattle" delegate="battle" player="British"/>
       <step name="britishNonCombatMove" delegate="move" player="British" display="Non Combat Move">
         <stepProperty name="combinedTurns" value="British:UK_Pacific"/>
@@ -1393,9 +1426,15 @@
       <step name="italiansTech" delegate="tech" player="Italians"/>
       <step name="italiansTechActivation" delegate="tech_activation" player="Italians"/>
       <step name="italiansPolitics" delegate="politics" player="Italians"/>
-      <step name="italiansCombatMove" delegate="move" player="Italians"/>
-      <step name="italiansAirborneCombatMove" delegate="specialCombatMove" player="Italians" display="Airborne Attack Move"/>
-      <step name="italiansPurchase" delegate="purchase" player="Italians"/>
+      <step name="italiansCombatMove" delegate="move" player="Italians">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="italiansAirborneCombatMove" delegate="specialCombatMove" player="Italians" display="Airborne Attack Move">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="italiansPurchase" delegate="purchase" player="Italians">
+        <stepProperty name="skipPosting" value="false"/>
+      </step>
       <step name="italiansBattle" delegate="battle" player="Italians"/>
       <step name="italiansNonCombatMove" delegate="move" player="Italians" display="Non Combat Move"/>
       <step name="italiansPlace" delegate="place" player="Italians"/>
@@ -1404,9 +1443,15 @@
       <step name="anzacTech" delegate="tech" player="ANZAC"/>
       <step name="anzacTechActivation" delegate="tech_activation" player="ANZAC"/>
       <step name="anzacPolitics" delegate="politics" player="ANZAC"/>
-      <step name="anzacCombatMove" delegate="move" player="ANZAC"/>
-      <step name="anzacAirborneCombatMove" delegate="specialCombatMove" player="ANZAC" display="Airborne Attack Move"/>
-      <step name="anzacPurchase" delegate="purchase" player="ANZAC"/>
+      <step name="anzacCombatMove" delegate="move" player="ANZAC">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="anzacAirborneCombatMove" delegate="specialCombatMove" player="ANZAC" display="Airborne Attack Move">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="anzacPurchase" delegate="purchase" player="ANZAC">
+        <stepProperty name="skipPosting" value="false"/>
+      </step>
       <step name="anzacBattle" delegate="battle" player="ANZAC"/>
       <step name="anzacNonCombatMove" delegate="move" player="ANZAC" display="Non Combat Move"/>
       <step name="anzacPlace" delegate="place" player="ANZAC"/>
@@ -1417,9 +1462,15 @@
       <step name="frenchTech" delegate="tech" player="French"/>
       <step name="frenchTechActivation" delegate="tech_activation" player="French"/>
       <step name="frenchPolitics" delegate="politics" player="French"/>
-      <step name="frenchCombatMove" delegate="move" player="French"/>
-      <step name="frenchAirborneCombatMove" delegate="specialCombatMove" player="French" display="Airborne Attack Move"/>
-      <step name="frenchPurchase" delegate="purchase" player="French"/>
+      <step name="frenchCombatMove" delegate="move" player="French">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="frenchAirborneCombatMove" delegate="specialCombatMove" player="French" display="Airborne Attack Move">
+        <stepProperty name="skipPosting" value="true"/>
+      </step>
+      <step name="frenchPurchase" delegate="purchase" player="French">
+        <stepProperty name="skipPosting" value="false"/>
+      </step>
       <step name="frenchBattle" delegate="battle" player="French"/>
       <step name="frenchNonCombatMove" delegate="move" player="French" display="Non Combat Move"/>
       <step name="frenchPlace" delegate="place" player="French"/>
@@ -1460,7 +1511,7 @@
       <result resourceOrUnit="tactical_bomber" quantity="1"/>
     </productionRule>
     <productionRule name="buyBomber">
-      <cost resource="PUs" quantity="12"/>
+      <cost resource="PUs" quantity="14"/>
       <result resourceOrUnit="bomber" quantity="1"/>
     </productionRule>
     <productionRule name="buyTransport">
@@ -15351,7 +15402,7 @@
     <property name="notes">
       <value><![CDATA[  
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
-<b>G40 Balanced - Balance Mod 3.3</b><br>
+<b>G40 Balanced - Balance Mod 4.1</b><br>
 <br>
 <b>Original Game Credits:</b> Bung, Veqryn<br><br>
 
@@ -15695,6 +15746,7 @@ These changes to units are things other than price/movement which you can see in
 <b>Credits to Veqryn for almost all related Engine code that allows this map to work.</b>
 <br><br><hr><br>
 <br>Change Log:
+<br>BM4.1 Include Bombers now costing 14
 <br>
 <br>BM3.4 Marine now qualifies for landings on Normandy/Holland/Sth France objective
 <br>Options for Balanced Mod changes

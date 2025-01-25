@@ -8,3 +8,4 @@ games:
 - {game_name: World War II Global 1942 2nd Edition, file_name: ww2global42_2nd_edition.xml}
 - {game_name: World War II Global 1940 Balanced Mod3 with Combat Move First, file_name: ww2global40_balanced_move1st.xml}
 - {game_name: World War II Global 1940 2nd Edition with Combat Move First, file_name: ww2global40_2ndEd_move1st.xml}
+- {game_name: World War II Global 1940 French Rebalance, file_name: ParisianRebalance1940.xml}
