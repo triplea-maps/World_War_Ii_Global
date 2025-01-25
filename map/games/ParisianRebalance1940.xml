@@ -14179,12 +14179,8 @@
     </attachment>
     <attachment name="politicalActionAttachment_ANZAC_To_War_With_Japanese" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_Not_Yet_At_War_With_Japanese"/>
-      <option name="relationshipChange" value="Japanese:British:Unprovoked"/>
-      <option name="relationshipChange" value="Japanese:UK_Pacific:Unprovoked"/>
       <option name="relationshipChange" value="Japanese:ANZAC:Unprovoked"/>
       <option name="relationshipChange" value="Japanese:Dutch:War"/>
-      <option name="relationshipChange" value="Chinese:British:Allied"/>
-      <option name="relationshipChange" value="Chinese:UK_Pacific:Allied"/>
       <option name="relationshipChange" value="Chinese:ANZAC:Allied"/>
       <option name="relationshipChange" value="Chinese:Dutch:Friendly"/>
       <option name="relationshipChange" value="Japanese:Free_French:War"/>
