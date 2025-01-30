@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Global 1940 French Rebalance" version="2.0"/>
+  <info name="World War II Global 1940 French Rebalance" version="2.1"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -5059,10 +5059,10 @@
       <option name="changeOwnership" value="French Madagascar:French:Free_French:false"/>
       <option name="changeOwnership" value="French Guiana:French:Free_French:false"/>
       <option name="changeOwnership" value="Syria:French:Free_French:false"/>
-      <option name="changeOwnership" value="Normandy Bordeaux:French:Italians:true"/>    <!-- Swap to Axis then back to Allies to convert ownership of facilities -->
-      <option name="changeOwnership" value="Normandy Bordeaux:Italians:Free_French:true"/>
-      <option name="changeOwnership" value="Southern France:French:Italians:true"/>
-      <option name="changeOwnership" value="Southern France:Italians:Free_French:true"/>
+      <option name="changeOwnership" value="Normandy Bordeaux:French:Neutral_Axis:true"/>    <!-- Swap to Axis then back to Allies to convert ownership of facilities -->
+      <option name="changeOwnership" value="Normandy Bordeaux:Neutral_Axis:Free_French:true"/>
+      <option name="changeOwnership" value="Southern France:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="Southern France:Neutral_Axis:Free_French:true"/>
       <option name="changeOwnership" value="New Hebrides:French:Free_French:false"/>
       <option name="changeOwnership" value="French Indo China:French:Free_French:false"/>
     </attachment>
@@ -5081,10 +5081,10 @@
       <option name="changeOwnership" value="French Madagascar:French:Free_French:false"/>
       <option name="changeOwnership" value="French Guiana:French:Free_French:false"/>
       <option name="changeOwnership" value="Syria:French:Free_French:false"/>
-      <option name="changeOwnership" value="Normandy Bordeaux:French:Italians:true"/>    <!-- Swap to Axis then back to Allies to convert ownership of facilities -->
-      <option name="changeOwnership" value="Normandy Bordeaux:Italians:Free_French:true"/>
-      <option name="changeOwnership" value="Southern France:French:Italians:true"/>
-      <option name="changeOwnership" value="Southern France:Italians:Free_French:true"/>
+      <option name="changeOwnership" value="Normandy Bordeaux:French:Neutral_Axis:true"/>    <!-- Swap to Axis then back to Allies to convert ownership of facilities -->
+      <option name="changeOwnership" value="Normandy Bordeaux:Neutral_Axis:Free_French:true"/>
+      <option name="changeOwnership" value="Southern France:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="Southern France:Neutral_Axis:Free_French:true"/>
       <option name="changeOwnership" value="New Hebrides:French:Free_French:false"/>
       <option name="changeOwnership" value="French Indo China:French:Free_French:false"/>
     </attachment>
@@ -5103,10 +5103,10 @@
       <option name="changeOwnership" value="French Madagascar:French:Free_French:false"/>
       <option name="changeOwnership" value="French Guiana:French:Free_French:false"/>
       <option name="changeOwnership" value="Syria:French:Free_French:false"/>
-      <option name="changeOwnership" value="Normandy Bordeaux:French:Italians:true"/>    <!-- Swap to Axis then back to Allies to convert ownership of facilities -->
-      <option name="changeOwnership" value="Normandy Bordeaux:Italians:Free_French:true"/>
-      <option name="changeOwnership" value="Southern France:French:Italians:true"/>
-      <option name="changeOwnership" value="Southern France:Italians:Free_French:true"/>
+      <option name="changeOwnership" value="Normandy Bordeaux:French:Neutral_Axis:true"/>    <!-- Swap to Axis then back to Allies to convert ownership of facilities -->
+      <option name="changeOwnership" value="Normandy Bordeaux:Neutral_Axis:Free_French:true"/>
+      <option name="changeOwnership" value="Southern France:French:Neutral_Axis:true"/>
+      <option name="changeOwnership" value="Southern France:Neutral_Axis:Free_French:true"/>
       <option name="changeOwnership" value="New Hebrides:French:Free_French:false"/>
       <option name="changeOwnership" value="French Indo China:French:Free_French:false"/>
     </attachment>
@@ -15498,7 +15498,7 @@
     <property name="notes">
       <value><![CDATA[  
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
-<b>Global 1940 French Rebalance 2.0</b><br><br>
+<b>Global 1940 French Rebalance 2.1</b><br><br>
 A mod by simon33 to Balanced Mod 4 to improve some frustrating limitations dating back to the original edition of Global 1940. Predominantly this is to make it much more worthwhile for Paris to be retaken by the allies. Also, in a sea lion game Canada is kept fighting in a similar way to India, with a separate economy.<br><br>
 <b>Changes:</b><br>
 <ul><li>All Origianlly French territories turn Free French if Paris falls. This allows USA, UK and Anzac to walk in to these territories and activate them similar to Dutch territories</li>
